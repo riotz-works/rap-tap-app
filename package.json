@@ -1,0 +1,33 @@
+{
+  "name": "rap-tap-app",
+  "displayName": "ラップ、タップ、アップ 🎶",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
+    "nuxt": "^1.4.2",
+    "shx": "^0.3.2"
+  },
+  "scripts": {
+    "clean": "shx rm -rf .nuxt dist",
+    "setup": "yarn install --ignore-optional",
+    "upgrade": "yarn upgrade --latest",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "analyze": "nuxt build --analyze",
+    "generate": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
+    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'"
+  },
+  "homepage": "https://github.com/riotz-works/rap-tap-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riotz-works/rap-tap-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riotz-works/rap-tap-app/issues"
+  },
+  "author": "Riotz Works (https://riotz.works)",
+  "license": "MIT"
+}
