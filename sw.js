@@ -1,0 +1,53 @@
+importScripts('/rap-tap-app/static/workbox.dev.5c678697.js')
+
+
+
+workbox.precaching.precacheAndRoute([
+  {
+    "url": "/rap-tap-app/static/app.3f63c50960ebb518a87c.js",
+    "revision": "96d898fceed4b3c3254ad50b5cbbbf21"
+  },
+  {
+    "url": "/rap-tap-app/static/layouts/default.860485f7694926d31a51.js",
+    "revision": "a027f8a5d7ae8a43d456c813d6fe0c84"
+  },
+  {
+    "url": "/rap-tap-app/static/manifest.013b8b7414a87d56614f.js",
+    "revision": "8088c3fb5030b658e3621bac2cf0c4c5"
+  },
+  {
+    "url": "/rap-tap-app/static/pages/about.80542407b6f3dd5e64fc.js",
+    "revision": "3c686c841f9b4d1f5a5d6db56d1b053f"
+  },
+  {
+    "url": "/rap-tap-app/static/pages/index.cb1007d02803ddd198e6.js",
+    "revision": "be5d90d131fb854c95c494b7a8ab4616"
+  },
+  {
+    "url": "/rap-tap-app/static/vendor.191b391e57bb33b3afa1.js",
+    "revision": "8901b1d56bcb5851d49e49a8aacf4a7f"
+  }
+], {
+  "cacheId": "rap-tap-app",
+  "directoryIndex": "/",
+  "cleanUrls": false
+})
+
+
+
+workbox.clientsClaim()
+workbox.skipWaiting()
+
+
+workbox.routing.registerRoute(new RegExp('/rap-tap-app/static/.*'), workbox.strategies.cacheFirst({}), 'GET')
+
+workbox.routing.registerRoute(new RegExp('/rap-tap-app/.*'), workbox.strategies.networkFirst({}), 'GET')
+
+workbox.routing.registerRoute(new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'), workbox.strategies.cacheFirst({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+
+workbox.routing.registerRoute(new RegExp('.(?:png|gif|jpg|jpeg|svg)$'), workbox.strategies.cacheFirst({"cacheExpiration":{"maxEntries":60,"maxAgeSeconds":2592000}}), 'GET')
+
+
+
+
+
