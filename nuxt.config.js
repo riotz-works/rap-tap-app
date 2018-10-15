@@ -11,7 +11,40 @@ module.exports = {
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : pkg.displayName
   },
+  meta: {
+    ogHost: pkg.applicationHost
+  },
+  manifest: {
+    name: pkg.displayName,
+    short_name: pkg.displayShortName,
+    description: pkg.description,
+    display: 'standalone',
+    lang: 'ja',
+    scope: `/${pkg.name}/`,
+    theme_color: '#000',
+    background_color: '#000'
+  },
   loading: {
     color: '#000'
+  },
+  modules: [
+    [ '@nuxtjs/pwa' ]
+  ],
+  workbox: {
+    dev: true,
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.(?:googleapis|gstatic).com/(.*)',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [ 0, 200 ]}}
+      },
+      {
+        urlPattern: '\.(?:png|gif|jpg|jpeg|svg)$',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheExpiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 }}
+      }
+    ]
   }
 };

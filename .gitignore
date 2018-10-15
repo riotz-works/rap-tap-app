@@ -1,5 +1,6 @@
 # Nuxt generate
 dist
+static/sw.js
 
 
 # Created by https://www.gitignore.io/api/node
