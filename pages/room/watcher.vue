@@ -20,7 +20,7 @@
         <!-- 対戦者Aのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="rapper-a" autoplay class="battle-movie"></video>
+            <video id="rapper-a" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ rappers.A.nickname }}</div>
             </v-card-title>
@@ -45,7 +45,7 @@
         <!-- 対戦者Bのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="rapper-b" autoplay class="battle-movie"></video>
+            <video id="rapper-b" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ rappers.B.nickname }}</div>
             </v-card-title>

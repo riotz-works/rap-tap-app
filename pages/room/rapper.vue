@@ -21,7 +21,7 @@
         <!-- 自分のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-me" autoplay class="battle-movie"></video>
+            <video id="battle-movie-me" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ this.rappers.me.nickname }}</div>
             </v-card-title>
@@ -46,7 +46,7 @@
         <!-- 相手のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-competitor" autoplay class="battle-movie"></video>
+            <video id="battle-movie-competitor" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ this.rappers.competitor.nickname }}</div>
             </v-card-title>
