@@ -14,8 +14,6 @@
           <router-link to="/host">
             <v-btn dark color="black" class="host-btn">バトルを募集する</v-btn>
           </router-link>
-          <v-btn dark color="black" class="host-btn">対戦する</v-btn>
-          <v-btn dark color="black" class="host-btn">観戦する</v-btn>
         </v-flex>
       </v-layout>
 
