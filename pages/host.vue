@@ -16,7 +16,7 @@
                 label="URL"
                 append-icon="file_copy"
                 @click:append="copyRoomURL"
-                value="https://to.rapper.page.sample"
+                :value="roomUrl.rapper"
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
           </v-card>
@@ -37,7 +37,7 @@
                 label="URL"
                 append-icon="file_copy"
                 @click:append="copyRoomURL"
-                value="https://to.watcher.page.sample"
+                :value="roomUrl.watcher"
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
           </v-card>
@@ -51,6 +51,7 @@
 
 <script lang="ts">
 
+import { NuxtContext } from 'nuxt';
 import QRCode from 'qrcode';
 import Vue from 'vue';
 
@@ -74,6 +75,17 @@ export default Vue.extend({
     };
     QRCode.toCanvas(rapperCanvas, 'https://to.rapper.page.sample', qrCodeOptions);
     QRCode.toCanvas(watcherCanvas, 'https://to.watcher.page.sample', qrCodeOptions);
+  },
+
+  async asyncData({ app }: NuxtContext): Promise<object> {
+    const res = await app.$axios.get('https://n0wp6edtwj.execute-api.us-west-2.amazonaws.com/dev/version?detail=true'); // 一旦ダミー API Call
+
+    return {
+      roomUrl: {
+        rapper: `https://rapper.sample.com/${res.data.name}`,
+        watcher: `https://watcher.sample.com/${res.data.name}`
+      }
+    };
   }
 });
 
