@@ -4,9 +4,7 @@
       <!-- ボタン表示 -->
       <v-layout row>
         <v-flex xs12>
-          <router-link to="/host">
-            <v-btn class="host-btn" @click="onHost">バトルを募集する</v-btn>
-          </router-link>
+          <v-btn class="host-btn" @click="onHost">バトルを募集する</v-btn>
         </v-flex>
       </v-layout>
 
