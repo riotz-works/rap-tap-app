@@ -22,7 +22,7 @@
           <v-card>
             <video id="rapper-a" autoplay class="battle-movie"></video>
             <v-card-title>
-              <div>nickname</div>
+              <div>{{ rappers.A.nickname }}</div>
             </v-card-title>
             <v-card-actions>
               <v-chip color="indigo" label outline @click="onClickThumbUpForA">
@@ -47,7 +47,7 @@
           <v-card>
             <video id="rapper-b" autoplay class="battle-movie"></video>
             <v-card-title>
-              <div>nickname</div>
+              <div>{{ rappers.B.nickname }}</div>
             </v-card-title>
             <v-card-actions>
               <v-chip color="indigo" label outline @click="onClickThumbUpForB">
@@ -124,7 +124,7 @@ export default Vue.extend({
     peer:          undefined,
     rapperStreamA: undefined,
     rapperStreamB: undefined,
-    nickname: 'watcher',
+    nickname: '',
 
     rappers: {
       A: {
@@ -162,23 +162,24 @@ export default Vue.extend({
       this.chatMessage = '';
     },
     onClickThumbUpForA(): void {
-      console.log('onClickThumbUpForA');
       RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`)
-        .transaction((feedback: { thumb_up: number; thumb_down: number }) => {
-          console.log('@@@', feedback);
-          return { thumb_up: this.rappers.A.feedback.thumb_up + 1, thumb_down: this.rappers.B.feedback.thumb_down };
-        });
+        .transaction((feedback: { thumb_up: number; thumb_down: number }) =>
+          feedback ? { thumb_up: feedback.thumb_up + 1, thumb_down: feedback.thumb_down } : undefined);
     },
     onClickThumbDownForA(): void {
-      console.log('onClickThumbDownForA');
-
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`)
+        .transaction((feedback: { thumb_up: number; thumb_down: number }) =>
+          feedback ? { thumb_up: feedback.thumb_up, thumb_down: feedback.thumb_down + 1 } : undefined);
     },
     onClickThumbUpForB(): void {
-      console.log('onClickThumbUpForB');
-
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`)
+        .transaction((feedback: { thumb_up: number; thumb_down: number }) =>
+          feedback ? { thumb_up: feedback.thumb_up + 1, thumb_down: feedback.thumb_down } : undefined);
     },
     onClickThumbDownForB(): void {
-      console.log('onClickThumbDownForB');
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`)
+        .transaction((feedback: { thumb_up: number; thumb_down: number }) =>
+          feedback ? { thumb_up: feedback.thumb_up, thumb_down: feedback.thumb_down + 1 } : undefined);
     }
   },
 
@@ -186,10 +187,11 @@ export default Vue.extend({
 
     this.roomId = this.$route.query.roomId;
     this.roomName = this.$route.query.roomName;
+    this.nickname = this.$route.query.nickname;
 
     this.roomState = this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
       if (res.data.rappers.length < 2) {
-        return 'wating';
+        return 'waiting';
       }
       this.rappers.A.nickname = res.data.rappers[0].nickname;
       this.rappers.A.peerId   = res.data.rappers[0].peerId;

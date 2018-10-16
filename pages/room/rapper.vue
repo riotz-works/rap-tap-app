@@ -23,7 +23,7 @@
           <v-card>
             <video id="battle-movie-me" autoplay class="battle-movie"></video>
             <v-card-title>
-              <div>nickname</div>
+              <div>{{ this.rappers.me.nickname }}</div>
             </v-card-title>
             <v-card-actions>
               <v-chip color="indigo" label outline>
@@ -48,7 +48,7 @@
           <v-card>
             <video id="battle-movie-competitor" autoplay class="battle-movie"></video>
             <v-card-title>
-              <div>nickname</div>
+              <div>{{ this.rappers.competitor.nickname }}</div>
             </v-card-title>
             <v-card-actions>
               <v-chip color="indigo" label outline>
@@ -123,7 +123,7 @@ export default Vue.extend({
 
     rappers: {
       me: {
-        nickname: '',
+        nickname: 'Waiting...',
         peerId: '',
         feedback: {
           thumb_up: 0,
@@ -141,7 +141,6 @@ export default Vue.extend({
     },
 
     peer:     undefined,
-    nickname: 'wrapper',
 
     // コンポーネント外出したい
     chatCount: 0,
@@ -170,6 +169,13 @@ export default Vue.extend({
             }
             this.rappers.competitor.nickname = competitor.nickname;
             this.rappers.competitor.peerId = competitor.peerId;
+
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.competitor.peerId}/feedback`).on('value', (snapshot: any) => {
+              console.log('on competitor feedback value: ', snapshot.val());
+              if (snapshot.val()) {
+                this.rappers.competitor.feedback = snapshot.val();
+              }
+            });
           });
           const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
           competitorVideo.srcObject = competitorStream;
@@ -181,7 +187,7 @@ export default Vue.extend({
 
     sendMessage(): void {
       RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
-        name:    this.nickname,
+        name:    this.rappers.me.nickname,
         content: this.chatMessage
       });
       this.chatMessage = '';
@@ -192,8 +198,17 @@ export default Vue.extend({
 
     this.roomId = this.$route.query.roomId;
     this.roomName = this.$route.query.roomName;
+    this.nickname = this.$route.query.nickname;
     this.rappers.me.nickname = this.$route.query.nickname;
     this.rappers.me.peerId = this.$route.query.peerId;
+
+    this.roomState = this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
+
+      const competitor = res.data.rappers.find((r: any) => r.peerId !== this.peerId);
+      this.rappers.competitor.nickname = competitor.nickname;
+      this.rappers.competitor.peerId = competitor.peerId;
+
+    });
 
     RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: any) => {
       const data = snapshot.val();
@@ -201,25 +216,14 @@ export default Vue.extend({
       this.chatCount++;
     });
 
-    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('child_added', (snapshot: any) => {
-      this.rappers.me.feedback = snapshot.val();
-    });
-
-    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.competitor.peerId}/feedback`).on('child_added', (snapshot: any) => {
-      this.rappers.competitor.feedback = snapshot.val();
+    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: any) => {
+      if (snapshot.val()) {
+        this.rappers.me.feedback = snapshot.val();
+      }
     });
 
     this.peer = new Peer(this.rappers.me.peerId, { key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
   }
-
-  // async asyncData({ app }: NuxtContext): Promise<object> {
-
-  //   const res = this.$coreApi.get(`/rooms/${this.roomId}`);
-  //   const competitor = res.data.rappers.find((r: any) => r.peerId !== this.peerId);
-  //   this.rappers.competitor.nickname = competitor.nickname;
-  //   this.rappers.competitor.peerId = competitor.peerId;
-
-  // });
 });
 </script>
 
