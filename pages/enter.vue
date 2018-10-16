@@ -112,12 +112,4 @@ export default Vue.extend({
 
 
 <style scoped>
-.bottom {
-  overflow: hidden;
-  position: fixed;
-
-  bottom: 32px;
-  left: 20px;
-  right: 20px;
-}
 </style>

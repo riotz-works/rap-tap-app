@@ -2,6 +2,32 @@ html, body {
   font-feature-settings : "palt";
 }
 
+a {
+  text-decoration: none;
+}
+
 .no-margin {
   margin: 0;
+}
+
+.neon {
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff00de, 0 0 7px #ff00de, 0 0 8px #ff00de, 0 0 10px #ff0000, 0 0 15px #ff0000;
+}
+.neon-blue {
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #Cc00ff, 0 0 7px #cc00ff, 0 0 8px #ff00de, 0 0 10px #0000ff, 0 0 15px #0000ff;
+}
+
+.bottom {
+  overflow: hidden;
+  position: fixed;
+
+  bottom: 32px;
+  left: 20px;
+  right: 20px;
+}
+
+.transparent-panel {
+  background-color: rgba(0, 0, 0, .2) !important;
 }

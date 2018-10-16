@@ -42,7 +42,7 @@ export default Vue.extend({
   },
   async asyncData({ app }: NuxtContext): Promise<object> {
     return {
-      modules: [ pkg, (await app.$axios.get(`${process.env.RAP_TAP_APP_CORE_API_VERSION}?detail=true`)).data ]
+      modules: [ pkg, (await app.$axios.get(`${process.env.RAP_TAP_APP_CORE_API}/version?detail=true`)).data ]
     };
   }
 });

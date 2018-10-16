@@ -6,7 +6,7 @@
 
         <!-- 対戦者Aのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <div v-if="rappers.A.state === 'waiting'">
               <br />
               <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
@@ -16,16 +16,16 @@
               <div>{{ rappers.A.nickname }}</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline @click="onClickThumbUpForA">
+              <v-chip color="white" label outline @click="onClickThumbUpForA">
                 <v-avatar>
-                  <v-icon>thumb_up</v-icon>
+                  <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
                 {{ rappers.A.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline @click="onClickThumbDownForA">
+              <v-chip color="white" label outline @click="onClickThumbDownForA">
                 <v-avatar>
-                  <v-icon>thumb_down</v-icon>
+                  <v-icon class="neon-blue">thumb_down</v-icon>
                 </v-avatar>
                 {{ rappers.A.feedback.thumb_down }}
               </v-chip>
@@ -35,7 +35,7 @@
 
         <!-- 対戦者Bのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <div v-if="rappers.B.state === 'waiting'">
               <br />
               <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
@@ -45,16 +45,16 @@
               <div>{{ rappers.B.nickname }}</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline @click="onClickThumbUpForB">
+              <v-chip color="white" label outline @click="onClickThumbUpForB">
                 <v-avatar>
-                  <v-icon>thumb_up</v-icon>
+                  <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
                 {{ rappers.B.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline @click="onClickThumbDownForB">
+              <v-chip color="white" label outline @click="onClickThumbDownForB">
                 <v-avatar>
-                  <v-icon>thumb_down</v-icon>
+                  <v-icon class="neon-blue">thumb_down</v-icon>
                 </v-avatar>
                 {{ rappers.B.feedback.thumb_down }}
               </v-chip>
@@ -67,7 +67,7 @@
       <!-- チャット内容 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
-          <v-card class="chat-contents">
+          <v-card class="chat-contents transparent-panel">
 
             <div v-for="chat of chats" :key="chat.id">
               <v-chip label color="pink" text-color="white">
@@ -82,7 +82,7 @@
       <!-- チャット入力 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <v-card-actions>
               <v-text-field
                 v-model="chatMessage"

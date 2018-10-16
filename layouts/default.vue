@@ -4,7 +4,7 @@
       <v-toolbar-title class="title">
         <router-link to="/">
           <img src="@/static/icon.png" />
-          <span>{{ require('~/package.json').displayName }}</span>
+          <span class="neon">{{ require('~/package.json').displayName }}</span>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -56,9 +56,7 @@ nav {
   padding-left: 4px;
 }
 
-.title a {
-  color: #EF164B;
-  text-decoration: none;
+.title a span {
   font-size: medium;
   font-weight: bold;
 }
@@ -70,11 +68,11 @@ nav {
 
 .footer {
   background-color: rgba(0, 0, 0, 0) !important;
+  padding-right: 4px;
   min-height: 0px;
   text-align: right;
 }
 .footer a {
   color: #fff;
-  text-decoration: none;
 }
 </style>

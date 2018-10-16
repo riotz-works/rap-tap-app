@@ -18,22 +18,22 @@
 
         <!-- 自分のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <video id="battle-movie-me" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ this.rappers.me.nickname }}</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline>
+              <v-chip color="white" label outline>
                 <v-avatar>
-                  <v-icon>thumb_up</v-icon>
+                  <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
                 {{ rappers.me.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline>
+              <v-chip color="white" label outline>
                 <v-avatar>
-                  <v-icon>thumb_down</v-icon>
+                  <v-icon class="neon-blue">thumb_down</v-icon>
                 </v-avatar>
                 {{ rappers.me.feedback.thumb_down }}
               </v-chip>
@@ -43,22 +43,22 @@
 
         <!-- 相手のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <video id="battle-movie-competitor" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ this.rappers.competitor.nickname }}</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline>
+              <v-chip color="white" label outline>
                 <v-avatar>
-                  <v-icon>thumb_up</v-icon>
+                  <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
                 {{ rappers.competitor.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline>
+              <v-chip color="white" label outline>
                 <v-avatar>
-                  <v-icon>thumb_down</v-icon>
+                  <v-icon class="neon-blue">thumb_down</v-icon>
                 </v-avatar>
                 {{ rappers.competitor.feedback.thumb_down }}
               </v-chip>
@@ -71,7 +71,7 @@
       <!-- チャット内容 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
-          <v-card class="chat-contents">
+          <v-card class="chat-contents transparent-panel">
 
             <div v-for="chat of chats" :key="chat.id">
               <v-chip label color="pink" text-color="white">
@@ -86,7 +86,7 @@
       <!-- チャット入力 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
-          <v-card>
+          <v-card class="transparent-panel">
             <v-card-actions>
               <v-text-field
                 v-model="chatMessage"
