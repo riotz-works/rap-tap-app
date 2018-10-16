@@ -222,7 +222,7 @@ export default Vue.extend({
       }
     });
 
-    this.peer = new Peer(this.rappers.me.peerId, { key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
+    this.peer = new Peer(this.rappers.me.peerId, { key: process.env.SKYWAY_API_KEY, debug: 3 });
   }
 });
 </script>

@@ -216,7 +216,7 @@ export default Vue.extend({
         }
       });
 
-      this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
+      this.peer = new Peer({ key: process.env.SKYWAY_API_KEY, debug: 3 });
       setTimeout(() => { // TODO: Change the trigger to join the room
         this.peer.joinRoom(this.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream | any) => {
 

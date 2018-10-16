@@ -44,7 +44,8 @@ module.exports = {
     { src: '~/plugins/core-api', ssr: false }
   ],
   env: {
-    RAP_TAP_APP_CORE_API_VERSION: process.env.RAP_TAP_APP_CORE_API_VERSION
+    RAP_TAP_APP_CORE_API_VERSION: process.env.RAP_TAP_APP_CORE_API_VERSION,
+    SKYWAY_API_KEY: process.env.SKYWAY_API_KEY
   },
   axios: {
     retry: {
