@@ -1,9 +1,9 @@
 <template>
   <v-app dark>
-    <v-toolbar app flat>
+    <v-toolbar app flat height="36px">
       <v-toolbar-title class="title">
         <router-link to="/">
-          <img src="@/static/icon.png" height="30px" />
+          <img src="@/static/icon.png" height="32px" />
           <span>{{ require('~/package.json').displayName }}</span>
         </router-link>
       </v-toolbar-title>
