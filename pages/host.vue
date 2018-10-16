@@ -78,10 +78,10 @@ export default Vue.extend({
     },
     openEnterPageForRapper(): void {
       location.href = this.rapperUrl;
-      this.$router.push({ path: '/enter', query: { mode: 'rapper', roomId: this.getRoomId, roomName: this.getRoomName }})
+      this.$router.push({ path: '/enter', query: { mode: 'rapper', roomId: this.roomId, roomName: this.roomName }});
     },
     openEnterPageForWatcher(): void {
-      location.href = this.watcherUrl;
+      this.$router.push({ path: '/enter', query: { mode: 'watcher', roomId: this.roomId, roomName: this.roomName }});
     }
   },
 
