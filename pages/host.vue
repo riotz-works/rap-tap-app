@@ -10,7 +10,7 @@
               <h3 class="headline mb-0">対戦者</h3>
               <v-spacer />
               <v-chip label color="primary" @click="openEnterPageForRapper">
-                <v-icon>open_in_new</v-icon>
+                <v-icon>open_in_browser</v-icon>
               </v-chip>
             </v-card-title>
             <canvas id="rapper-qr-code"></canvas>
@@ -37,7 +37,7 @@
               <h3 class="headline mb-0">観戦者</h3>
               <v-spacer />
               <v-chip label color="primary" @click="openEnterPageForWatcher">
-                <v-icon>open_in_new</v-icon>
+                <v-icon>open_in_browser</v-icon>
               </v-chip>
             </v-card-title>
             <canvas id="watcher-qr-code"></canvas>
@@ -62,12 +62,15 @@
 
 
 <script lang="ts">
-import { NuxtContext } from 'nuxt';
 import QRCode from 'qrcode';
 import Vue from 'vue';
-import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
+
+  data: (): {} => ({
+    rapperUrl: '',
+    watcherUrl: ''
+  }),
 
   methods: {
     copyRapperRoomUrl(): void {
@@ -79,10 +82,10 @@ export default Vue.extend({
       document.execCommand('copy');
     },
     openEnterPageForRapper(): void {
-      window.open(this.rapperUrl);
+      location.href = this.rapperUrl;
     },
     openEnterPageForWatcher(): void {
-      window.open(this.watcherUrl);
+      location.href = this.watcherUrl;
     }
   },
 
@@ -95,30 +98,20 @@ export default Vue.extend({
       width: 250
     };
 
+    const roomId = this.$route.query.roomId;
+    const roomName = this.$route.query.roomName;
+    const roomParam = `roomId=${roomId}&roomName=${roomName}`;
+
+    if (location.hostname === 'localhost') {
+      this.rapperUrl = `http://${location.hostname}:${location.port}/enter/?mode=rapper&${roomParam}`;
+      this.watcherUrl = `http://${location.hostname}:${location.port}/enter/?mode=watcher&${roomParam}`;
+    } else {
+      this.rapperUrl = `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${roomParam}`;
+      this.watcherUrl = `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${roomParam}`;
+    }
+
     QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
     QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);
-  },
-
-  async asyncData({ app }: NuxtContext): Promise<object> {
-
-    const res = await app.$coreApi.post('/rooms', { roomName: 'BATTLE_FOR_SPIKE' });
-
-    RealtimeDB.ref(`/rooms/${res.data.roomId}`).set({
-      messages: [],
-      rappers: {}
-    });
-    const roomParam = `roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
-
-    const urlForLocal = {
-      rapperUrl:  `http://${location.hostname}:${location.port}/enter/?mode=rapper&${roomParam}`,
-      watcherUrl: `http://${location.hostname}:${location.port}/enter/?mode=watcher&${roomParam}`
-    };
-    const urlToServe = {
-      rapperUrl:  `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${roomParam}`,
-      watcherUrl: `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${roomParam}`
-    };
-
-    return location.hostname === 'localhost' ? urlForLocal : urlToServe;
   }
 });
 
