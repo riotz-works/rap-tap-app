@@ -40,6 +40,9 @@ module.exports = {
     [ '@nuxtjs/vuetify' ],
     [ '~/modules/typescript.js' ]
   ],
+  env: {
+    RAP_TAP_APP_CORE_API_VERSION: process.env.RAP_TAP_APP_CORE_API_VERSION
+  },
   axios: {
     retry: {
       retries: 3,
@@ -65,6 +68,12 @@ module.exports = {
         handler: 'cacheFirst',
         method: 'GET',
         strategyOptions: { cacheExpiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 }}
+      },
+      {
+        urlPattern: process.env.RAP_TAP_APP_CORE_API_VERSION,
+        handler: 'networkFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [ 0, 200 ]}}
       }
     ]
   }

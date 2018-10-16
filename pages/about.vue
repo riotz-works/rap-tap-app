@@ -22,13 +22,13 @@
 
 
 <script lang="ts">
+import { NuxtContext } from 'nuxt';
 import Vue from 'vue';
 import pkg from '~/package.json';
 
 export default Vue.extend({
   computed: {
     title: (): string => 'About',
-    modules: (): object[] => [ pkg ],
     headers: (): object => [
       { text: '#',           sortable: false, width:  '24px' },
       { text: 'Module Name', sortable: false, width: '240px' },
@@ -38,6 +38,11 @@ export default Vue.extend({
   head(): object {
     return {
       title: this.title
+    };
+  },
+  async asyncData({ app }: NuxtContext): Promise<object> {
+    return {
+      modules: [ pkg, (await app.$axios.get(`${process.env.RAP_TAP_APP_CORE_API_VERSION}?detail=true`)).data ]
     };
   }
 });
