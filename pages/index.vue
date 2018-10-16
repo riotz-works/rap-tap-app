@@ -30,7 +30,7 @@ export default Vue.extend({
           });
           const roomParam = `roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
           const urlForLocal = `http://${location.hostname}:${location.port}/host/?${roomParam}`;
-          const urlToServe = `https://${location.hostname}/rap-tap-app/enter/host/?${roomParam}`;
+          const urlToServe = `https://${location.hostname}/rap-tap-app/host/?${roomParam}`;
 
           location.href = location.hostname === 'localhost' ? urlForLocal : urlToServe;
       });
