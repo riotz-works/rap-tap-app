@@ -8,6 +8,7 @@
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
             <div v-if="rappers.A.state === 'waiting'">
+              <br />
               <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
             </div>
             <video id="rapper-a" autoplay playsinline class="battle-movie"></video>
@@ -36,6 +37,7 @@
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
             <div v-if="rappers.B.state === 'waiting'">
+              <br />
               <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
             </div>
             <video id="rapper-b" autoplay playsinline class="battle-movie"></video>
@@ -113,6 +115,7 @@ export default Vue.extend({
 
     roomId:   '',
     roomName: '',
+    roomState: 'wating', // wating | started
 
     peer:          undefined,
     rapperStreamA: undefined,
@@ -139,8 +142,6 @@ export default Vue.extend({
         }
       }
     },
-
-    roomState: 'wating', // wating | started
 
     // コンポーネント外出したい
     chatCount: 0,
@@ -184,55 +185,70 @@ export default Vue.extend({
     this.roomName = this.$route.query.roomName;
     this.nickname = this.$route.query.nickname;
 
-    this.roomState = this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
-      if (res.data.rappers.length < 2) {
-        return 'waiting';
-      }
-      this.rappers.A.nickname = res.data.rappers[0].nickname;
-      this.rappers.A.peerId   = res.data.rappers[0].peerId;
-      this.rappers.B.nickname = res.data.rappers[1].nickname;
-      this.rappers.B.peerId   = res.data.rappers[1].peerId;
+    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
+      const data = snapshot.val();
+      this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+      this.chatCount++;
+    });
 
-      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
-        const data = snapshot.val();
-        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
-        this.chatCount++;
-      });
+    this.peer = new Peer({ key: process.env.SKYWAY_API_KEY, debug: 3 });
 
-      RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: any) => {
-        if (snapshot.val()) {
-          this.rappers.A.feedback = snapshot.val();
-        }
-      });
+    this.peer.on('open', () => {
+      const sfuRoom = this.peer.joinRoom(this.roomId, { mode: 'sfu' });
+      sfuRoom.on('peerJoin', () => console.log('@@ peerJoin'));
+      sfuRoom.on('stream', (stream: MediaStream | any) => {
 
-      RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: any) => {
-        if (snapshot.val()) {
-          this.rappers.B.feedback = snapshot.val();
-        }
-      });
+        console.log('@@ on stream');
 
-      this.peer = new Peer({ key: process.env.SKYWAY_API_KEY, debug: 3 });
-      setTimeout(() => { // TODO: Change the trigger to join the room
-        this.peer.joinRoom(this.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream | any) => {
+        this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
 
-          if (stream.peerId === this.rappers.A.peerId) {
+          const rapper = res.data.rappers.find((r: any) => r.peerId === stream.peerId);
+          if (!rapper) {
+            return;
+          }
+
+          if (!this.rappers.A.peerId) {
+
+            this.rappers.A.peerId   = rapper.peerId;
+            this.rappers.A.nickname = rapper.nickname;
+
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: any) => {
+              if (snapshot.val()) {
+                this.rappers.A.feedback = snapshot.val();
+              }
+            });
             this.rappers.A.state = 'entered';
             this.rapperStreamA = stream;
             const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
             rapperVideoA.srcObject = stream;
           }
-          if (stream.peerId === this.rappers.B.peerId) {
+
+          else if (!this.rappers.B.peerId) {
+            this.rappers.B.peerId   = rapper.peerId;
+            this.rappers.B.nickname = rapper.nickname;
+
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: any) => {
+              if (snapshot.val()) {
+                this.rappers.B.feedback = snapshot.val();
+              }
+            });
+
             this.rappers.B.state = 'entered';
             this.rapperStreamB = stream;
             const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
             rapperVideoB.srcObject = stream;
           }
 
-        });
-      }, 2000);
+          else {
+            console.log('Out case');
+          }
 
-      return 'started';
-    });
+          if (this.rappers.A.peerId && this.rappers.B.peerId) {
+            this.roomState = 'started';
+          }
+        });
+      });
+  });
   }
 
 });

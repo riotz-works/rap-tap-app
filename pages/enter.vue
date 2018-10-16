@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="enter-section">
 
     <!-- 案内文言 -->
     <v-layout row>
@@ -11,7 +11,7 @@
     <!-- ニックネーム入力フォーム -->
     <v-layout row>
       <v-flex xs12 text-xs-center>
-        <v-form ref="form" v-model="valid" lazy-validation>
+        <v-form ref="form" color="black" v-model="valid" lazy-validation>
           <v-text-field
             v-model="nickname"
             :rules="nicknameRules"
@@ -112,4 +112,9 @@ export default Vue.extend({
 
 
 <style scoped>
+
+/* .enter-section {
+  background-color: rgba(51,51,51,0.2);
+} */
+
 </style>

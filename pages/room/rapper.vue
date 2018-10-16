@@ -206,7 +206,6 @@ export default Vue.extend({
 
     this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
       const competitor = res.data.rappers.find((r: any) => r.peerId !== this.peerId);
-      this.rappers.competitor.nickname = competitor.nickname;
       this.rappers.competitor.peerId = competitor.peerId;
     });
 
