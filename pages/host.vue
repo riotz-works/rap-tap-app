@@ -8,6 +8,10 @@
           <v-card>
             <v-card-title primary-title>
               <h3 class="headline mb-0">対戦者</h3>
+              <v-spacer />
+              <v-chip label color="primary" @click="openEnterPageForRapper">
+                <v-icon>open_in_new</v-icon>
+              </v-chip>
             </v-card-title>
             <canvas id="rapper-qr-code"></canvas>
             <v-card-actions>
@@ -31,6 +35,10 @@
           <v-card>
             <v-card-title primary-title>
               <h3 class="headline mb-0">観戦者</h3>
+              <v-spacer />
+              <v-chip label color="primary" @click="openEnterPageForWatcher">
+                <v-icon>open_in_new</v-icon>
+              </v-chip>
             </v-card-title>
             <canvas id="watcher-qr-code"></canvas>
             <v-card-actions>
@@ -62,13 +70,19 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 export default Vue.extend({
 
   methods: {
-    copyRapperRoomUrl (): void {
+    copyRapperRoomUrl(): void {
       (document.getElementById('rapper-copy-url') as any).select(); // TODO: Typing
       document.execCommand('copy');
     },
-    copyWatcherRoomUrl (): void {
+    copyWatcherRoomUrl(): void {
       (document.getElementById('watcher-copy-url') as any).select(); // TODO: Typing
       document.execCommand('copy');
+    },
+    openEnterPageForRapper(): void {
+      window.open(this.rapperUrl);
+    },
+    openEnterPageForWatcher(): void {
+      window.open(this.watcherUrl);
     }
   },
 
