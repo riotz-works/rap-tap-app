@@ -120,40 +120,41 @@ export default Vue.extend({
   data: (): {} => ({
     peer:     undefined,
     myStream: undefined,
-    nickname: 'test-nickname',
+    nickname: 'wrapper',
 
     // コンポーネント外出したい
-    chatCount: 1,
-    chats: [
-      { id: 'id-0', nickname: 'system', content: 'バトルルームに入場しました。' }
-    ],
+    chatCount: 0,
+    chats: [],
     chatMessage: ''
   }),
 
   methods: {
+
     onStart(): void {
       this.peer.joinRoom(this.$route.query.roomId, { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
         const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
         competitorVideo.srcObject = competitorStream;
       });
     },
+
     sendMessage(): void {
-      const dbMessageRef = RealtimeDB.ref('message');
-      dbMessageRef.push({ name: this.nickname, content: this.chatMessage });
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
+        name:    this.nickname,
+        content: this.chatMessage
+      });
       this.chatMessage = '';
     }
   },
 
   mounted(): void {
-    const dbMessageRef = RealtimeDB.ref('message');
-    dbMessageRef.on('child_added', (snapshot: any) => {
+    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
       const data = snapshot.val();
-      this.chats.push({ id: `id-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+      this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
       this.chatCount++;
     });
 
     this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((myStream: MediaStream) => {
       const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
       myVideo.srcObject = myStream;
       this.myStream = myStream;

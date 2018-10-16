@@ -120,28 +120,28 @@ export default Vue.extend({
     peer:          undefined,
     rapperStreamA: undefined,
     rapperStreamB: undefined,
+    nickname: 'watcher',
 
     // コンポーネント外出したい
-    chatCount: 1,
-    chats: [
-      { id: 'id-0', nickname: 'system', content: 'バトルルームに入場しました。' }
-    ],
+    chatCount: 0,
+    chats: [],
     chatMessage: ''
   }),
 
   methods: {
     sendMessage(): void {
-      const dbMessageRef = RealtimeDB.ref('message');
-      dbMessageRef.push({ name: this.nickname, content: this.chatMessage });
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
+        name:    this.nickname,
+        content: this.chatMessage
+      });
       this.chatMessage = '';
     }
   },
 
   mounted(): void {
-    const dbMessageRef = RealtimeDB.ref('message');
-    dbMessageRef.on('child_added', (snapshot: any) => {
+    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
       const data = snapshot.val();
-      this.chats.push({ id: `id-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+      this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
       this.chatCount++;
     });
 

@@ -55,8 +55,8 @@
 
 <script lang="ts">
 import { NuxtContext } from 'nuxt';
-
 import QRCode from 'qrcode';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -88,15 +88,24 @@ export default Vue.extend({
   async asyncData({ app }: NuxtContext): Promise<object> {
 
     const res = await app.$coreApi.post('/rooms', { roomName: 'BATTLE_FOR_SPIKE' });
+
+    RealtimeDB.ref(`/rooms/${res.data.roomId}`).set({
+      messages: [],
+      feedbacks: {
+        like: 0,
+        thumbs_up: 0,
+        thumbs_down: 0
+      }
+    });
     const query = `?roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
 
     const urlForLocal = {
-      rapperUrl: `http://${location.hostname}:${location.port}/room/rapper/${query}`,
+      rapperUrl:  `http://${location.hostname}:${location.port}/room/rapper/${query}`,
       watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${query}`
     };
     const urlToServe = {
-      rapperUrl: `http://${location.hostname}:${location.port}/room/rapper/${query}`,
-      watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${query}`
+      rapperUrl:  `https://${location.hostname}/rap-tap-app/room/rapper/${query}`,
+      watcherUrl: `https://${location.hostname}/rap-tap-app/room/watcher/${query}`
     };
 
     return location.hostname === 'localhost' ? urlForLocal : urlToServe;
