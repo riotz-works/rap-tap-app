@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 const config = {
-  databaseURL: 'https://spajam-2018-qualification.firebaseio.com'
+  databaseURL: process.env.FIREBASE_URL
 };
 
 firebase.initializeApp(config);

@@ -45,6 +45,7 @@ module.exports = {
   ],
   env: {
     RAP_TAP_APP_CORE_API: process.env.RAP_TAP_APP_CORE_API,
+    FIREBASE_URL: process.env.FIREBASE_URL,
     SKYWAY_API_KEY: process.env.SKYWAY_API_KEY
   },
   axios: {
