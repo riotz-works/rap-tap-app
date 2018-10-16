@@ -1,8 +1,9 @@
 <template>
   <v-app dark>
     <v-toolbar app flat>
-      <v-toolbar-title>
+      <v-toolbar-title class="title">
         <router-link to="/">
+          <img src="@/static/icon.png" height="30px" />
           <span>{{ require('~/package.json').displayName }}</span>
         </router-link>
       </v-toolbar-title>
@@ -34,4 +35,8 @@ export default Vue.extend({
 
 
 <style>
+.title a {
+  color: #fff;
+  text-decoration: none;
+}
 </style>
