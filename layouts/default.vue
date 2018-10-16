@@ -3,7 +3,7 @@
     <v-toolbar app flat height="36px">
       <v-toolbar-title class="title">
         <router-link to="/">
-          <img src="@/static/icon.png" height="32px" />
+          <img src="@/static/icon.png" />
           <span>{{ require('~/package.json').displayName }}</span>
         </router-link>
       </v-toolbar-title>
@@ -35,17 +35,34 @@ export default Vue.extend({
 
 
 <style>
-.container {
-  background: url("~/assets/image/wallpaper-top.jpg") center center / cover no-repeat fixed;
+nav {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.application {
+  background: url("~/assets/top.jpg") center center / cover no-repeat fixed !important;
   height: 100%;
 }
 
+.v-toolbar__content {
+  padding-left: 4px;
+}
+
 .title a {
-  color: #fff;
+  color: #EF164B;
   text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.title img {
+  width: 28px;
+  margin-top: 4px;
+  margin-right: 4px;
 }
 
 .footer {
+  background-color: rgba(0, 0, 0, 0) !important;
   min-height: 0px;
   text-align: right;
 }
