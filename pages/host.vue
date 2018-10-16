@@ -13,10 +13,12 @@
             <v-card-actions>
               <v-text-field
                 readonly
+                id="rapper-copy-url"
                 label="URL"
                 append-icon="file_copy"
-                @click:append="copyRoomURL"
+                @click:append="copyRapperRoomUrl"
                 :value="roomUrl.rapper"
+                persistent-hint
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
           </v-card>
@@ -34,10 +36,12 @@
             <v-card-actions>
               <v-text-field
                 readonly
+                id="watcher-copy-url"
                 label="URL"
                 append-icon="file_copy"
-                @click:append="copyRoomURL"
+                @click:append="copyWatcherRoomUrl"
                 :value="roomUrl.watcher"
+                persistent-hint
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
           </v-card>
@@ -58,10 +62,13 @@ import Vue from 'vue';
 export default Vue.extend({
 
   methods: {
-    copyRoomURL (e: MouseEvent) {
-      // TODO: Copy URL
-      console.log('Copy room URL', e);
-      console.log('MouseEvent', e);
+    copyRapperRoomUrl () {
+      (document.getElementById('rapper-copy-url') as any).select(); // TODO: Typing
+      document.execCommand('copy');
+    },
+    copyWatcherRoomUrl () {
+      (document.getElementById('watcher-copy-url') as any).select(); // TODO: Typing
+      document.execCommand('copy');
     }
   },
 
