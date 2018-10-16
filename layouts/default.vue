@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-toolbar app flat>
       <v-toolbar-title>
         <router-link to="/">
