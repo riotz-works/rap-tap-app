@@ -1,18 +1,15 @@
 <template>
   <section>
 
-      <!-- 参加人数、曲表示 -->
-      <v-layout row>
-        <v-flex xs12>
-        </v-flex>
-      </v-layout>
-
       <!-- 観戦パネル -->
       <v-layout row>
 
         <!-- 対戦者Aのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
+            <div v-if="rappers.A.state === 'waiting'">
+              <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
+            </div>
             <video id="rapper-a" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ rappers.A.nickname }}</div>
@@ -38,6 +35,9 @@
         <!-- 対戦者Bのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
+            <div v-if="rappers.B.state === 'waiting'">
+              <v-progress-circular :size="50" color="amber" indeterminate class="battle-movie"></v-progress-circular>
+            </div>
             <video id="rapper-b" autoplay playsinline class="battle-movie"></video>
             <v-card-title>
               <div>{{ rappers.B.nickname }}</div>
@@ -121,6 +121,7 @@ export default Vue.extend({
 
     rappers: {
       A: {
+        state: 'waiting', // waiting, entered
         nickname: 'Waiting...',
         peerId: undefined,
         feedback: {
@@ -129,6 +130,7 @@ export default Vue.extend({
         }
       },
       B: {
+        state: 'waiting', // waiting, entered
         nickname: 'Waiting...',
         peerId: undefined,
         feedback: {
@@ -214,11 +216,13 @@ export default Vue.extend({
         this.peer.joinRoom(this.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream | any) => {
 
           if (stream.peerId === this.rappers.A.peerId) {
+            this.rappers.A.state = 'entered';
             this.rapperStreamA = stream;
             const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
             rapperVideoA.srcObject = stream;
           }
           if (stream.peerId === this.rappers.B.peerId) {
+            this.rappers.B.state = 'entered';
             this.rapperStreamB = stream;
             const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
             rapperVideoB.srcObject = stream;

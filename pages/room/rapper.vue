@@ -1,10 +1,15 @@
 <template>
   <section>
 
-      <!-- 参加人数、曲表示 -->
+      <!--　ステータス表示 -->
       <v-layout row>
         <v-flex xs12>
-          <v-btn dark color="black" class="display-label" @click="onStart">START</v-btn>
+          <v-btn v-if="roomState === 'entered'"    dark color="black" class="display-label" @click="onStart">START</v-btn>
+          <v-btn v-if="roomState === 'connecting'" dark color="black" class="display-label" disabled>
+            <v-progress-circular indeterminate color="red"></v-progress-circular>
+          </v-btn>
+          <v-btn v-if="roomState === 'waiting'"  dark color="black" class="display-label" disabled>対戦相手が入場するまでお待ち下さい。</v-btn>
+          <v-btn v-if="roomState === 'fighting'" dark color="black" class="display-label" disabled>FIGHT</v-btn>
         </v-flex>
       </v-layout>
 
@@ -113,6 +118,7 @@ export default Vue.extend({
 
     roomId:   '',
     roomName: '',
+    roomState: 'entered', // entered, connecting, waiting, fighting
 
     rappers: {
       me: {
@@ -143,14 +149,15 @@ export default Vue.extend({
 
   methods: {
     onStart(): void {
+      this.roomState = 'connecting';
 
       navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((myStream: MediaStream) => {
         const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
         myVideo.srcObject = myStream;
+        this.roomState = 'waiting';
 
         return myStream;
       }).then((myStream: MediaStream) => {
-
         this.peer.joinRoom(this.roomId, { mode: 'sfu', stream: myStream }).on('stream', (competitorStream: MediaStream | any) => {
           console.log('@@ Incoming stream: ', competitorStream);
 
@@ -169,6 +176,7 @@ export default Vue.extend({
                 this.rappers.competitor.feedback = snapshot.val();
               }
             });
+            this.roomState = 'fighting';
           });
           const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
           competitorVideo.srcObject = competitorStream;
@@ -194,13 +202,12 @@ export default Vue.extend({
     this.nickname = this.$route.query.nickname;
     this.rappers.me.nickname = this.$route.query.nickname;
     this.rappers.me.peerId = this.$route.query.peerId;
+    this.roomState = 'entered';
 
-    this.roomState = this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
-
+    this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
       const competitor = res.data.rappers.find((r: any) => r.peerId !== this.peerId);
       this.rappers.competitor.nickname = competitor.nickname;
       this.rappers.competitor.peerId = competitor.peerId;
-
     });
 
     RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: any) => {
