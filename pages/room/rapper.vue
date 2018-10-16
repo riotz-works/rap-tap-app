@@ -4,13 +4,6 @@
       <!-- 参加人数、曲表示 -->
       <v-layout row>
         <v-flex xs12>
-          <v-chip label color="black" text-color="white" class="display-label">
-            <v-icon left>people</v-icon>0 人
-          </v-chip>
-          <br />
-          <v-chip label color="black" text-color="white" class="display-label">
-            <v-icon left>library_music</v-icon>Song
-          </v-chip>
           <v-btn dark color="black" class="display-label" @click="onStart">START</v-btn>
         </v-flex>
       </v-layout>
