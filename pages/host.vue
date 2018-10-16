@@ -55,7 +55,7 @@
 
 <script lang="ts">
 
-import { NuxtContext } from 'nuxt';
+// import { NuxtContext } from 'nuxt';
 import QRCode from 'qrcode';
 import Vue from 'vue';
 
@@ -80,17 +80,17 @@ export default Vue.extend({
       scale: 5,
       width: 250
     };
-    QRCode.toCanvas(rapperCanvas, 'https://to.rapper.page.sample', qrCodeOptions);
-    QRCode.toCanvas(watcherCanvas, 'https://to.watcher.page.sample', qrCodeOptions);
+
+    QRCode.toCanvas(rapperCanvas, this.roomUrl.rapper, qrCodeOptions);
+    QRCode.toCanvas(watcherCanvas, this.roomUrl.watcher, qrCodeOptions);
   },
 
-  async asyncData({ app }: NuxtContext): Promise<object> {
-    const res = await app.$axios.get('https://n0wp6edtwj.execute-api.us-west-2.amazonaws.com/dev/version?detail=true'); // 一旦ダミー API Call
-
+  async asyncData(): Promise<object> {
+    // TODO: API Call
     return {
       roomUrl: {
-        rapper: `https://rapper.sample.com/${res.data.name}`,
-        watcher: `https://watcher.sample.com/${res.data.name}`
+        rapper: `${location.origin}/room/rapper?roomId=129678a1-9b4b-49c9-b40c-dcc851c2c07c`,
+        watcher: `${location.origin}/room/watcher?roomId=129678a1-9b4b-49c9-b40c-dcc851c2c07c`
       }
     };
   }

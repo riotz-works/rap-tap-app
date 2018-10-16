@@ -20,7 +20,7 @@
         <!-- 自分のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-me" muted class="battle-movie"></video>
+            <video id="battle-movie-me" autoplay class="battle-movie"></video>
             <v-card-title>
               <div>nickname</div>
             </v-card-title>
@@ -45,7 +45,7 @@
         <!-- 相手のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-competitor" muted class="battle-movie"></video>
+            <video id="battle-movie-competitor" class="battle-movie" src="~/static/sample.mp4"></video>
             <v-card-title>
               <div>nickname</div>
             </v-card-title>
@@ -92,10 +92,29 @@
 
 
 <script lang="ts">
+
+import Peer from 'skyway-js';
 import Vue from 'vue';
 
 export default Vue.extend({
 
+  mounted(): void {
+
+    const peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
+    const myVideo         = document.getElementById('battle-movie-me') as HTMLMediaElement;
+    const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
+
+      myVideo.srcObject = myStream;
+
+      peer.on('open', () => {
+        peer.joinRoom('test', { mode: 'sfu', myStream }).on('stream', (competitorStream: MediaStream) => {
+          competitorVideo.srcObject = competitorStream;
+        });
+      });
+    });
+  }
 });
 </script>
 
@@ -104,7 +123,7 @@ export default Vue.extend({
 
 .battle-movie {
   width: 100%;
-  height: auto; /* TODO: Set calculated max-height to keep aspect ratio */
+  height: 280px; /* TODO: Set calculated height to keep aspect ratio */
 }
 
 .display-label {
