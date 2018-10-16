@@ -1,3 +1,4 @@
+const axiosRetry = require('axios-retry');
 const pkg = require('./package.json');
 
 module.exports = {
@@ -6,7 +7,8 @@ module.exports = {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },
   build: {
-    publicPath: '/static/'
+    publicPath: '/static/',
+    vendor: [ 'axios' ]
   },
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : pkg.displayName
@@ -28,9 +30,16 @@ module.exports = {
     color: '#000'
   },
   modules: [
+    [ '@nuxtjs/axios' ],
     [ '@nuxtjs/pwa' ],
     [ '@nuxtjs/sitemap' ]
   ],
+  axios: {
+    retry: {
+      retries: 3,
+      retryDelay: axiosRetry.exponentialDelay
+    }
+  },
   sitemap: {
     hostname: `${pkg.applicationHost}/${pkg.name}`,
     gzip: true,
