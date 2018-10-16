@@ -1,15 +1,8 @@
 <template>
   <section>
 
-      <!-- ロゴ表示 -->
-      <v-layout row >
-        <v-flex xs12>
-          <img src="@/static/icon.png" width="100%">
-        </v-flex>
-      </v-layout>
-
       <!-- ボタン表示 -->
-      <v-layout row>
+      <v-layout row class="bottom">
         <v-flex xs12>
           <router-link to="/host">
             <v-btn dark color="black" class="host-btn">バトルを募集する</v-btn>
@@ -37,4 +30,12 @@ a {
   width: 100%;
 }
 
+.bottom {
+  overflow: hidden;
+  position: fixed;
+
+  bottom: 46px;
+  left: 20px;
+  right: 20px;
+}
 </style>

@@ -35,6 +35,11 @@ export default Vue.extend({
 
 
 <style>
+.container {
+  background: url("~/assets/image/wallpaper-top.jpg") center center / cover no-repeat fixed;
+  height: 100%;
+}
+
 .title a {
   color: #fff;
   text-decoration: none;
