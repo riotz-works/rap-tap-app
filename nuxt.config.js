@@ -32,7 +32,8 @@ module.exports = {
   modules: [
     [ '@nuxtjs/axios' ],
     [ '@nuxtjs/pwa' ],
-    [ '@nuxtjs/sitemap' ]
+    [ '@nuxtjs/sitemap' ],
+    [ '~/modules/typescript.js' ]
   ],
   axios: {
     retry: {
