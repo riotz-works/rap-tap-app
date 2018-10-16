@@ -70,14 +70,31 @@
 
       </v-layout>
 
-      <!-- チャット -->
+      <!-- チャット内容 -->
+      <v-layout row>
+        <v-flex xs12 class="margin-0-2">
+          <v-card class="chat-contents">
+
+            <div v-for="chat of chats" :key="chat.id">
+              <v-chip label color="pink" text-color="white">
+                {{ chat.nickname }}
+              </v-chip>{{ chat.content }}
+            </div>
+
+          </v-card>
+        </v-flex>
+      </v-layout>
+
+      <!-- チャット入力 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
           <v-card>
             <v-card-actions>
               <v-text-field
+                v-model="chatMessage"
                 :counter="20"
                 append-icon="chat"
+                @click:append="sendMessage"
                 label="メッセージを入力してください"
                 required
               >
@@ -96,25 +113,45 @@
 
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
   data: (): {} => ({
     peer:     undefined,
-    myStream: undefined
+    myStream: undefined,
+    nickname: 'test-nickname',
+
+    // コンポーネント外出したい
+    chatCount: 1,
+    chats: [
+      { id: 'id-0', nickname: 'system', content: 'バトルルームに入場しました。' }
+    ],
+    chatMessage: ''
   }),
 
   methods: {
     onStart(): void {
       this.peer.joinRoom('test', { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
-        console.log('@@@competitorStream: ', competitorStream);
         const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
         competitorVideo.srcObject = competitorStream;
       });
+    },
+    sendMessage(): void {
+      const dbMessageRef = RealtimeDB.ref('message');
+      dbMessageRef.push({ name: this.nickname, content: this.chatMessage });
+      this.chatMessage = '';
     }
   },
 
   mounted(): void {
+    const dbMessageRef = RealtimeDB.ref('message');
+    dbMessageRef.on('child_added', (snapshot: any) => {
+      const data = snapshot.val();
+      this.chats.push({ id: `id-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+      this.chatCount++;
+    });
+
     this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
     navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
       const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
@@ -131,6 +168,11 @@ export default Vue.extend({
 .battle-movie {
   width: 100%;
   height: 280px; /* TODO: Set calculated height to keep aspect ratio */
+}
+
+.chat-contents {
+  max-height: 200px;
+  overflow: scroll;
 }
 
 .display-label {

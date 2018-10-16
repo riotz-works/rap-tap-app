@@ -69,14 +69,31 @@
 
       </v-layout>
 
-      <!-- チャット -->
+      <!-- チャット内容 -->
+      <v-layout row>
+        <v-flex xs12 class="margin-0-2">
+          <v-card class="chat-contents">
+
+            <div v-for="chat of chats" :key="chat.id">
+              <v-chip label color="pink" text-color="white">
+                {{ chat.nickname }}
+              </v-chip>{{ chat.content }}
+            </div>
+
+          </v-card>
+        </v-flex>
+      </v-layout>
+
+      <!-- チャット入力 -->
       <v-layout row>
         <v-flex xs12 class="margin-0-2">
           <v-card>
             <v-card-actions>
               <v-text-field
+                v-model="chatMessage"
                 :counter="20"
                 append-icon="chat"
+                @click:append="sendMessage"
                 label="メッセージを入力してください"
                 required
               >
@@ -95,16 +112,39 @@
 
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
   data: () => ({
     peer:          undefined,
     rapperStreamA: undefined,
-    rapperStreamB: undefined
+    rapperStreamB: undefined,
+
+    // コンポーネント外出したい
+    chatCount: 1,
+    chats: [
+      { id: 'id-0', nickname: 'system', content: 'バトルルームに入場しました。' }
+    ],
+    chatMessage: ''
   }),
 
+  methods: {
+    sendMessage(): void {
+      const dbMessageRef = RealtimeDB.ref('message');
+      dbMessageRef.push({ name: this.nickname, content: this.chatMessage });
+      this.chatMessage = '';
+    }
+  },
+
   mounted(): void {
+    const dbMessageRef = RealtimeDB.ref('message');
+    dbMessageRef.on('child_added', (snapshot: any) => {
+      const data = snapshot.val();
+      this.chats.push({ id: `id-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+      this.chatCount++;
+    });
+
     this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
 
     setTimeout(() => { // TODO: Change the trigger to join the room
