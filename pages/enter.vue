@@ -71,7 +71,7 @@ export default Vue.extend({
         const roomId   = this.$route.query.roomId;
         const roomName = this.$route.query.roomName;
         const nickname = this.nickname;
-        const peerId = `${roomId}-${this.nickname}-${Math.random().toString(36).slice(-4)}`;
+        const peerId = `${roomId}-${Math.random().toString(36).slice(-4)}`;
 
         if (mode === 'rapper') {
           const res: AxiosResponse = await this.$coreApi.post(`/rooms/${roomId}`, {
