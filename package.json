@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^0.1.1",
     "cross-env": "^5.2.0",
