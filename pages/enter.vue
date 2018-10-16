@@ -89,21 +89,13 @@ export default Vue.extend({
           });
         }
 
-        const queryParams = `?roomId=${roomId}&roomName=${roomName}&peerId=${peerId}&nickname=${nickname}`;
-
-        const urlForLocal = {
-          rapperUrl:  `http://${location.hostname}:${location.port}/room/rapper/${queryParams}`,
-          watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${queryParams}`
-        };
-        const urlToServe = {
-          rapperUrl:  `https://${location.hostname}/rap-tap-app/room/rapper/${queryParams}`,
-          watcherUrl: `https://${location.hostname}/rap-tap-app/room/watcher/${queryParams}`
-        };
-        if      (location.hostname === 'localhost' && mode === 'rapper')  { location.href = urlForLocal.rapperUrl; }
-        else if (location.hostname === 'localhost' && mode === 'watcher') { location.href = urlForLocal.watcherUrl; }
-        else if (mode === 'rapper')  { location.href = urlToServe.rapperUrl; }
-        else if (mode === 'watcher') { location.href = urlToServe.watcherUrl; }
-        else    { return; }
+        if (mode === 'rapper') {
+          this.$router.push({ path: '/room/rapper', query: { roomId, roomName, peerId, nickname }});
+        }
+        if (mode === 'watcher') {
+          this.$router.push({ path: '/room/watcher', query: { roomId, roomName, peerId, nickname }});
+        }
+        return;
       }
     }
   }

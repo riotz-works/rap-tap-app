@@ -67,11 +67,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
-  data: (): {} => ({
-    rapperUrl: '',
-    watcherUrl: ''
-  }),
-
   methods: {
     copyRapperRoomUrl(): void {
       (document.getElementById('rapper-copy-url') as any).select(); // TODO: Typing
@@ -83,10 +78,34 @@ export default Vue.extend({
     },
     openEnterPageForRapper(): void {
       location.href = this.rapperUrl;
+      this.$router.push({ path: '/enter', query: { mode: 'rapper', roomId: this.getRoomId, roomName: this.getRoomName }})
     },
     openEnterPageForWatcher(): void {
       location.href = this.watcherUrl;
     }
+  },
+
+  computed: {
+    roomId(): string {
+      return this.$route.query.roomId;
+    },
+    roomName(): string {
+      return this.$route.query.roomName;
+    },
+    roomParam(): string {
+      return `roomId=${this.roomId}&roomName=${this.roomName}`;
+    },
+    rapperUrl(): string {
+      return location.hostname === 'localhost' ?
+        `http://${location.hostname}:${location.port}/enter/?mode=rapper&${this.roomParam}`
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${this.Param}`;
+    },
+    watcherUrl(): string {
+      return location.hostname === 'localhost' ?
+        `http://${location.hostname}:${location.port}/enter/?mode=watcher&${this.roomParam}`
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`
+    }
+
   },
 
   mounted(): void {
@@ -97,18 +116,6 @@ export default Vue.extend({
       scale: 5,
       width: 250
     };
-
-    const roomId = this.$route.query.roomId;
-    const roomName = this.$route.query.roomName;
-    const roomParam = `roomId=${roomId}&roomName=${roomName}`;
-
-    if (location.hostname === 'localhost') {
-      this.rapperUrl = `http://${location.hostname}:${location.port}/enter/?mode=rapper&${roomParam}`;
-      this.watcherUrl = `http://${location.hostname}:${location.port}/enter/?mode=watcher&${roomParam}`;
-    } else {
-      this.rapperUrl = `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${roomParam}`;
-      this.watcherUrl = `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${roomParam}`;
-    }
 
     QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
     QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);

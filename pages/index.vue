@@ -22,17 +22,18 @@ export default Vue.extend({
 
   methods: {
     onHost(): void {
-      this.$coreApi.post('/rooms', { roomName: 'BATTLE_FOR_SPIKE' }).then((res: any) => {
+      this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: any) => {
 
-          RealtimeDB.ref(`/rooms/${res.data.roomId}`).set({
+        return RealtimeDB
+          .ref(`/rooms/${res.data.roomId}`)
+          .set({
             messages: [],
             rappers: {}
-          });
-          const roomParam = `roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
-          const urlForLocal = `http://${location.hostname}:${location.port}/host/?${roomParam}`;
-          const urlToServe = `https://${location.hostname}/rap-tap-app/host/?${roomParam}`;
+          })
+          .then(() => res);
 
-          location.href = location.hostname === 'localhost' ? urlForLocal : urlToServe;
+      }).then((res: any) => {
+        this.$router.push({path: '/host', query: { roomId: res.data.roomId, roomName: res.data.roomName }});
       });
     }
   }
