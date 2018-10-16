@@ -1,4 +1,1878 @@
 /*!
+ * SkyWay Copyright(c) 2018 NTT Communications Corporation
+ * peerjs Copyright(c) 2013 Michelle Bu <michelle@michellebu.com>
+ */
+
+/*!*****************************************!*\
+  !*** ./node_modules/base64-js/index.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!****************************************************!*\
+  !*** ./node_modules/decode-uri-component/index.js ***!
+  \****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************************!*\
+  !*** ./node_modules/detect-browser/index.js ***!
+  \**********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! os */
+
+/*! ./../process/browser.js */
+
+/*!****************************************!*\
+  !*** ./node_modules/enum/dist/enum.js ***!
+  \****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./enumItem */
+
+/*! ./isType */
+
+/*! ./indexOf */
+
+/*! is-buffer */
+
+/*! ./../../webpack/buildin/global.js */
+
+/*!********************************************!*\
+  !*** ./node_modules/enum/dist/enumItem.js ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./isType */
+
+/*!*******************************************!*\
+  !*** ./node_modules/enum/dist/indexOf.js ***!
+  \*******************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************!*\
+  !*** ./node_modules/enum/dist/isType.js ***!
+  \******************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!************************************!*\
+  !*** ./node_modules/enum/index.js ***!
+  \************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./dist/enum */
+
+/*!***************************************!*\
+  !*** ./node_modules/events/events.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***************************************!*\
+  !*** ./node_modules/ieee754/index.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*!***************************************!*\
+  !*** ./node_modules/isarray/index.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************************!*\
+  !*** ./node_modules/js-binarypack/lib/binarypack.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./bufferbuilder */
+
+/*! ./bufferbuilder */
+
+/*!*********************************************************!*\
+  !*** ./node_modules/js-binarypack/lib/bufferbuilder.js ***!
+  \*********************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/buffer/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*! base64-js */
+
+/*! ieee754 */
+
+/*! isarray */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!*************************************************!*\
+  !*** ./node_modules/object-sizeof/byte_size.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************!*\
+  !*** ./node_modules/object-sizeof/index.js ***!
+  \*********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./byte_size */
+
+/*! buffer */
+
+/*!***********************************************!*\
+  !*** ./node_modules/os-browserify/browser.js ***!
+  \***********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!********************************************!*\
+  !*** ./node_modules/query-string/index.js ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! strict-uri-encode */
+
+/*! object-assign */
+
+/*! decode-uri-component */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/query-string/node_modules/object-assign/index.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!******************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/array-equals.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************************!*\
+  !*** ./node_modules/sdp-interop/lib/index.js ***!
+  \***********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./interop */
+
+/*!*************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/interop.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./transform */
+
+/*! ./array-equals */
+
+/*!***************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/transform.js ***!
+  \***************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! sdp-transform */
+
+/*!***************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/grammar.js ***!
+  \***************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/index.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./parser */
+
+/*! ./writer */
+
+/*!**************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/parser.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./grammar */
+
+/*!**************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/writer.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./grammar */
+
+/*!****************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/index.js ***!
+  \****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./url */
+
+/*! socket.io-parser */
+
+/*! ./manager */
+
+/*! debug */
+
+/*! ./manager */
+
+/*! ./socket */
+
+/*!******************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/manager.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! engine.io-client */
+
+/*! ./socket */
+
+/*! component-emitter */
+
+/*! socket.io-parser */
+
+/*! ./on */
+
+/*! component-bind */
+
+/*! debug */
+
+/*! indexof */
+
+/*! backo2 */
+
+/*!*************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/on.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/socket.js ***!
+  \*****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! socket.io-parser */
+
+/*! component-emitter */
+
+/*! to-array */
+
+/*! ./on */
+
+/*! component-bind */
+
+/*! debug */
+
+/*! parseqs */
+
+/*!**************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/url.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! parseuri */
+
+/*! debug */
+
+/*! ./../../webpack/buildin/global.js */
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/after/index.js ***!
+  \*******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/arraybuffer.slice/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/backo2/index.js ***!
+  \********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/base64-arraybuffer/lib/base64-arraybuffer.js ***!
+  \*************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/blob/index.js ***!
+  \******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-bind/index.js ***!
+  \****************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-emitter/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-inherit/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/debug/src/browser.js ***!
+  \*************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./debug */
+
+/*! ./../../../../process/browser.js */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/debug/src/debug.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ms */
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/index.js ***!
+  \******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./lib/index */
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/index.js ***!
+  \**********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./socket */
+
+/*! engine.io-parser */
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/socket.js ***!
+  \***********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./transports/index */
+
+/*! component-emitter */
+
+/*! debug */
+
+/*! indexof */
+
+/*! engine.io-parser */
+
+/*! parseuri */
+
+/*! parsejson */
+
+/*! parseqs */
+
+/*! ./transport */
+
+/*! ./transports/index */
+
+/*! engine.io-parser */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transport.js ***!
+  \**************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! engine.io-parser */
+
+/*! component-emitter */
+
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/index.js ***!
+  \*********************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! xmlhttprequest-ssl */
+
+/*! ./polling-xhr */
+
+/*! ./polling-jsonp */
+
+/*! ./websocket */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling-jsonp.js ***!
+  \*****************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./polling */
+
+/*! component-inherit */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling-xhr.js ***!
+  \***************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! xmlhttprequest-ssl */
+
+/*! ./polling */
+
+/*! component-emitter */
+
+/*! component-inherit */
+
+/*! debug */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling.js ***!
+  \***********************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ../transport */
+
+/*! parseqs */
+
+/*! engine.io-parser */
+
+/*! component-inherit */
+
+/*! yeast */
+
+/*! debug */
+
+/*! xmlhttprequest-ssl */
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/websocket.js ***!
+  \*************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ../transport */
+
+/*! engine.io-parser */
+
+/*! parseqs */
+
+/*! component-inherit */
+
+/*! yeast */
+
+/*! debug */
+
+/*! ws */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/xmlhttprequest.js ***!
+  \*******************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! has-cors */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/browser.js ***!
+  \************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./keys */
+
+/*! has-binary2 */
+
+/*! arraybuffer.slice */
+
+/*! after */
+
+/*! ./utf8 */
+
+/*! base64-arraybuffer */
+
+/*! blob */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/keys.js ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/utf8.js ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! https://mths.be/utf8js v2.1.2 by @mathias */
+
+/*! ./../../../../webpack/buildin/module.js */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/has-binary2/index.js ***!
+  \*************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! isarray */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/has-cors/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/indexof/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/isarray/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!****************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/ms/index.js ***!
+  \****************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parsejson/index.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parseqs/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parseuri/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/binary.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! isarray */
+
+/*! ./is-buffer */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/index.js ***!
+  \******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! debug */
+
+/*! component-emitter */
+
+/*! has-binary2 */
+
+/*! ./binary */
+
+/*! ./is-buffer */
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/is-buffer.js ***!
+  \**********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/to-array/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/yeast/index.js ***!
+  \*******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************!*\
+  !*** ./node_modules/strict-uri-encode/index.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************!*\
+  !*** ./package.json ***!
+  \**********************/
+
+/*! exports provided: name, version, description, main, module, scripts, repository, files, author, license, devDependencies, dependencies, default */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************!*\
+  !*** ./src/peer.js + 12 modules ***!
+  \**********************************/
+
+/*! exports provided: default */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/detect-browser/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/enum/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/events/events.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/js-binarypack/lib/binarypack.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/object-sizeof/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/query-string/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/sdp-interop/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/sdp-transform/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/socket.io-client/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./package.json (<- Module is not an ECMAScript module) */
+
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*!
+ * SkyWay Copyright(c) 2018 NTT Communications Corporation
+ * peerjs Copyright(c) 2013 Michelle Bu <michelle@michellebu.com>
+ */
+
+/*!*****************************************!*\
+  !*** ./node_modules/base64-js/index.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!****************************************************!*\
+  !*** ./node_modules/decode-uri-component/index.js ***!
+  \****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************************!*\
+  !*** ./node_modules/detect-browser/index.js ***!
+  \**********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! os */
+
+/*! ./../process/browser.js */
+
+/*!****************************************!*\
+  !*** ./node_modules/enum/dist/enum.js ***!
+  \****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./enumItem */
+
+/*! ./isType */
+
+/*! ./indexOf */
+
+/*! is-buffer */
+
+/*! ./../../webpack/buildin/global.js */
+
+/*!********************************************!*\
+  !*** ./node_modules/enum/dist/enumItem.js ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./isType */
+
+/*!*******************************************!*\
+  !*** ./node_modules/enum/dist/indexOf.js ***!
+  \*******************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************!*\
+  !*** ./node_modules/enum/dist/isType.js ***!
+  \******************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!************************************!*\
+  !*** ./node_modules/enum/index.js ***!
+  \************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./dist/enum */
+
+/*!***************************************!*\
+  !*** ./node_modules/events/events.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***************************************!*\
+  !*** ./node_modules/ieee754/index.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*!***************************************!*\
+  !*** ./node_modules/isarray/index.js ***!
+  \***************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************************!*\
+  !*** ./node_modules/js-binarypack/lib/binarypack.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./bufferbuilder */
+
+/*! ./bufferbuilder */
+
+/*!*********************************************************!*\
+  !*** ./node_modules/js-binarypack/lib/bufferbuilder.js ***!
+  \*********************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/buffer/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*! base64-js */
+
+/*! ieee754 */
+
+/*! isarray */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!*************************************************!*\
+  !*** ./node_modules/object-sizeof/byte_size.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************!*\
+  !*** ./node_modules/object-sizeof/index.js ***!
+  \*********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./byte_size */
+
+/*! buffer */
+
+/*!***********************************************!*\
+  !*** ./node_modules/os-browserify/browser.js ***!
+  \***********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!********************************************!*\
+  !*** ./node_modules/query-string/index.js ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! strict-uri-encode */
+
+/*! object-assign */
+
+/*! decode-uri-component */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/query-string/node_modules/object-assign/index.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!******************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/array-equals.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************************!*\
+  !*** ./node_modules/sdp-interop/lib/index.js ***!
+  \***********************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./interop */
+
+/*!*************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/interop.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./transform */
+
+/*! ./array-equals */
+
+/*!***************************************************!*\
+  !*** ./node_modules/sdp-interop/lib/transform.js ***!
+  \***************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! sdp-transform */
+
+/*!***************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/grammar.js ***!
+  \***************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/index.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./parser */
+
+/*! ./writer */
+
+/*!**************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/parser.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./grammar */
+
+/*!**************************************************!*\
+  !*** ./node_modules/sdp-transform/lib/writer.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./grammar */
+
+/*!****************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/index.js ***!
+  \****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./url */
+
+/*! socket.io-parser */
+
+/*! ./manager */
+
+/*! debug */
+
+/*! ./manager */
+
+/*! ./socket */
+
+/*!******************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/manager.js ***!
+  \******************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! engine.io-client */
+
+/*! ./socket */
+
+/*! component-emitter */
+
+/*! socket.io-parser */
+
+/*! ./on */
+
+/*! component-bind */
+
+/*! debug */
+
+/*! indexof */
+
+/*! backo2 */
+
+/*!*************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/on.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*****************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/socket.js ***!
+  \*****************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! socket.io-parser */
+
+/*! component-emitter */
+
+/*! to-array */
+
+/*! ./on */
+
+/*! component-bind */
+
+/*! debug */
+
+/*! parseqs */
+
+/*!**************************************************!*\
+  !*** ./node_modules/socket.io-client/lib/url.js ***!
+  \**************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! parseuri */
+
+/*! debug */
+
+/*! ./../../webpack/buildin/global.js */
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/after/index.js ***!
+  \*******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/arraybuffer.slice/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/backo2/index.js ***!
+  \********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/base64-arraybuffer/lib/base64-arraybuffer.js ***!
+  \*************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/blob/index.js ***!
+  \******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-bind/index.js ***!
+  \****************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-emitter/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/component-inherit/index.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/debug/src/browser.js ***!
+  \*************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./debug */
+
+/*! ./../../../../process/browser.js */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/debug/src/debug.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ms */
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/index.js ***!
+  \******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./lib/index */
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/index.js ***!
+  \**********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./socket */
+
+/*! engine.io-parser */
+
+/*!***********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/socket.js ***!
+  \***********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./transports/index */
+
+/*! component-emitter */
+
+/*! debug */
+
+/*! indexof */
+
+/*! engine.io-parser */
+
+/*! parseuri */
+
+/*! parsejson */
+
+/*! parseqs */
+
+/*! ./transport */
+
+/*! ./transports/index */
+
+/*! engine.io-parser */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!**************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transport.js ***!
+  \**************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! engine.io-parser */
+
+/*! component-emitter */
+
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/index.js ***!
+  \*********************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! xmlhttprequest-ssl */
+
+/*! ./polling-xhr */
+
+/*! ./polling-jsonp */
+
+/*! ./websocket */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling-jsonp.js ***!
+  \*****************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./polling */
+
+/*! component-inherit */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling-xhr.js ***!
+  \***************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! xmlhttprequest-ssl */
+
+/*! ./polling */
+
+/*! component-emitter */
+
+/*! component-inherit */
+
+/*! debug */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/polling.js ***!
+  \***********************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ../transport */
+
+/*! parseqs */
+
+/*! engine.io-parser */
+
+/*! component-inherit */
+
+/*! yeast */
+
+/*! debug */
+
+/*! xmlhttprequest-ssl */
+
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/transports/websocket.js ***!
+  \*************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ../transport */
+
+/*! engine.io-parser */
+
+/*! parseqs */
+
+/*! component-inherit */
+
+/*! yeast */
+
+/*! debug */
+
+/*! ws */
+
+/*! ./../../../../../webpack/buildin/global.js */
+
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-client/lib/xmlhttprequest.js ***!
+  \*******************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! has-cors */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!************************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/browser.js ***!
+  \************************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./keys */
+
+/*! has-binary2 */
+
+/*! arraybuffer.slice */
+
+/*! after */
+
+/*! ./utf8 */
+
+/*! base64-arraybuffer */
+
+/*! blob */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/keys.js ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/engine.io-parser/lib/utf8.js ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! https://mths.be/utf8js v2.1.2 by @mathias */
+
+/*! ./../../../../webpack/buildin/module.js */
+
+/*! ./../../../../webpack/buildin/global.js */
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/has-binary2/index.js ***!
+  \*************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! isarray */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/has-cors/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/indexof/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/isarray/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!****************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/ms/index.js ***!
+  \****************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parsejson/index.js ***!
+  \***********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parseqs/index.js ***!
+  \*********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/parseuri/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/binary.js ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! isarray */
+
+/*! ./is-buffer */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/index.js ***!
+  \******************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! debug */
+
+/*! component-emitter */
+
+/*! has-binary2 */
+
+/*! ./binary */
+
+/*! ./is-buffer */
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/socket.io-parser/is-buffer.js ***!
+  \**********************************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ./../../../webpack/buildin/global.js */
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/to-array/index.js ***!
+  \**********************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/socket.io-client/node_modules/yeast/index.js ***!
+  \*******************************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!*************************************************!*\
+  !*** ./node_modules/strict-uri-encode/index.js ***!
+  \*************************************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************!*\
+  !*** ./package.json ***!
+  \**********************/
+
+/*! exports provided: name, version, description, main, module, scripts, repository, files, author, license, devDependencies, dependencies, default */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*!**********************************!*\
+  !*** ./src/peer.js + 12 modules ***!
+  \**********************************/
+
+/*! exports provided: default */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/detect-browser/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/enum/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/events/events.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/js-binarypack/lib/binarypack.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/object-sizeof/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/query-string/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/sdp-interop/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/sdp-transform/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/socket.io-client/lib/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./package.json (<- Module is not an ECMAScript module) */
+
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+
+/*! no static exports found */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*!
  * Vue.js v2.5.17
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
