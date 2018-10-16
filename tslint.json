@@ -1,0 +1,6 @@
+{
+  "defaultSeverity": "warn",
+  "extends": [ "tslint:all" ],
+  "rules": {
+  }
+}
