@@ -99,30 +99,27 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
-  data: () => ({
-    peer: null,
-    myStream: null,
-    competitorStream: null
+  data: (): {} => ({
+    peer:     undefined,
+    myStream: undefined
   }),
 
   methods: {
-    onStart() {
-      const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
+    onStart(): void {
       this.peer.joinRoom('test', { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
-        console.log('joined room');
-        this.competitorStream = competitorStream;
+        console.log('@@@competitorStream: ', competitorStream);
+        const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
         competitorVideo.srcObject = competitorStream;
-        competitorVideo.play();
       });
-
     }
   },
+
   mounted(): void {
     this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
-    const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
     navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
-      this.myStream = myStream;
+      const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
       myVideo.srcObject = myStream;
+      this.myStream = myStream;
     });
   }
 });

@@ -20,7 +20,7 @@
         <!-- 対戦者Aのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-a" muted class="battle-movie"></video>
+            <video id="rapper-a" autoplay class="battle-movie"></video>
             <v-card-title>
               <div>nickname</div>
             </v-card-title>
@@ -45,7 +45,7 @@
         <!-- 対戦者Bのパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-b" muted class="battle-movie"></video>
+            <video id="rapper-b" autoplay class="battle-movie"></video>
             <v-card-title>
               <div>nickname</div>
             </v-card-title>
@@ -92,9 +92,41 @@
 
 
 <script lang="ts">
+
+import Peer from 'skyway-js';
 import Vue from 'vue';
 
 export default Vue.extend({
+
+  data: () => ({
+    peer:          undefined,
+    rapperStreamA: undefined,
+    rapperStreamB: undefined
+  }),
+
+  mounted(): void {
+    this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
+
+    setTimeout(() => { // TODO: Change the trigger to join the room
+      this.peer.joinRoom('test', { mode: 'sfu' }).on('stream', (stream: MediaStream) => {
+
+        if (!this.rapperStreamA) {
+          this.rapperStreamA = stream;
+          const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
+          rapperVideoA.srcObject = stream;
+
+        } else if (!this.rapperStreamB) {
+          this.streamB = stream;
+          const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
+          rapperVideoB.srcObject = stream;
+
+        } else {
+          console.log('Probably 3rd user joined room. The stream is skipped.');
+        }
+      });
+    }, 2000);
+
+  }
 
 });
 </script>
