@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="bottom">
 
     <!-- 案内文言 -->
     <v-layout row>
@@ -112,4 +112,12 @@ export default Vue.extend({
 
 
 <style scoped>
+.bottom {
+  overflow: hidden;
+  position: fixed;
+
+  bottom: 32px;
+  left: 20px;
+  right: 20px;
+}
 </style>
