@@ -97,7 +97,7 @@ export default Vue.extend({
     rapperUrl(): string {
       return location.hostname === 'localhost' ?
         `http://${location.hostname}:${location.port}/enter/?mode=rapper&${this.roomParam}`
-        : `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${this.Param}`;
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${this.roomParam}`;
     },
     watcherUrl(): string {
       return location.hostname === 'localhost' ?
