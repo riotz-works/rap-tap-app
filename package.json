@@ -16,7 +16,7 @@
     "shx": "^0.3.2"
   },
   "scripts": {
-    "clean": "shx rm -rf .nuxt dist static/sw.js",
+    "clean": "shx rm -rf .nuxt dist static/sw.js static/sitemap.xml*",
     "setup": "yarn install --ignore-optional",
     "upgrade": "yarn upgrade --latest",
     "dev": "nuxt",
