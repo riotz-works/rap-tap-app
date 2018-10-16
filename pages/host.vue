@@ -5,7 +5,7 @@
       <!-- 対戦者 -->
       <v-layout row>
         <v-flex xs12 text-xs-center>
-          <v-card>
+          <v-card class="transparent-panel">
             <v-card-title primary-title>
               <h3 class="headline mb-0">対戦者</h3>
               <v-spacer />
@@ -32,7 +32,7 @@
       <!-- 観戦者 -->
       <v-layout row>
         <v-flex xs12 text-xs-center>
-          <v-card>
+          <v-card class="transparent-panel">
             <v-card-title primary-title>
               <h3 class="headline mb-0">観戦者</h3>
               <v-spacer />
