@@ -36,7 +36,10 @@
 
 
 <script lang="ts">
+
+import { AxiosResponse } from 'axios'; // tslint:disable-line
 import Vue from 'vue';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
@@ -54,13 +57,53 @@ export default Vue.extend({
   }),
 
   methods: {
+
     getMode() {
       const mode = this.$route.query.mode;
       return this.modes[mode] || '対戦';
     },
-    submit() {
+
+    async submit(): Promise<void> {
+
       if (this.$refs.form.validate()) {
-        console.log('nickname: ', this.nickname);
+
+        const mode = this.$route.query.mode;
+        const roomId   = this.$route.query.roomId;
+        const roomName = this.$route.query.roomName;
+        const nickname = this.nickname;
+        const peerId = `${roomId}-${this.nickname}-${Math.random().toString(36).slice(-4)}`;
+
+        if (mode === 'rapper') {
+          const res: AxiosResponse = await this.$coreApi.post(`/rooms/${roomId}`, {
+            nickname, peerId
+          });
+          if (res.status !== 200) {
+            console.error(`Error on POST /rooms/${roomId}`);
+            return;
+          }
+          await RealtimeDB.ref(`/rooms/${roomId}/rappers/${peerId}`).set({
+            feedback: {
+              thumb_up: 0,
+              thumb_down: 0
+            }
+          });
+        }
+
+        const queryParams = `?roomId=${roomId}&roomName=${roomName}&peerId=${peerId}&nickname=${nickname}`;
+
+        const urlForLocal = {
+          rapperUrl:  `http://${location.hostname}:${location.port}/room/rapper/${queryParams}`,
+          watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${queryParams}`
+        };
+        const urlToServe = {
+          rapperUrl:  `https://${location.hostname}/rap-tap-app/room/rapper/${queryParams}`,
+          watcherUrl: `https://${location.hostname}/rap-tap-app/room/watcher/${queryParams}`
+        };
+        if      (location.hostname === 'localhost' && mode === 'rapper')  { location.href = urlForLocal.rapperUrl; }
+        else if (location.hostname === 'localhost' && mode === 'watcher') { location.href = urlForLocal.watcherUrl; }
+        else if (mode === 'rapper')  { location.href = urlToServe.rapperUrl; }
+        else if (mode === 'watcher') { location.href = urlToServe.watcherUrl; }
+        else    { return; }
       }
     }
   }

@@ -56,17 +56,17 @@
 <script lang="ts">
 import { NuxtContext } from 'nuxt';
 import QRCode from 'qrcode';
-import RealtimeDB from '~/plugins/firebase-realtimedb';
 import Vue from 'vue';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
   methods: {
-    copyRapperRoomUrl () {
+    copyRapperRoomUrl (): void {
       (document.getElementById('rapper-copy-url') as any).select(); // TODO: Typing
       document.execCommand('copy');
     },
-    copyWatcherRoomUrl () {
+    copyWatcherRoomUrl (): void {
       (document.getElementById('watcher-copy-url') as any).select(); // TODO: Typing
       document.execCommand('copy');
     }
@@ -91,21 +91,17 @@ export default Vue.extend({
 
     RealtimeDB.ref(`/rooms/${res.data.roomId}`).set({
       messages: [],
-      feedbacks: {
-        like: 0,
-        thumbs_up: 0,
-        thumbs_down: 0
-      }
+      rappers: {}
     });
-    const query = `?roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
+    const roomParam = `roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
 
     const urlForLocal = {
-      rapperUrl:  `http://${location.hostname}:${location.port}/room/rapper/${query}`,
-      watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${query}`
+      rapperUrl:  `http://${location.hostname}:${location.port}/enter/?mode=rapper&${roomParam}`,
+      watcherUrl: `http://${location.hostname}:${location.port}/enter/?mode=watcher&${roomParam}`
     };
     const urlToServe = {
-      rapperUrl:  `https://${location.hostname}/rap-tap-app/room/rapper/${query}`,
-      watcherUrl: `https://${location.hostname}/rap-tap-app/room/watcher/${query}`
+      rapperUrl:  `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${roomParam}`,
+      watcherUrl: `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${roomParam}`
     };
 
     return location.hostname === 'localhost' ? urlForLocal : urlToServe;

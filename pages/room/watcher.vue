@@ -25,18 +25,18 @@
               <div>nickname</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline>
+              <v-chip color="indigo" label outline @click="onClickThumbUpForA">
                 <v-avatar>
                   <v-icon>thumb_up</v-icon>
                 </v-avatar>
-                1
+                {{ rappers.A.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline>
+              <v-chip color="indigo" label outline @click="onClickThumbDownForA">
                 <v-avatar>
                   <v-icon>thumb_down</v-icon>
                 </v-avatar>
-                1
+                {{ rappers.A.feedback.thumb_down }}
               </v-chip>
             </v-card-actions>
           </v-card>
@@ -50,18 +50,18 @@
               <div>nickname</div>
             </v-card-title>
             <v-card-actions>
-              <v-chip color="indigo" label outline>
+              <v-chip color="indigo" label outline @click="onClickThumbUpForB">
                 <v-avatar>
                   <v-icon>thumb_up</v-icon>
                 </v-avatar>
-                1
+                {{ rappers.B.feedback.thumb_up }}
               </v-chip>
               <v-spacer></v-spacer>
-              <v-chip color="indigo" label outline>
+              <v-chip color="indigo" label outline @click="onClickThumbDownForB">
                 <v-avatar>
                   <v-icon>thumb_down</v-icon>
                 </v-avatar>
-                1
+                {{ rappers.B.feedback.thumb_down }}
               </v-chip>
             </v-card-actions>
           </v-card>
@@ -109,7 +109,7 @@
 
 
 <script lang="ts">
-
+import { AxiosResponse } from 'axios'; // tslint:disable-line
 import Peer from 'skyway-js';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
@@ -117,10 +117,35 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 export default Vue.extend({
 
   data: () => ({
+
+    roomId:   '',
+    roomName: '',
+
     peer:          undefined,
     rapperStreamA: undefined,
     rapperStreamB: undefined,
     nickname: 'watcher',
+
+    rappers: {
+      A: {
+        nickname: 'Waiting...',
+        peerId: undefined,
+        feedback: {
+          thumb_up: 0,
+          thumb_down: 0
+        }
+      },
+      B: {
+        nickname: 'Waiting...',
+        peerId: undefined,
+        feedback: {
+          thumb_up: 0,
+          thumb_down: 0
+        }
+      }
+    },
+
+    roomState: 'wating', // wating | started
 
     // コンポーネント外出したい
     chatCount: 0,
@@ -135,37 +160,80 @@ export default Vue.extend({
         content: this.chatMessage
       });
       this.chatMessage = '';
+    },
+    onClickThumbUpForA(): void {
+      console.log('onClickThumbUpForA');
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`)
+        .transaction((feedback: { thumb_up: number; thumb_down: number }) => {
+          console.log('@@@', feedback);
+          return { thumb_up: this.rappers.A.feedback.thumb_up + 1, thumb_down: this.rappers.B.feedback.thumb_down };
+        });
+    },
+    onClickThumbDownForA(): void {
+      console.log('onClickThumbDownForA');
+
+    },
+    onClickThumbUpForB(): void {
+      console.log('onClickThumbUpForB');
+
+    },
+    onClickThumbDownForB(): void {
+      console.log('onClickThumbDownForB');
     }
   },
 
   mounted(): void {
-    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
-      const data = snapshot.val();
-      this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
-      this.chatCount++;
-    });
 
-    this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
+    this.roomId = this.$route.query.roomId;
+    this.roomName = this.$route.query.roomName;
 
-    setTimeout(() => { // TODO: Change the trigger to join the room
-      this.peer.joinRoom(this.$route.query.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream) => {
+    this.roomState = this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
+      if (res.data.rappers.length < 2) {
+        return 'wating';
+      }
+      this.rappers.A.nickname = res.data.rappers[0].nickname;
+      this.rappers.A.peerId   = res.data.rappers[0].peerId;
+      this.rappers.B.nickname = res.data.rappers[1].nickname;
+      this.rappers.B.peerId   = res.data.rappers[1].peerId;
 
-        if (!this.rapperStreamA) {
-          this.rapperStreamA = stream;
-          const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
-          rapperVideoA.srcObject = stream;
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
+        const data = snapshot.val();
+        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+        this.chatCount++;
+      });
 
-        } else if (!this.rapperStreamB) {
-          this.streamB = stream;
-          const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
-          rapperVideoB.srcObject = stream;
-
-        } else {
-          console.log('Probably 3rd user joined room. The stream is skipped.');
+      RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: any) => {
+        if (snapshot.val()) {
+          this.rappers.A.feedback = snapshot.val();
         }
       });
-    }, 2000);
 
+      RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: any) => {
+        if (snapshot.val()) {
+          this.rappers.B.feedback = snapshot.val();
+        }
+      });
+
+      this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
+      setTimeout(() => { // TODO: Change the trigger to join the room
+        this.peer.joinRoom(this.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream | any) => {
+
+          if (stream.peerId === this.rappers.A.peerId) {
+            this.rapperStreamA = stream;
+            const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
+            rapperVideoA.srcObject = stream;
+          }
+          if (stream.peerId === this.rappers.B.peerId) {
+            this.rapperStreamB = stream;
+            const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
+            rapperVideoB.srcObject = stream;
+          }
+
+        });
+      }, 2000);
+
+      return 'started';
+    });
   }
 
 });
