@@ -17,7 +17,7 @@
                 label="URL"
                 append-icon="file_copy"
                 @click:append="copyRapperRoomUrl"
-                :value="roomUrl.rapper"
+                :value="rapperUrl"
                 persistent-hint
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
@@ -40,7 +40,7 @@
                 label="URL"
                 append-icon="file_copy"
                 @click:append="copyWatcherRoomUrl"
-                :value="roomUrl.watcher"
+                :value="watcherUrl"
                 persistent-hint
                 hint="Copy this link to the battle room"></v-text-field>
             </v-card-actions>
@@ -54,8 +54,8 @@
 
 
 <script lang="ts">
+import { NuxtContext } from 'nuxt';
 
-// import { NuxtContext } from 'nuxt';
 import QRCode from 'qrcode';
 import Vue from 'vue';
 
@@ -81,22 +81,27 @@ export default Vue.extend({
       width: 250
     };
 
-    QRCode.toCanvas(rapperCanvas, this.roomUrl.rapper, qrCodeOptions);
-    QRCode.toCanvas(watcherCanvas, this.roomUrl.watcher, qrCodeOptions);
+    QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
+    QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);
   },
 
-  async asyncData(): Promise<object> {
-    // TODO: API Call
-    return {
-      roomUrl: {
-        rapper: `${location.origin}/room/rapper?roomId=129678a1-9b4b-49c9-b40c-dcc851c2c07c`,
-        watcher: `${location.origin}/room/watcher?roomId=129678a1-9b4b-49c9-b40c-dcc851c2c07c`
-      }
+  async asyncData({ app }: NuxtContext): Promise<object> {
+
+    const res = await app.$coreApi.post('/rooms', { roomName: 'BATTLE_FOR_SPIKE' });
+    const query = `?roomId=${res.data.roomId}&roomName=${res.data.roomname}`;
+
+    const urlForLocal = {
+      rapperUrl: `http://${location.hostname}:${location.port}/room/rapper/${query}`,
+      watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${query}`
     };
+    const urlToServe = {
+      rapperUrl: `http://${location.hostname}:${location.port}/room/rapper/${query}`,
+      watcherUrl: `http://${location.hostname}:${location.port}/room/watcher/${query}`
+    };
+
+    return location.hostname === 'localhost' ? urlForLocal : urlToServe;
   }
 });
-
-
 
 </script>
 

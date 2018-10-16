@@ -145,10 +145,10 @@ export default Vue.extend({
       this.chatCount++;
     });
 
-    this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
+    this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
 
     setTimeout(() => { // TODO: Change the trigger to join the room
-      this.peer.joinRoom('test', { mode: 'sfu' }).on('stream', (stream: MediaStream) => {
+      this.peer.joinRoom(this.$route.query.roomId, { mode: 'sfu' }).on('stream', (stream: MediaStream) => {
 
         if (!this.rapperStreamA) {
           this.rapperStreamA = stream;

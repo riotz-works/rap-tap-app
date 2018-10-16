@@ -132,7 +132,7 @@ export default Vue.extend({
 
   methods: {
     onStart(): void {
-      this.peer.joinRoom('test', { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
+      this.peer.joinRoom(this.$route.query.roomId, { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
         const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
         competitorVideo.srcObject = competitorStream;
       });
@@ -152,13 +152,15 @@ export default Vue.extend({
       this.chatCount++;
     });
 
-    this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
+    this.peer = new Peer({ key: '129678a1-9b4b-49c9-b40c-dcc851c2c07c', debug: 3 });
     navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
       const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
       myVideo.srcObject = myStream;
       this.myStream = myStream;
     });
-  }
+  },
+
+
 });
 </script>
 

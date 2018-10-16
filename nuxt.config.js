@@ -40,6 +40,9 @@ module.exports = {
     [ '@nuxtjs/vuetify' ],
     [ '~/modules/typescript.js' ]
   ],
+  plugins: [
+    { src: '~/plugins/core-api', ssr: false }
+  ],
   env: {
     RAP_TAP_APP_CORE_API_VERSION: process.env.RAP_TAP_APP_CORE_API_VERSION
   },
