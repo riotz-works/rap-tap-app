@@ -5,7 +5,7 @@ import { NuxtContext } from 'nuxt';
 export default ({}: NuxtContext, inject) => {
 
   const client = axios.create({
-    baseURL: ''
+    baseURL: process.env.RAP_TAP_APP_CORE_API
   });
 
   inject('coreApi', client);

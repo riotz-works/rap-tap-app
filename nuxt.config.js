@@ -44,7 +44,7 @@ module.exports = {
     { src: '~/plugins/core-api', ssr: false }
   ],
   env: {
-    RAP_TAP_APP_CORE_API_VERSION: process.env.RAP_TAP_APP_CORE_API_VERSION,
+    RAP_TAP_APP_CORE_API: process.env.RAP_TAP_APP_CORE_API,
     SKYWAY_API_KEY: process.env.SKYWAY_API_KEY
   },
   axios: {
@@ -74,7 +74,7 @@ module.exports = {
         strategyOptions: { cacheExpiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 }}
       },
       {
-        urlPattern: process.env.RAP_TAP_APP_CORE_API_VERSION,
+        urlPattern: `${process.env.RAP_TAP_APP_CORE_API}/version`,
         handler: 'networkFirst',
         method: 'GET',
         strategyOptions: { cacheableResponse: { statuses: [ 0, 200 ]}}
