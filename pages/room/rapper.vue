@@ -28,11 +28,11 @@
                 <v-avatar>
                   <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
-                {{ rappers.me.feedback.thumb_up }}
+                <span class="neon">{{ rappers.me.feedback.thumb_up }}</span>
               </v-chip>
               <v-spacer></v-spacer>
               <v-chip color="white" label outline>
-                {{ rappers.me.feedback.thumb_down }}
+                <span class="neon-blue">{{ rappers.me.feedback.thumb_down }}</span>
                 <v-avatar>
                   <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
                 </v-avatar>
@@ -53,11 +53,11 @@
                 <v-avatar>
                   <v-icon class="neon">thumb_up</v-icon>
                 </v-avatar>
-                {{ rappers.competitor.feedback.thumb_up }}
+                <span class="neon">{{ rappers.competitor.feedback.thumb_up }}</span>
               </v-chip>
               <v-spacer></v-spacer>
               <v-chip color="white" label outline>
-                {{ rappers.competitor.feedback.thumb_down }}
+                <span class="neon-blue">{{ rappers.competitor.feedback.thumb_down }}</span>
                 <v-avatar>
                   <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
                 </v-avatar>
