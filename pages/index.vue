@@ -5,6 +5,9 @@
       <v-layout row>
         <v-flex xs12>
           <v-btn class="host-btn" @click="onHost">バトルを募集する</v-btn>
+          <v-alert :value="true" color="warning" icon="priority_high" outline class="warning">
+            認証等の保護はしていません。URLがわかると中継カメラの映像が見られます。あらかじめ了承のうえご利用ください。
+          </v-alert>
         </v-flex>
       </v-layout>
 
@@ -44,5 +47,9 @@ export default Vue.extend({
   font-weight: 600;
   margin: 0.5em 0;
   width: 100%;
+}
+
+.warning {
+  font-size: smaller;
 }
 </style>
