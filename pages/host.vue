@@ -77,7 +77,6 @@ export default Vue.extend({
       document.execCommand('copy');
     },
     openEnterPageForRapper(): void {
-      location.href = this.rapperUrl;
       this.$router.push({ path: '/enter', query: { mode: 'rapper', roomId: this.roomId, roomName: this.roomName }});
     },
     openEnterPageForWatcher(): void {
