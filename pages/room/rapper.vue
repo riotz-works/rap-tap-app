@@ -11,6 +11,7 @@
           <v-chip label color="black" text-color="white" class="display-label">
             <v-icon left>library_music</v-icon>Song
           </v-chip>
+          <v-btn dark color="black" class="display-label" @click="onStart">START</v-btn>
         </v-flex>
       </v-layout>
 
@@ -45,7 +46,7 @@
         <!-- 相手のパネル -->
         <v-flex xs6 text-xs-center class="margin-0-2">
           <v-card>
-            <video id="battle-movie-competitor" class="battle-movie" src="~/static/sample.mp4"></video>
+            <video id="battle-movie-competitor" autoplay class="battle-movie"></video>
             <v-card-title>
               <div>nickname</div>
             </v-card-title>
@@ -98,21 +99,30 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
-  mounted(): void {
+  data: () => ({
+    peer: null,
+    myStream: null,
+    competitorStream: null
+  }),
 
-    const peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
-    const myVideo         = document.getElementById('battle-movie-me') as HTMLMediaElement;
-    const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
-
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
-
-      myVideo.srcObject = myStream;
-
-      peer.on('open', () => {
-        peer.joinRoom('test', { mode: 'sfu', myStream }).on('stream', (competitorStream: MediaStream) => {
-          competitorVideo.srcObject = competitorStream;
-        });
+  methods: {
+    onStart() {
+      const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
+      this.peer.joinRoom('test', { mode: 'sfu', stream: this.myStream }).on('stream', (competitorStream: MediaStream) => {
+        console.log('joined room');
+        this.competitorStream = competitorStream;
+        competitorVideo.srcObject = competitorStream;
+        competitorVideo.play();
       });
+
+    }
+  },
+  mounted(): void {
+    this.peer = new Peer({ key: this.$route.query.roomId, debug: 3 });
+    const myVideo = document.getElementById('battle-movie-me') as HTMLMediaElement;
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true}).then((myStream: MediaStream) => {
+      this.myStream = myStream;
+      myVideo.srcObject = myStream;
     });
   }
 });
