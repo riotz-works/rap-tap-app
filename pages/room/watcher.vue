@@ -24,10 +24,10 @@
               </v-chip>
               <v-spacer></v-spacer>
               <v-chip color="white" label outline @click="onClickThumbDownForA">
-                <v-avatar>
-                  <v-icon class="neon-blue">thumb_down</v-icon>
-                </v-avatar>
                 {{ rappers.A.feedback.thumb_down }}
+                <v-avatar>
+                  <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
+                </v-avatar>
               </v-chip>
             </v-card-actions>
           </v-card>
@@ -53,10 +53,10 @@
               </v-chip>
               <v-spacer></v-spacer>
               <v-chip color="white" label outline @click="onClickThumbDownForB">
-                <v-avatar>
-                  <v-icon class="neon-blue">thumb_down</v-icon>
-                </v-avatar>
                 {{ rappers.B.feedback.thumb_down }}
+                <v-avatar>
+                  <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
+                </v-avatar>
               </v-chip>
             </v-card-actions>
           </v-card>
