@@ -6,14 +6,17 @@
   "applicationHost": "https://riotz.works",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0",
+    "nuxt": "^1.4.2",
+    "vue": "^2.5.17"
+  },
   "devDependencies": {
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^0.1.1",
     "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
-    "nuxt": "^1.4.2",
     "shx": "^0.3.2",
     "ts-loader": "3.5.0",
     "tslint": "^5.11.0",

@@ -5,17 +5,19 @@
 </template>
 
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   computed: {
-    title: () => 'About'
+    title: (): string => 'About'
   },
-  head() {
+  head(): object {
     return {
       title: this.title
     };
   }
-};
+});
 </script>
 
 
