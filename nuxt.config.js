@@ -29,6 +29,9 @@ module.exports = {
   loading: {
     color: '#000'
   },
+  css: [
+    '@/assets/css/style.scss'
+  ],
   modules: [
     [ '@nuxtjs/axios' ],
     [ '@nuxtjs/pwa' ],
