@@ -34,6 +34,7 @@ module.exports = {
   ],
   modules: [
     [ '@nuxtjs/axios' ],
+    [ '@nuxtjs/dotenv' ],
     [ '@nuxtjs/pwa' ],
     [ '@nuxtjs/sitemap' ],
     [ '@nuxtjs/vuetify' ],
