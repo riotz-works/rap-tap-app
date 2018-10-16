@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h1>ラップ、タップ、アップ</h1>
   </section>
 </template>
 

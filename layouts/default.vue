@@ -1,0 +1,37 @@
+<template>
+  <v-app>
+    <v-toolbar app flat>
+      <v-toolbar-title>
+        <router-link to="/">
+          <span>{{ require('~/package.json').displayName }}</span>
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat fab color="black" class="no-margin"><v-icon>notifications_none</v-icon></v-btn>
+      <v-btn flat fab color="black" class="no-margin"><v-icon>settings</v-icon></v-btn>
+    </v-toolbar>
+
+    <v-content>
+      <v-container>
+        <nuxt />
+      </v-container>
+    </v-content>
+
+    <v-footer app>
+      <v-spacer></v-spacer>
+      <small>© Since 2018 <a href="https://riotz.works">Riotz Works</a>.</small>
+    </v-footer>
+  </v-app>
+</template>
+
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+});
+</script>
+
+
+<style>
+</style>
