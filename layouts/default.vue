@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark :style="wallpaper()">
     <v-toolbar app flat height="36px">
       <v-toolbar-title class="title">
         <router-link to="/">
@@ -30,6 +30,15 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+  methods: {
+    wallpaper() {
+      const path = this.$route.path;
+      const mode = this.$route.query.mode;
+      const type = path.startsWith('/room') ? 'room' : mode === 'watcher' ? 'room' : 'top';
+      const position = type === 'top' ? 'bottom' : 'top';
+      return { background: `url("${require(`~/assets/image/wallpaper-${type}.jpg`)}") center ${position} / cover no-repeat fixed !important` }
+    }
+  }
 });
 </script>
 
@@ -40,7 +49,6 @@ nav {
 }
 
 .application {
-  background: url("~/assets/top.jpg") center center / cover no-repeat fixed !important;
   height: 100%;
 }
 
@@ -54,7 +62,6 @@ nav {
   font-size: medium;
   font-weight: bold;
 }
-
 .title img {
   width: 28px;
   margin-top: 4px;
