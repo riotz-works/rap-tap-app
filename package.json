@@ -14,7 +14,9 @@
     "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
     "nuxt": "^1.4.2",
-    "shx": "^0.3.2"
+    "shx": "^0.3.2",
+    "ts-loader": "3.5.0",
+    "typescript": "^3.0.3"
   },
   "scripts": {
     "clean": "shx rm -rf .nuxt dist static/sw.js static/sitemap.xml*",
