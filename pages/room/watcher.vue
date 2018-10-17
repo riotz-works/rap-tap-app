@@ -104,18 +104,24 @@
 
 
 <script lang="ts">
-import { AxiosResponse } from 'axios'; // tslint:disable-line
+import { AxiosResponse } from 'axios';
+import firebase from 'firebase';
 import Peer from 'skyway-js';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
+interface Rapper { peerId: string; }
+interface SkywayMediaStream extends MediaStream { peerId: string; }
+type Snapshot = firebase.database.DataSnapshot | null;
+
+
 export default Vue.extend({
 
-  data: () => ({
+  data: (): object => ({
 
     roomId:   '',
     roomName: '',
-    roomState: 'wating', // wating | started
+    roomState: 'wating', // Possible values are "wating | started"
 
     peer:          undefined,
     rapperStreamA: undefined,
@@ -124,7 +130,7 @@ export default Vue.extend({
 
     rappers: {
       A: {
-        state: 'waiting', // waiting, entered
+        state: 'waiting', // Possible values are "waiting | entered"
         nickname: 'Waiting...',
         peerId: undefined,
         feedback: {
@@ -133,7 +139,7 @@ export default Vue.extend({
         }
       },
       B: {
-        state: 'waiting', // waiting, entered
+        state: 'waiting', // Possible values are "waiting | entered"
         nickname: 'Waiting...',
         peerId: undefined,
         feedback: {
@@ -185,24 +191,26 @@ export default Vue.extend({
     this.roomName = this.$route.query.roomName;
     this.nickname = this.$route.query.nickname;
 
-    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: any) => {
-      const data = snapshot.val();
-      this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
-      this.chatCount++;
+    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: Snapshot) => {
+      if (snapshot && snapshot.val()) {
+        const data = snapshot.val();
+        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+        this.chatCount++;
+      }
     });
 
     this.peer = new Peer({ key: process.env.SKYWAY_API_KEY, debug: 3 });
 
     this.peer.on('open', () => {
       const sfuRoom = this.peer.joinRoom(this.roomId, { mode: 'sfu' });
-      sfuRoom.on('peerJoin', () => console.log('@@ peerJoin'));
-      sfuRoom.on('stream', (stream: MediaStream | any) => {
+      sfuRoom.on('peerJoin', () => console.debug('@@ peerJoin'));
+      sfuRoom.on('stream', (stream: SkywayMediaStream) => {
 
-        console.log('@@ on stream');
+        console.debug('@@ on stream');
 
         this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
 
-          const rapper = res.data.rappers.find((r: any) => r.peerId === stream.peerId);
+          const rapper = res.data.rappers.find((r: Rapper) => r.peerId === stream.peerId);
           if (!rapper) {
             return;
           }
@@ -212,8 +220,8 @@ export default Vue.extend({
             this.rappers.A.peerId   = rapper.peerId;
             this.rappers.A.nickname = rapper.nickname;
 
-            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: any) => {
-              if (snapshot.val()) {
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+              if (snapshot && snapshot.val()) {
                 this.rappers.A.feedback = snapshot.val();
               }
             });
@@ -221,14 +229,12 @@ export default Vue.extend({
             this.rapperStreamA = stream;
             const rapperVideoA = document.getElementById('rapper-a') as HTMLMediaElement;
             rapperVideoA.srcObject = stream;
-          }
-
-          else if (!this.rappers.B.peerId) {
+          } else if (!this.rappers.B.peerId) {
             this.rappers.B.peerId   = rapper.peerId;
             this.rappers.B.nickname = rapper.nickname;
 
-            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: any) => {
-              if (snapshot.val()) {
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+              if (snapshot && snapshot.val()) {
                 this.rappers.B.feedback = snapshot.val();
               }
             });
@@ -237,10 +243,8 @@ export default Vue.extend({
             this.rapperStreamB = stream;
             const rapperVideoB = document.getElementById('rapper-b') as HTMLMediaElement;
             rapperVideoB.srcObject = stream;
-          }
-
-          else {
-            console.log('Out case');
+          } else {
+            console.debug('Out case');
           }
 
           if (this.rappers.A.peerId && this.rappers.B.peerId) {

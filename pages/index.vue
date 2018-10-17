@@ -16,6 +16,7 @@
 
 
 <script lang="ts">
+import { AxiosResponse } from 'axios';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
@@ -23,17 +24,17 @@ export default Vue.extend({
 
   methods: {
     onHost(): void {
-      this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: any) => {
+      this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: AxiosResponse) =>
 
-        return RealtimeDB
+        RealtimeDB
           .ref(`/rooms/${res.data.roomId}`)
           .set({
             messages: [],
             rappers: {}
           })
-          .then(() => res);
+          .then(() => res)
 
-      }).then((res: any) => {
+      ).then((res: AxiosResponse) => {
         this.$router.push({path: '/host', query: { roomId: res.data.roomId, roomName: res.data.roomName }});
       });
     }

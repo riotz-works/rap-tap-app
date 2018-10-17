@@ -43,7 +43,7 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
-  data: () => ({
+  data: (): object => ({
     valid: true,
     nickname: '',
     nicknameRules: [
@@ -58,7 +58,7 @@ export default Vue.extend({
 
   methods: {
 
-    getMode() {
+    getMode(): string {
       const mode = this.$route.query.mode;
       return this.modes[mode] || '対戦';
     },

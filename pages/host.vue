@@ -69,11 +69,11 @@ export default Vue.extend({
 
   methods: {
     copyRapperRoomUrl(): void {
-      (document.getElementById('rapper-copy-url') as any).select(); // TODO: Typing
+      (document.getElementById('rapper-copy-url') as HTMLInputElement).select();
       document.execCommand('copy');
     },
     copyWatcherRoomUrl(): void {
-      (document.getElementById('watcher-copy-url') as any).select(); // TODO: Typing
+      (document.getElementById('watcher-copy-url') as HTMLInputElement).select();
       document.execCommand('copy');
     },
     openEnterPageForRapper(): void {
@@ -102,7 +102,7 @@ export default Vue.extend({
     watcherUrl(): string {
       return location.hostname === 'localhost' ?
         `http://${location.hostname}:${location.port}/enter/?mode=watcher&${this.roomParam}`
-        : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`;
     }
 
   },

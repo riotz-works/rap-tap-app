@@ -31,12 +31,12 @@ import Vue from 'vue';
 
 export default Vue.extend({
   methods: {
-    wallpaper() {
+    wallpaper(): object {
       const path = this.$route.path;
       const mode = this.$route.query.mode;
       const type = path.startsWith('/room') ? 'room' : mode === 'watcher' ? 'room' : 'top';
-      const position = type === 'top' ? 'bottom' : 'top';
-      return { background: `url("${require(`~/assets/image/wallpaper-${type}.jpg`)}") center ${position} / cover no-repeat fixed !important` }
+      const pos = type === 'top' ? 'bottom' : 'top';
+      return { background: `url("${require(`~/assets/image/wallpaper-${type}.jpg`)}") center ${pos} / cover no-repeat fixed !important` };
     }
   }
 });

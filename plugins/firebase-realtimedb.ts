@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import 'firebase/database';
+import 'firebase/database';   // tslint:disable-line:no-import-side-effect  // Because of Firebase recommended import method
 
 const config = {
   databaseURL: process.env.FIREBASE_URL
