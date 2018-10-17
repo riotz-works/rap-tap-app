@@ -12,7 +12,7 @@ workbox.precaching.precacheAndRoute([
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.2023a283ce8d9beb893a.js",
+    "url": "/rap-tap-app/static/manifest.8cba68d63ade5be2bc72.js",
     "revision": "fefa6ceb01fd9dc2c211c09e336df411"
   },
   {
