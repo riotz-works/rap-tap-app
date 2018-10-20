@@ -2,6 +2,21 @@
   <section>
     <v-container grid-list-md>
 
+    <v-snackbar
+        v-model  ="copyURLSnackbar.show"
+        :timeout ="copyURLSnackbar.timeout"
+        :top     ="copyURLSnackbar.align_y === 'top'"
+      >
+        {{ copyURLSnackbar.text }}
+        <v-btn
+          color="pink"
+          flat
+          @click="copyURLSnackbar.show = false"
+        >
+          Close
+        </v-btn>
+      </v-snackbar>
+
       <!-- 対戦者 -->
       <v-layout row>
         <v-flex xs12 text-xs-center>
@@ -67,14 +82,29 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
+  data: (): object => ({
+    copyURLSnackbar: {
+      show: false,
+      align_y: 'top',
+      timeout: 5000,
+      text: ''
+    }
+  }),
+
   methods: {
     copyRapperRoomUrl(): void {
       (document.getElementById('rapper-copy-url') as HTMLInputElement).select();
       document.execCommand('copy');
+
+      this.copyURLSnackbar.text = '対戦者ルームのURLをコピーしました。';
+      this.copyURLSnackbar.show = true;
     },
     copyWatcherRoomUrl(): void {
       (document.getElementById('watcher-copy-url') as HTMLInputElement).select();
       document.execCommand('copy');
+
+      this.copyURLSnackbar.text = '観戦者ルームのURLをコピーしました。';
+      this.copyURLSnackbar.show = true;
     },
     openEnterPageForRapper(): void {
       this.$router.push({ path: '/enter', query: { mode: 'rapper', roomId: this.roomId, roomName: this.roomName }});
