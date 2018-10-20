@@ -44,8 +44,10 @@ module.exports = {
     { src: '~/plugins/core-api', ssr: false }
   ],
   env: {
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+    FIREBASE_REALTIME_DATABASE_URL: process.env.FIREBASE_REALTIME_DATABASE_URL,
     RAP_TAP_APP_CORE_API: process.env.RAP_TAP_APP_CORE_API,
-    FIREBASE_URL: process.env.FIREBASE_URL,
     SKYWAY_API_KEY: process.env.SKYWAY_API_KEY
   },
   axios: {
