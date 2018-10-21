@@ -12,8 +12,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.792cde18975fe3858de8.js",
-    "revision": "73e11d8111440e1e391e43bb6445b085"
+    "url": "/rap-tap-app/static/manifest.66f87ff5f2aaf90a7942.js",
+    "revision": "6daaf7909d4d2745f45927bb45052807"
   },
   {
     "url": "/rap-tap-app/static/pages/about.5de71f9403198fa52518.js",
@@ -32,8 +32,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "8eecd5ee5f9b89548869c222558d6e11"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.909a567f528cc0096b70.js",
-    "revision": "d102a61a22b079c2019733a83fd1358d"
+    "url": "/rap-tap-app/static/pages/room/rapper.96bfac9946e34192df3b.js",
+    "revision": "7f2a59caeafaff9072f6c5466871b9bf"
   },
   {
     "url": "/rap-tap-app/static/pages/room/watcher.fa3c957d0110aab24019.js",
