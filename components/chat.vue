@@ -1,0 +1,107 @@
+<template>
+  <section>
+
+    <!-- チャット内容 -->
+    <v-layout row>
+      <v-flex xs12 class="chat-content-flex">
+        <v-card class="chat-contents transparent-panel">
+
+          <div v-for="chat of chats" :key="chat.id">
+              <v-chip label color="pink" text-color="white">
+              {{ chat.nickname }}
+              </v-chip>{{ chat.content }}
+          </div>
+
+        </v-card>
+      </v-flex>
+    </v-layout>
+
+    <!-- チャット入力 -->
+    <v-layout row>
+      <v-flex xs12 class="chat-input-flex">
+          <v-card class="transparent-panel">
+          <v-card-actions>
+              <v-text-field
+              v-model="chatInputMessage"
+              :counter="20"
+              append-icon="chat"
+              @click:append="sendChatMessage"
+              label="メッセージを入力してください"
+              required
+              >
+              </v-text-field>
+          </v-card-actions>
+          </v-card>
+      </v-flex>
+    </v-layout>
+
+  </section>
+</template>
+
+<script lang="ts">
+
+import Vue from 'vue';
+import RealtimeDB from '~/plugins/firebase-realtimedb';
+
+type Snapshot = firebase.database.DataSnapshot | null;
+
+interface ChatComponentData {
+  chatCount: number;
+  chats: Array<{ id: string; nickname: string; content: string }>;
+  chatInputMessage: string;
+}
+
+export default Vue.extend({
+
+  name: 'chat',
+
+  props: {
+    roomId: String,
+    myNickname: String
+  },
+
+  data: (): ChatComponentData => ({
+    chatCount: 0,
+    chats: [],
+    chatInputMessage: ''
+  }),
+
+  mounted(): void {
+    RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: Snapshot) => {
+      if (snapshot && snapshot.val()) {
+        const data = snapshot.val();
+        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
+        this.chatCount++;
+      }
+    });
+  },
+
+  methods: {
+    sendChatMessage(): void {
+      RealtimeDB.ref(`/rooms/${this.roomId}/messages`).push({
+        name:    this.myNickname,
+        content: this.chatInputMessage
+      });
+      this.chatInputMessage = '';
+    }
+  }
+});
+
+</script>
+
+<style scoped>
+
+.chat-contents {
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.chat-content-flex {
+  margin: 0.2em;
+}
+
+.chat-input-flex {
+  margin: 0.2em;
+}
+
+</style>

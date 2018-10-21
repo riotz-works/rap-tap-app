@@ -68,39 +68,8 @@
 
       </v-layout>
 
-      <!-- チャット内容 -->
-      <v-layout row>
-        <v-flex xs12 class="margin-0-2">
-          <v-card class="chat-contents transparent-panel">
-
-            <div v-for="chat of chats" :key="chat.id">
-              <v-chip label color="pink" text-color="white">
-                {{ chat.nickname }}
-              </v-chip>{{ chat.content }}
-            </div>
-
-          </v-card>
-        </v-flex>
-      </v-layout>
-
-      <!-- チャット入力 -->
-      <v-layout row>
-        <v-flex xs12 class="margin-0-2">
-          <v-card class="transparent-panel">
-            <v-card-actions>
-              <v-text-field
-                v-model="chatMessage"
-                :counter="20"
-                append-icon="chat"
-                @click:append="sendMessage"
-                label="メッセージを入力してください"
-                required
-              >
-              </v-text-field>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
+      <!-- チャット -->
+      <chat :roomId="roomId" :myNickname="rappers.me.nickname" />
 
   </section>
 </template>
@@ -110,6 +79,7 @@
 import { AxiosResponse } from 'axios';
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import Chat from '~/components/chat.vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 interface Rapper { peerId: string; }
@@ -119,10 +89,10 @@ type Snapshot = firebase.database.DataSnapshot | null;
 
 export default Vue.extend({
 
+  components: { Chat },
+
   data: (): {} => ({
 
-    roomId:   '',
-    roomName: '',
     roomState: 'entered', // Possible values are "entered | connecting | waiting | fighting"
 
     rappers: {
@@ -200,11 +170,20 @@ export default Vue.extend({
     }
   },
 
+  computed: {
+    roomId(): string {
+      return this.$route.query.roomId;
+    },
+    roomName(): string {
+      return this.$route.query.roomName;
+    },
+    nickname(): string {
+      return this.$route.query.nickname;
+    }
+  },
+
   mounted(): void {
 
-    this.roomId = this.$route.query.roomId;
-    this.roomName = this.$route.query.roomName;
-    this.nickname = this.$route.query.nickname;
     this.rappers.me.nickname = this.$route.query.nickname;
     this.rappers.me.peerId = this.$route.query.peerId;
     this.roomState = 'entered';
@@ -212,14 +191,6 @@ export default Vue.extend({
     this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
       const competitor = res.data.rappers.find((r: Rapper) => r.peerId !== this.peerId);
       this.rappers.competitor.peerId = competitor.peerId;
-    });
-
-    RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: Snapshot) => {
-      if (snapshot && snapshot.val()) {
-        const data = snapshot.val();
-        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
-        this.chatCount++;
-      }
     });
 
     RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
@@ -239,11 +210,6 @@ export default Vue.extend({
 .battle-movie {
   width: 100%;
   height: 280px; /* TODO: Set calculated height to keep aspect ratio */
-}
-
-.chat-contents {
-  max-height: 200px;
-  overflow: scroll;
 }
 
 .display-label {
