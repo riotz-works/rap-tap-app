@@ -91,7 +91,7 @@ export default Vue.extend({
 
   components: { Chat },
 
-  data: (): {} => ({
+  data: (): object => ({
 
     roomState: 'entered', // Possible values are "entered | connecting | waiting | fighting"
 

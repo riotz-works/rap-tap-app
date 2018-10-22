@@ -64,40 +64,8 @@
 
       </v-layout>
 
-      <!-- チャット内容 -->
-      <v-layout row>
-        <v-flex xs12 class="margin-0-2">
-          <v-card class="chat-contents transparent-panel">
-
-            <div v-for="chat of chats" :key="chat.id">
-              <v-chip label color="pink" text-color="white">
-                {{ chat.nickname }}
-              </v-chip>{{ chat.content }}
-            </div>
-
-          </v-card>
-        </v-flex>
-      </v-layout>
-
-      <!-- チャット入力 -->
-      <v-layout row>
-        <v-flex xs12 class="margin-0-2">
-          <v-card class="transparent-panel">
-            <v-card-actions>
-              <v-text-field
-                v-model="chatMessage"
-                :counter="20"
-                append-icon="chat"
-                @click:append="sendMessage"
-                label="メッセージを入力してください"
-                required
-              >
-              </v-text-field>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
-
+      <!-- チャット -->
+      <chat :roomId="roomId" :myNickname="nickname" />
 
   </section>
 </template>
@@ -108,6 +76,7 @@ import { AxiosResponse } from 'axios';
 import firebase from 'firebase';
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import Chat from '~/components/chat.vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 interface Rapper { peerId: string; }
@@ -117,16 +86,15 @@ type Snapshot = firebase.database.DataSnapshot | null;
 
 export default Vue.extend({
 
+  components: { Chat },
+
   data: (): object => ({
 
-    roomId:   '',
-    roomName: '',
     roomState: 'wating', // Possible values are "wating | started"
 
     peer:          undefined,
     rapperStreamA: undefined,
     rapperStreamB: undefined,
-    nickname: '',
 
     rappers: {
       A: {
@@ -147,12 +115,7 @@ export default Vue.extend({
           thumb_down: 0
         }
       }
-    },
-
-    // コンポーネント外出したい
-    chatCount: 0,
-    chats: [],
-    chatMessage: ''
+    }
   }),
 
   methods: {
@@ -185,19 +148,19 @@ export default Vue.extend({
     }
   },
 
+  computed: {
+    roomId(): string {
+      return this.$route.query.roomId;
+    },
+    roomName(): string {
+      return this.$route.query.roomName;
+    },
+    nickname(): string {
+      return this.$route.query.nickname;
+    }
+  },
+
   mounted(): void {
-
-    this.roomId = this.$route.query.roomId;
-    this.roomName = this.$route.query.roomName;
-    this.nickname = this.$route.query.nickname;
-
-    RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).on('child_added', (snapshot: Snapshot) => {
-      if (snapshot && snapshot.val()) {
-        const data = snapshot.val();
-        this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });
-        this.chatCount++;
-      }
-    });
 
     this.peer = new Peer({ key: process.env.SKYWAY_API_KEY, debug: 3 });
 
