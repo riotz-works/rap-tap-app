@@ -1,0 +1,19 @@
+{
+  "projectName": "rap-tap-app",
+  "projectOwner": "riotz-works",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "types": {
+    "talk": {
+      "symbol": "📢",
+      "description": "Talks",
+      "link": "#-発表資料"
+    }
+  },
+  "contributors": []
+}

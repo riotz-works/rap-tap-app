@@ -14,6 +14,16 @@
 - [リアルタイム動画ラップ バトル アプリを短時間で作り上げた完全サーバーレスな秘技](https://riotz.works/slides/?2018-serverless-conf) @Serverlessconf Tokyo 2018
 
 
+## ✨ 開発チーム ＆ 貢献者
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+
 ## ⚖ ライセンス
 このリポジトリおよび成果物は Riots Works が 著作権を有し、MIT ライセンスの元に配布されています。  
 ライセンスの全文は こちら [LICENSE](/LICENSE) を ご参照ください。  
