@@ -21,6 +21,7 @@
     "@nuxtjs/sitemap": "^0.1.1",
     "@nuxtjs/vuetify": "^0.4.3",
     "@types/node": "^10.12.0",
+    "all-contributors-cli": "^5.4.1",
     "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.9.4",
@@ -39,7 +40,9 @@
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
     "generate": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'"
+    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "homepage": "https://github.com/riotz-works/rap-tap-app#readme",
   "repository": {
