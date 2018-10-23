@@ -19,6 +19,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
+| [<img src="https://avatars3.githubusercontent.com/u/31102213?v=4" width="100px;"/><br /><sub><b>lulzneko</b></sub>](https://riotz.works)<br />[💻](https://github.com/riotz-works/rap-tap-app/commits?author=lulzneko "Code") [🤔](#ideas-lulzneko "Ideas, Planning, & Feedback") [💬](#question-lulzneko "Answering Questions") [📢](#-発表資料 "Talks") |
+| :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
