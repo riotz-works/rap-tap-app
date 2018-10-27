@@ -11,16 +11,22 @@
     <!-- ニックネーム入力フォーム -->
     <v-layout row>
       <v-flex xs12 text-xs-center>
-        <v-form ref="form" color="black" v-model="valid" lazy-validation>
+        <v-form
+          color="black"
+          lazy-validation
+          ref="form"
+          v-model="valid"
+          v-on:submit.prevent="submit"
+        >
           <v-text-field
-            v-model="nickname"
-            :rules="nicknameRules"
-            :counter="20"
             label="ニックネーム"
             prepend-icon="tag_faces"
             required
-          >
-          </v-text-field>
+            v-model="nickname"
+            :counter="20"
+            :rules="nicknameRules"
+            @keyup.enter="submit"
+          ></v-text-field>
           <v-btn
             :disabled="!valid"
             @click="submit"
@@ -44,6 +50,7 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 export default Vue.extend({
 
   data: (): object => ({
+    isSubmitted: false,
     valid: true,
     nickname: '',
     nicknameRules: [
@@ -65,7 +72,8 @@ export default Vue.extend({
 
     async submit(): Promise<void> {
 
-      if (this.$refs.form.validate()) {
+      if (!this.isSubmitted && this.$refs.form.validate()) {
+        this.isSubmitted = true;
 
         const mode = this.$route.query.mode;
         const roomId   = this.$route.query.roomId;
@@ -78,6 +86,7 @@ export default Vue.extend({
             nickname, peerId
           });
           if (res.status !== 200) {
+            this.isSubmitted = false;
             console.error(`Error on POST /rooms/${roomId}`);
             return;
           }
