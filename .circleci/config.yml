@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/workspace
   docker:
-    - image: circleci/node
+    - image: circleci/node:10
 
 
 version: 2
