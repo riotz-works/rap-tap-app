@@ -7219,10 +7219,10 @@ sitemap@^1.13.0:
     underscore "^1.7.0"
     url-join "^1.1.0"
 
-skyway-js@^1.1.17:
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-1.1.17.tgz#635e3bc4615840dfecca07eb64c845c11a365d77"
-  integrity sha512-1x9y6tWR76ZVsOFG7buFZEMQYS/ypGgt3whi98YhL0HZklxexXaM+l4SgYPFNGnMT0N12A2RF8mB6oasi7sNgg==
+skyway-js@^1.1.18:
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-1.1.18.tgz#dfb93b83aec3e37e831022b134632b6c682ca3eb"
+  integrity sha512-kUNgUpgLiWITKl9erqyt0lrY9kEbuTQpyLbrQcssEXYv/Pptj7MzpmOHFvLEHlhPsRiBL38yfd/0pGt0JUDbhw==
   dependencies:
     detect-browser "^2.1.0"
     enum "git+https://github.com/eastandwest/enum.git#react-native"
