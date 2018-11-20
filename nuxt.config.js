@@ -35,6 +35,7 @@ module.exports = {
   modules: [
     [ '@nuxtjs/axios' ],
     [ '@nuxtjs/dotenv' ],
+    [ '@nuxtjs/google-analytics', { id: 'UA-109297390-1' }],
     [ '@nuxtjs/pwa' ],
     [ '@nuxtjs/sitemap' ],
     [ '@nuxtjs/vuetify' ],
