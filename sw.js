@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.af5fdcaaa0a0094145af.js",
-    "revision": "f26401699459cf87bba6d0b8fa2a4a7f"
+    "url": "/rap-tap-app/static/app.2a1f5245701bba620276.js",
+    "revision": "95f2b7b41bde803a6c674d3a80c81aa1"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.957e86aab7dd8b031f11.js",
+    "url": "/rap-tap-app/static/layouts/default.a8913b25accd1c9e84b4.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.2549584d5a60cf0be797.js",
-    "revision": "8965957b82a5f17ab96fb0fdf6cca505"
+    "url": "/rap-tap-app/static/manifest.c1a1ea935ae37369a2ad.js",
+    "revision": "56ced2594c1f8fa3a4252ff425286ba9"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.5de71f9403198fa52518.js",
+    "url": "/rap-tap-app/static/pages/about.3bf7302cec63e724c98d.js",
     "revision": "c509c11cd00dbcd62e9568defdf7fe57"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.cc584e793c4c2f952972.js",
+    "url": "/rap-tap-app/static/pages/enter.afea4afb52d7ead2bfe2.js",
     "revision": "16847d16ce367441e11cb9870dc90017"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.f577e331f00c535368ee.js",
+    "url": "/rap-tap-app/static/pages/host.64aed8178462bfcee1d7.js",
     "revision": "3f57ce92cbccdc9fbc49b6f49fd9b224"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.b71f05852afc97aa5642.js",
+    "url": "/rap-tap-app/static/pages/index.09abfcbae3387d25f548.js",
     "revision": "4aeea53944557b8b8a715c74a0f3fe91"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.b6d0cd3b83b5915ffcbf.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.915dbbbcb9b08546d4b0.js",
     "revision": "74985c3b861c291acbb5f355bcb51bf8"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.472ccee58633033f42d9.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.45b7802daf8db14fc281.js",
     "revision": "eb2bba973bf4308c94c404b86d026502"
   },
   {
