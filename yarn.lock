@@ -453,17 +453,17 @@
     "@nuxtjs/meta" "^2.6.0"
     "@nuxtjs/workbox" "^2.6.0"
 
-"@nuxtjs/sitemap@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.1.1.tgz#25031515289e506aa8d3decc33e31569bb023a95"
-  integrity sha512-7b/X40PAQCkPUd6wViHzTnq02WtX7joRbkvchaFkyCT5cjOs92swZ7wwcpNZB36bRKdx4JvWsK84CYiyQhy9vA==
+"@nuxtjs/sitemap@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.1.2.tgz#760e46ff74eaabbb021c6b0303db8b67aa4a5d70"
+  integrity sha512-ozF+ZubDS1mSHCiH1fNHuOqcDN44GQ+xCrJB/FS+0llUcWzquL39nZpMM8pwKZ9RnrPF4ldZ+0gjjMPXn6rFmA==
   dependencies:
     async-cache "^1.1.0"
-    fs-extra "^5.0.0"
+    fs-extra "^7.0.1"
     is-https "^1.0.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     minimatch "^3.0.4"
-    sitemap "^1.13.0"
+    sitemap "^2.1.0"
 
 "@nuxtjs/vuetify@^0.4.3":
   version "0.4.3"
@@ -3481,6 +3481,15 @@ fs-extra@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.0.tgz#8cc3f47ce07ef7b3593a11b9fb245f7e34c041d6"
   integrity sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ==
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -7211,13 +7220,14 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sitemap@^1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
-  integrity sha1-Vpy+IYAgKSamKiZs094Jyc60P4M=
+sitemap@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-2.1.0.tgz#1633cb88c196d755ad94becfb1c1bcacc6d3425a"
+  integrity sha512-AkfA7RDVCITQo+j5CpXsMJlZ/8ENO2NtgMHYIh+YMvex2Hao/oe3MQgNa03p0aWY6srCfUA1Q02OgiWCAiuccA==
   dependencies:
-    underscore "^1.7.0"
-    url-join "^1.1.0"
+    lodash "^4.17.10"
+    url-join "^4.0.0"
+    xmlbuilder "^10.0.0"
 
 skyway-js@^1.1.19:
   version "1.1.19"
@@ -7969,11 +7979,6 @@ ultron@~1.1.0:
   resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
   integrity sha512-UIEXBNeYmKptWH6z8ZnqTeS8fV74zG0/eRU9VGkpzz+LIJNs8W/zM/L+7ctCkRrgbNnnR0xxw4bKOr0cW0N0Og==
 
-underscore@^1.7.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
-  integrity sha512-5/4etnCkd9c8gwgowi5/om/mYO5ajCaOgdzj/oW+0eQV9WxKBDZw5+ycmKmeaTXjInS/W0BzpGLo2xR2aBwZdg==
-
 union-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
@@ -8056,15 +8061,15 @@ urix@^0.1.0:
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-join@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
-  integrity sha1-dBxsL0WWxIMNZxhGCSDQySIC3Hg=
-
 url-join@^2.0.2:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
   integrity sha1-WvIvGMBSoACkjXuCxenC4v7tpyg=
+
+url-join@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-4.0.0.tgz#4d3340e807d3773bda9991f8305acdcc2a665d2a"
+  integrity sha1-TTNA6AfTdzvamZH4MFrNzCpmXSo=
 
 url-loader@^0.6.2:
   version "0.6.2"
@@ -8611,6 +8616,11 @@ xml2js@^0.4.5:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xmlbuilder@^10.0.0:
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-10.1.1.tgz#8cae6688cc9b38d850b7c8d3c0a4161dcaf475b0"
+  integrity sha512-OyzrcFLL/nb6fMGHbiRDuPup9ljBycsdCypwuyg5AAHvyWzGfChJpCXMG88AGTIMFhGZ9RccFN1e6lhg3hkwKg==
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
