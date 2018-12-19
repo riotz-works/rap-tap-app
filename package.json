@@ -21,7 +21,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^0.1.1",
     "@nuxtjs/vuetify": "^0.4.3",
-    "@types/node": "^10.12.12",
+    "@types/node": "^10.12.17",
     "all-contributors-cli": "^5.4.1",
     "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
