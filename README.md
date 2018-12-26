@@ -13,6 +13,7 @@
 - [リアルタイムの競演と参加型観戦で音楽を最高に楽しむアプリ「ラップ、タップ、アップ」](https://riotz.works/slides/?2018-spajam-qualification) @SPAJAM 2018 東京D予選
 - [リアルタイム動画ラップ バトル アプリを短時間で作り上げた完全サーバーレスな秘技](https://riotz.works/slides/?2018-serverless-conf) @Serverlessconf Tokyo 2018
 - [Vue.js/Nuxt.js で 実現できた の リアルタイム動画ラップ バトル アプリ](https://riotz.works/slides/?2018-vue-fes-reject-con) @Vue Fes Japan 2018 Reject Conference
+- [フル Node.js エコシステム で 戦った モバイルアプリのハッカソン](https://riotz.works/slides/?2018-nodefest) @東京Node学園祭2018
 
 
 ## ✨ 開発チーム ＆ 貢献者
