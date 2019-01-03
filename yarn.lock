@@ -453,10 +453,10 @@
     "@nuxtjs/meta" "^2.6.0"
     "@nuxtjs/workbox" "^2.6.0"
 
-"@nuxtjs/sitemap@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.1.2.tgz#760e46ff74eaabbb021c6b0303db8b67aa4a5d70"
-  integrity sha512-ozF+ZubDS1mSHCiH1fNHuOqcDN44GQ+xCrJB/FS+0llUcWzquL39nZpMM8pwKZ9RnrPF4ldZ+0gjjMPXn6rFmA==
+"@nuxtjs/sitemap@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.2.0.tgz#a3bb2bef6f697f3603dc121511990e17c19a6797"
+  integrity sha512-enqYD8OMyKpyRAJX0TjGY/L1k53l7/QZ4LB/akN6D8c64dURz0eZ/8MZ/dz90Wj600jclOdfyU9IOtcCWvvlVg==
   dependencies:
     async-cache "^1.1.0"
     fs-extra "^7.0.1"
