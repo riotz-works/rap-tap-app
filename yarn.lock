@@ -563,10 +563,10 @@ align-text@^0.1.1, align-text@^0.1.3:
     longest "^1.0.1"
     repeat-string "^1.5.2"
 
-all-contributors-cli@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/all-contributors-cli/-/all-contributors-cli-5.6.0.tgz#c0a99ee91dfa5e28478b41157dd01cfb31de921a"
-  integrity sha512-coGg1nQySaVvmGUUsMhAFGI5PWkBpxNg7VUOKK/9HtOUd98Vg0rFPNgjU2ChvWQULqDDxG9V6enfXtaabBh6iA==
+all-contributors-cli@^5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/all-contributors-cli/-/all-contributors-cli-5.6.1.tgz#18de0c355fe393da19dd2d265f0d2adf2d0bc04b"
+  integrity sha512-7kHrGRcVnAV/2T+M3wXxFiwFs7Up1JeP76EpuY3Sb5oa7IJDqAwFg9VXNN81OZaCwBE+QVjIeehV5/sh5Xqmqw==
   dependencies:
     async "^2.0.0-rc.1"
     chalk "^2.3.0"
