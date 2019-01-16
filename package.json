@@ -22,7 +22,7 @@
     "@nuxtjs/sitemap": "^0.2.0",
     "@nuxtjs/vuetify": "^0.4.3",
     "@types/node": "^10.12.18",
-    "all-contributors-cli": "^5.7.0",
+    "all-contributors-cli": "^5.9.1",
     "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
