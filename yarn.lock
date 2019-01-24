@@ -465,12 +465,12 @@
     minimatch "^3.0.4"
     sitemap "^2.1.0"
 
-"@nuxtjs/vuetify@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-0.4.3.tgz#12427ad564be5ab652a0f10ff61bf48bdc0a9d06"
-  integrity sha512-al/bQz2dPQMszdvVBP8GpMhXpPzLhYnsqKt5Y6qlrLVSUOWvnnXEZY7xu1u1u2PEcq84COVlAqz34r1tLVHr8g==
+"@nuxtjs/vuetify@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-0.5.2.tgz#54037cba0053107a7320ba5df33042f86d55cdb3"
+  integrity sha512-YyyAUHZHuoUMMzO8inhHI2cRxVcKAat02NLqawCKCf3++QwNvbQQ5atHDwCPE1X/nW+nvZtfHLV3O6KB2OhzBQ==
   dependencies:
-    vuetify "^1.2.5"
+    vuetify "^1.4.2"
 
 "@nuxtjs/workbox@^2.6.0":
   version "2.6.0"
@@ -8272,10 +8272,10 @@ vue@^2.5.17:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
   integrity sha512-mFbcWoDIJi0w0Za4emyLiW72Jae0yjANHbCVquMKijcavBGypqlF7zHRgMa5k4sesdv7hv2rB4JPdZfR+TPfhQ==
 
-vuetify@^1.2.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.3.5.tgz#9f0466b83255e8b0aab76a7378039f12bb12f42a"
-  integrity sha512-81otPD6/hTiDGzFWyqATEMgsOsKdj+MLJrgOkR7zmwIDnKBlE04HWhhpTosKPugxI3g+SXdY8ha0cf3WWNhMzA==
+vuetify@^1.4.2:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.4.3.tgz#dfa187a2bd37427c352bdd194837430a06b45735"
+  integrity sha512-BRTETa3rQ016OOkL1Y28vOYPPJFU0TwSr9nwjT/M840bnk0A9znk1mGvdk1W+qb9IbtWJ9RUk2W1+7l9RcKa8A==
 
 vuex@^3.0.1:
   version "3.0.1"
