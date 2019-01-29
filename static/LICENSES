@@ -2018,6 +2018,8 @@ and limitations under the License.
 
 /*! ../../mixins/colorable */
 
+/*! ../../mixins/themeable */
+
 /*! ../../util/mixins */
 
 /*!********************************************!*\
@@ -2108,6 +2110,8 @@ and limitations under the License.
 
 /*! ../../mixins/toggleable */
 
+/*! ../../util/helpers */
+
 /*!**************************************!*\
   !*** ./src/components/VBtn/index.ts ***!
   \**************************************/
@@ -2142,15 +2146,9 @@ and limitations under the License.
 
 /*! ../../stylus/components/_cards.styl */
 
-/*! ../../mixins/colorable */
-
-/*! ../../mixins/measurable */
+/*! ../VSheet */
 
 /*! ../../mixins/routable */
-
-/*! ../../mixins/themeable */
-
-/*! ../../util/helpers */
 
 /*! ../../util/mixins */
 
@@ -2186,8 +2184,6 @@ and limitations under the License.
 
 /*! ./VCardTitle */
 
-/*! vue */
-
 /*!***********************************************!*\
   !*** ./src/components/VCarousel/VCarousel.ts ***!
   \***********************************************/
@@ -2205,6 +2201,8 @@ and limitations under the License.
 /*! ../../mixins/button-group */
 
 /*! ../../util/helpers */
+
+/*! ../../util/console */
 
 /*!***************************************************!*\
   !*** ./src/components/VCarousel/VCarouselItem.ts ***!
@@ -2390,6 +2388,8 @@ and limitations under the License.
 
 /*! ../../transitions/expand-transition */
 
+/*! ../../../util/helpers */
+
 /*!**************************************************!*\
   !*** ./src/components/VDataTable/mixins/foot.js ***!
   \**************************************************/
@@ -2439,23 +2439,21 @@ and limitations under the License.
 /*! ../../util/console */
 
 /*!************************************************************!*\
-  !*** ./src/components/VDatePicker/VDatePickerDateTable.js ***!
+  !*** ./src/components/VDatePicker/VDatePickerDateTable.ts ***!
   \************************************************************/
 
 /*! exports provided: default */
 
-/*! ../../mixins/colorable */
-
 /*! ./mixins/date-picker-table */
-
-/*! ../../mixins/themeable */
 
 /*! ./util */
 
 /*! ../../util/helpers */
 
+/*! ../../util/mixins */
+
 /*!*********************************************************!*\
-  !*** ./src/components/VDatePicker/VDatePickerHeader.js ***!
+  !*** ./src/components/VDatePicker/VDatePickerHeader.ts ***!
   \*********************************************************/
 
 /*! exports provided: default */
@@ -2472,22 +2470,22 @@ and limitations under the License.
 
 /*! ./util */
 
+/*! ../../util/mixins */
+
 /*!*************************************************************!*\
-  !*** ./src/components/VDatePicker/VDatePickerMonthTable.js ***!
+  !*** ./src/components/VDatePicker/VDatePickerMonthTable.ts ***!
   \*************************************************************/
 
 /*! exports provided: default */
 
-/*! ../../mixins/colorable */
-
 /*! ./mixins/date-picker-table */
-
-/*! ../../mixins/themeable */
 
 /*! ./util */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VDatePicker/VDatePickerTitle.js ***!
+  !*** ./src/components/VDatePicker/VDatePickerTitle.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -2498,8 +2496,10 @@ and limitations under the License.
 
 /*! ../../mixins/picker-button */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VDatePicker/VDatePickerYears.js ***!
+  !*** ./src/components/VDatePicker/VDatePickerYears.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -2509,6 +2509,8 @@ and limitations under the License.
 /*! ../../mixins/colorable */
 
 /*! ./util */
+
+/*! ../../util/mixins */
 
 /*!*********************************************!*\
   !*** ./src/components/VDatePicker/index.js ***!
@@ -2529,7 +2531,7 @@ and limitations under the License.
 /*! ./VDatePickerYears */
 
 /*!****************************************************************!*\
-  !*** ./src/components/VDatePicker/mixins/date-picker-table.js ***!
+  !*** ./src/components/VDatePicker/mixins/date-picker-table.ts ***!
   \****************************************************************/
 
 /*! exports provided: default */
@@ -2538,10 +2540,16 @@ and limitations under the License.
 
 /*! ../../../directives/touch */
 
-/*! .././util/isDateAllowed */
+/*! ../../../mixins/colorable */
+
+/*! ../../../mixins/themeable */
+
+/*! ../util/isDateAllowed */
+
+/*! ../../../util/mixins */
 
 /*!************************************************************************!*\
-  !*** ./src/components/VDatePicker/util/createNativeLocaleFormatter.js ***!
+  !*** ./src/components/VDatePicker/util/createNativeLocaleFormatter.ts ***!
   \************************************************************************/
 
 /*! exports provided: default */
@@ -2549,7 +2557,7 @@ and limitations under the License.
 /*! ./pad */
 
 /*!**************************************************!*\
-  !*** ./src/components/VDatePicker/util/index.js ***!
+  !*** ./src/components/VDatePicker/util/index.ts ***!
   \**************************************************/
 
 /*! exports provided: createNativeLocaleFormatter, monthChange, pad */
@@ -2561,13 +2569,13 @@ and limitations under the License.
 /*! ./pad */
 
 /*!**********************************************************!*\
-  !*** ./src/components/VDatePicker/util/isDateAllowed.js ***!
+  !*** ./src/components/VDatePicker/util/isDateAllowed.ts ***!
   \**********************************************************/
 
 /*! exports provided: default */
 
 /*!********************************************************!*\
-  !*** ./src/components/VDatePicker/util/monthChange.js ***!
+  !*** ./src/components/VDatePicker/util/monthChange.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -2575,7 +2583,7 @@ and limitations under the License.
 /*! ./pad */
 
 /*!************************************************!*\
-  !*** ./src/components/VDatePicker/util/pad.js ***!
+  !*** ./src/components/VDatePicker/util/pad.ts ***!
   \************************************************/
 
 /*! exports provided: default */
@@ -2851,7 +2859,7 @@ and limitations under the License.
 /*! ./VImg */
 
 /*!*****************************************!*\
-  !*** ./src/components/VInput/VInput.js ***!
+  !*** ./src/components/VInput/VInput.ts ***!
   \*****************************************/
 
 /*! exports provided: default */
@@ -2874,8 +2882,10 @@ and limitations under the License.
 
 /*! ../../util/console */
 
+/*! ../../util/mixins */
+
 /*!****************************************!*\
-  !*** ./src/components/VInput/index.js ***!
+  !*** ./src/components/VInput/index.ts ***!
   \****************************************/
 
 /*! exports provided: VInput, default */
@@ -3422,8 +3432,6 @@ and limitations under the License.
 
 /*! ../../util/mixins */
 
-/*! ../../util/helpers */
-
 /*!*********************************************!*\
   !*** ./src/components/VResponsive/index.ts ***!
   \*********************************************/
@@ -3502,6 +3510,32 @@ and limitations under the License.
 
 /*! ../../util/console */
 
+/*!*****************************************!*\
+  !*** ./src/components/VSheet/VSheet.ts ***!
+  \*****************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_sheet.styl */
+
+/*! ../../mixins/colorable */
+
+/*! ../../mixins/elevatable */
+
+/*! ../../mixins/measurable */
+
+/*! ../../mixins/themeable */
+
+/*! ../../util/mixins */
+
+/*!****************************************!*\
+  !*** ./src/components/VSheet/index.ts ***!
+  \****************************************/
+
+/*! exports provided: VSheet, default */
+
+/*! ./VSheet */
+
 /*!*******************************************!*\
   !*** ./src/components/VSlider/VSlider.js ***!
   \*******************************************/
@@ -3553,6 +3587,48 @@ and limitations under the License.
 /*! exports provided: VSnackbar, default */
 
 /*! ./VSnackbar */
+
+/*!*************************************************!*\
+  !*** ./src/components/VSparkline/VSparkline.ts ***!
+  \*************************************************/
+
+/*! exports provided: default */
+
+/*! ../../mixins/colorable */
+
+/*! ../../util/mixins */
+
+/*! ./helpers/core */
+
+/*! ./helpers/path */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/core.ts ***!
+  \***************************************************/
+
+/*! exports provided: genPoints */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/math.ts ***!
+  \***************************************************/
+
+/*! exports provided: checkCollinear, getDistance, moveTo */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/path.ts ***!
+  \***************************************************/
+
+/*! exports provided: genPath */
+
+/*! ./math */
+
+/*!********************************************!*\
+  !*** ./src/components/VSparkline/index.ts ***!
+  \********************************************/
+
+/*! exports provided: VSparkline, default */
+
+/*! ./VSparkline */
 
 /*!*************************************************!*\
   !*** ./src/components/VSpeedDial/VSpeedDial.js ***!
@@ -3885,10 +3961,10 @@ and limitations under the License.
 /*! ./VTextarea */
 
 /*!***************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePicker.js ***!
+  !*** ./src/components/VTimePicker/VTimePicker.ts ***!
   \***************************************************/
 
-/*! exports provided: default */
+/*! exports provided: selectingTimes, default */
 
 /*! ./VTimePickerTitle */
 
@@ -3900,8 +3976,10 @@ and limitations under the License.
 
 /*! ../VDatePicker/util/pad */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePickerClock.js ***!
+  !*** ./src/components/VTimePicker/VTimePickerClock.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -3912,8 +3990,10 @@ and limitations under the License.
 
 /*! ../../mixins/themeable */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePickerTitle.js ***!
+  !*** ./src/components/VTimePicker/VTimePickerTitle.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -3924,8 +4004,12 @@ and limitations under the License.
 
 /*! ../VDatePicker/util */
 
+/*! ../../util/mixins */
+
+/*! ./VTimePicker */
+
 /*!*********************************************!*\
-  !*** ./src/components/VTimePicker/index.js ***!
+  !*** ./src/components/VTimePicker/index.ts ***!
   \*********************************************/
 
 /*! exports provided: VTimePicker, VTimePickerClock, VTimePickerTitle, default */
@@ -4169,10 +4253,10 @@ and limitations under the License.
 /*! vue */
 
 /*!************************************************!*\
-  !*** ./src/components/Vuetify/mixins/icons.js ***!
+  !*** ./src/components/Vuetify/mixins/icons.ts ***!
   \************************************************/
 
-/*! exports provided: default */
+/*! exports provided: convertToComponentDeclarations, default */
 
 /*!***********************************************!*\
   !*** ./src/components/Vuetify/mixins/lang.ts ***!
@@ -4210,7 +4294,7 @@ and limitations under the License.
   !*** ./src/components/index.ts ***!
   \*********************************/
 
-/*! exports provided: VApp, VAlert, VAutocomplete, VAvatar, VBadge, VBottomNav, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtn, VBtnToggle, VCard, VCardMedia, VCardTitle, VCardActions, VCardText, VCarousel, VCarouselItem, VCheckbox, VChip, VCombobox, VCounter, VDataIterator, VDataTable, VEditDialog, VTableOverflow, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanel, VExpansionPanelContent, VFooter, VForm, VContainer, VContent, VFlex, VLayout, VSpacer, VHover, VIcon, VImg, VInput, VItem, VItemGroup, VJumbotron, VLabel, VList, VListGroup, VListTile, VListTileAction, VListTileAvatar, VListTileActionText, VListTileContent, VListTileTitle, VListTileSubTitle, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VPagination, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSlider, VSnackbar, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarSideIcon, VToolbarTitle, VToolbarItems, VTooltip, VTreeview, VTreeviewNode, VWindow, VWindowItem, VBottomSheetTransition, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VRowExpandTransition */
+/*! exports provided: VApp, VAlert, VAutocomplete, VAvatar, VBadge, VBottomNav, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtn, VBtnToggle, VCard, VCardMedia, VCardTitle, VCardActions, VCardText, VCarousel, VCarouselItem, VCheckbox, VChip, VCombobox, VCounter, VDataIterator, VDataTable, VEditDialog, VTableOverflow, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanel, VExpansionPanelContent, VFooter, VForm, VContainer, VContent, VFlex, VLayout, VSpacer, VHover, VIcon, VImg, VInput, VItem, VItemGroup, VJumbotron, VLabel, VList, VListGroup, VListTile, VListTileAction, VListTileAvatar, VListTileActionText, VListTileContent, VListTileTitle, VListTileSubTitle, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSlider, VSnackbar, VSparkline, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarSideIcon, VToolbarTitle, VToolbarItems, VTooltip, VTreeview, VTreeviewNode, VWindow, VWindowItem, VBottomSheetTransition, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VRowExpandTransition */
 
 /*! ./VApp */
 
@@ -4288,6 +4372,8 @@ and limitations under the License.
 
 /*! ./VPagination */
 
+/*! ./VSheet */
+
 /*! ./VParallax */
 
 /*! ./VPicker */
@@ -4309,6 +4395,8 @@ and limitations under the License.
 /*! ./VSlider */
 
 /*! ./VSnackbar */
+
+/*! ./VSparkline */
 
 /*! ./VSpeedDial */
 
@@ -4345,8 +4433,6 @@ and limitations under the License.
   \*********************************************************/
 
 /*! exports provided: default */
-
-/*! ../../util/helpers */
 
 /*!*********************************************!*\
   !*** ./src/components/transitions/index.js ***!
@@ -4519,6 +4605,14 @@ and limitations under the License.
 /*! ../util/console */
 
 /*!**********************************!*\
+  !*** ./src/mixins/elevatable.ts ***!
+  \**********************************/
+
+/*! exports provided: default */
+
+/*! vue */
+
+/*!**********************************!*\
   !*** ./src/mixins/filterable.ts ***!
   \**********************************/
 
@@ -4558,6 +4652,8 @@ and limitations under the License.
 
 /*! exports provided: default */
 
+/*! ../util/helpers */
+
 /*! vue */
 
 /*!********************************!*\
@@ -4572,6 +4668,8 @@ and limitations under the License.
 
 /*! ./stackable */
 
+/*! ../util/console */
+
 /*!***********************************!*\
   !*** ./src/mixins/overlayable.js ***!
   \***********************************/
@@ -4583,13 +4681,17 @@ and limitations under the License.
 /*! ../util/helpers */
 
 /*!*************************************!*\
-  !*** ./src/mixins/picker-button.js ***!
+  !*** ./src/mixins/picker-button.ts ***!
   \*************************************/
 
 /*! exports provided: default */
 
+/*! ./colorable */
+
+/*! ../util/mixins */
+
 /*!******************************!*\
-  !*** ./src/mixins/picker.js ***!
+  !*** ./src/mixins/picker.ts ***!
   \******************************/
 
 /*! exports provided: default */
@@ -4599,6 +4701,8 @@ and limitations under the License.
 /*! ./colorable */
 
 /*! ./themeable */
+
+/*! ../util/mixins */
 
 /*!************************************!*\
   !*** ./src/mixins/positionable.ts ***!
@@ -4725,18 +4829,20 @@ and limitations under the License.
 /*! vue */
 
 /*!***********************************!*\
-  !*** ./src/mixins/validatable.js ***!
+  !*** ./src/mixins/validatable.ts ***!
   \***********************************/
 
 /*! exports provided: default */
 
-/*! ../util/helpers */
+/*! ./colorable */
 
 /*! ./registrable */
 
+/*! ../util/helpers */
+
 /*! ../util/console */
 
-/*! ./colorable */
+/*! ../util/mixins */
 
 /*!*****************************!*\
   !*** ./src/stylus/app.styl ***!
@@ -5050,6 +5156,12 @@ and limitations under the License.
 
 /*! no static exports found */
 
+/*!*******************************************!*\
+  !*** ./src/stylus/components/_sheet.styl ***!
+  \*******************************************/
+
+/*! no static exports found */
+
 /*!*********************************************!*\
   !*** ./src/stylus/components/_sliders.styl ***!
   \*********************************************/
@@ -5216,7 +5328,9 @@ and limitations under the License.
   !*** ./src/util/helpers.ts ***!
   \*****************************/
 
-/*! exports provided: createSimpleFunctional, createSimpleTransition, createJavaScriptTransition, directiveConfig, addOnceEventListener, getNestedValue, deepEqual, getObjectValueByPath, getPropertyFromItem, createRange, getZIndex, escapeHTML, filterObjectOnKeys, filterChildren, convertToUnit, kebabCase, isObject, keyCodes, remapInternalIcon, keys, camelize */
+/*! exports provided: createSimpleFunctional, createSimpleTransition, createJavaScriptTransition, directiveConfig, addOnceEventListener, getNestedValue, deepEqual, getObjectValueByPath, getPropertyFromItem, createRange, getZIndex, escapeHTML, filterObjectOnKeys, filterChildren, convertToUnit, kebabCase, isObject, keyCodes, remapInternalIcon, keys, camelize, arrayDiff */
+
+/*! vue */
 
 /*!**************************!*\
   !*** ./src/util/mask.js ***!
