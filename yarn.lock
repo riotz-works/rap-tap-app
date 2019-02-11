@@ -472,12 +472,12 @@
     minimatch "^3.0.4"
     sitemap "^2.1.0"
 
-"@nuxtjs/vuetify@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-0.5.2.tgz#54037cba0053107a7320ba5df33042f86d55cdb3"
-  integrity sha512-YyyAUHZHuoUMMzO8inhHI2cRxVcKAat02NLqawCKCf3++QwNvbQQ5atHDwCPE1X/nW+nvZtfHLV3O6KB2OhzBQ==
+"@nuxtjs/vuetify@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-0.5.4.tgz#e9d5874390a34fa10872a57feadb5526fe5f940e"
+  integrity sha512-scTFpvUDIxGFGV6K+4G1qDNPk/dScNUjUyUfA9S5T79dF+tBZjjnv4pTXUx7wtS87CLKk4PvlSC2tqOJUKL1Kg==
   dependencies:
-    vuetify "^1.4.2"
+    vuetify "^1.5.0"
 
 "@nuxtjs/workbox@^2.6.0":
   version "2.6.0"
@@ -8430,10 +8430,10 @@ vue@^2.5.17:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
   integrity sha512-mFbcWoDIJi0w0Za4emyLiW72Jae0yjANHbCVquMKijcavBGypqlF7zHRgMa5k4sesdv7hv2rB4JPdZfR+TPfhQ==
 
-vuetify@^1.4.2:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.4.3.tgz#dfa187a2bd37427c352bdd194837430a06b45735"
-  integrity sha512-BRTETa3rQ016OOkL1Y28vOYPPJFU0TwSr9nwjT/M840bnk0A9znk1mGvdk1W+qb9IbtWJ9RUk2W1+7l9RcKa8A==
+vuetify@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.0.tgz#b7334f525b5dd416b01d5e9ddbadad22beeb9d7f"
+  integrity sha512-I2bITwvtkfbUf2hfrKo3Uta4egpv5KzEcKR1czgdyjZdA1nlo96XV2EDu0XetLl6p+AjhOqwlZWbLSezy9ZZmQ==
 
 vuex@^3.0.1:
   version "3.0.1"
@@ -8864,24 +8864,6 @@ yargs-parser@^7.0.0:
   integrity sha1-jQrELxbqVd69MyyvTEA4s+P139k=
   dependencies:
     camelcase "^4.1.0"
-
-yargs@^12.0.5:
-  version "12.0.5"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
-  integrity sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
-  dependencies:
-    cliui "^4.0.0"
-    decamelize "^1.2.0"
-    find-up "^3.0.0"
-    get-caller-file "^1.0.1"
-    os-locale "^3.0.0"
-    require-directory "^2.1.1"
-    require-main-filename "^1.0.1"
-    set-blocking "^2.0.0"
-    string-width "^2.0.0"
-    which-module "^2.0.0"
-    y18n "^3.2.1 || ^4.0.0"
-    yargs-parser "^11.1.1"
 
 yargs@^12.0.5:
   version "12.0.5"
