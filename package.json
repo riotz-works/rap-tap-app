@@ -31,7 +31,7 @@
     "ts-loader": "3.5.0",
     "tslint": "^5.14.0",
     "tslint-loader": "^3.5.4",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.4.1"
   },
   "scripts": {
     "clean": "shx rm -rf .nuxt dist static/sw.js static/sitemap.xml*",
