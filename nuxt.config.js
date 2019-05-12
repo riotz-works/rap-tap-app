@@ -11,7 +11,7 @@ module.exports = {
     vendor: [ 'axios', 'vuetify' ]
   },
   head: {
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : pkg.displayName
+    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : 'ラップ、タップ、アップ 🎶'
   },
   meta: {
     ogHost: pkg.applicationHost
