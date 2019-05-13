@@ -16,14 +16,14 @@ jobs:
             echo "Yarn v$(yarn -v)"
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Setup
           command: yarn setup
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
+            - ~/.cache/yarn
       - run:
           name: Build
           command: |
