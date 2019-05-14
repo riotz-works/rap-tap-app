@@ -1,29 +1,48 @@
-defaults: &defaults
-  working_directory: ~/workspace
-  docker:
-    - image: circleci/node:10
+version: 2.1
 
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:10
+    environment:
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
 
-version: 2
-jobs:
-  build:
-    <<: *defaults
+commands:
+  system_info:
     steps:
       - run:
           name: System information
           command: |
             echo "Node $(node -v)"
             echo "Yarn v$(yarn -v)"
-      - checkout
+  restore_yarn_packages:
+    steps:
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          name: Restore Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}-{{ .Environment.CACHE_VERSION_NPM }}
+
+  save_yarn_packages:
+    steps:
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}-{{ .Environment.CACHE_VERSION_NPM }}
+          paths:
+            - ~/.cache/yarn
+
+
+jobs:
+  build:
+    executor:
+      name: default
+    steps:
+      - system_info
+      - checkout
+      - restore_yarn_packages
       - run:
           name: Setup
           command: yarn setup
-      - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+      - save_yarn_packages
       - run:
           name: Build
           command: |
@@ -35,7 +54,8 @@ jobs:
           paths:
             - ./*
   deploy:
-    <<: *defaults
+    executor:
+      name: default
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -51,16 +71,19 @@ jobs:
             yarn deploy
 
 workflows:
-  version: 2
   build-deploy-flow:
     jobs:
       - build:
           context: rap-tap-app
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy:
+          context: rap-tap-app
           requires:
             - build
           filters:
             branches:
               only:
                 - source
-          context: rap-tap-app
