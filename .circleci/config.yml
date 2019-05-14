@@ -1,33 +1,47 @@
-defaults: &defaults
-  working_directory: ~/workspace
-  docker:
-    - image: circleci/node:10
+version: 2.1
 
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:10
+    environment:
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
 
-version: 2
-jobs:
-  build:
-    <<: *defaults
+commands:
+  system_info:
     steps:
       - run:
           name: System information
           command: |
             echo "Node $(node -v)"
             echo "Yarn v$(yarn -v)"
-      - checkout
+  setup:
+    steps:
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          name: Restore Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Setup
           command: yarn setup
       - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
+
+jobs:
+  build:
+    executor:
+      name: default
+    steps:
+      - system_info
+      - checkout
+      - setup
       - run:
           name: Build
-          command: |
-            yarn generate
+          command: yarn generate
       - store_artifacts:
           path: dist
       - persist_to_workspace:
@@ -35,13 +49,14 @@ jobs:
           paths:
             - ./*
   deploy:
-    <<: *defaults
+    executor:
+      name: default
     steps:
+      - attach_workspace:
+          at: ~/workspace
       - add_ssh_keys:
           fingerprints:
             - "b2:63:c2:77:fe:82:48:8d:10:28:f8:ae:b7:1f:57:52"
-      - attach_workspace:
-          at: ~/workspace
       - run:
           name: Deploy
           command: |
@@ -50,17 +65,21 @@ jobs:
             git config --global user.email "contact@riotz.works"
             yarn deploy
 
+
 workflows:
-  version: 2
   build-deploy-flow:
     jobs:
       - build:
           context: rap-tap-app
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy:
+          context: rap-tap-app
           requires:
             - build
           filters:
             branches:
               only:
                 - source
-          context: rap-tap-app
