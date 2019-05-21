@@ -7534,10 +7534,10 @@ sitemap@^2.2.0:
     url-join "^4.0.0"
     xmlbuilder "^10.0.0"
 
-skyway-js@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-1.2.0.tgz#3a721b28a6f12da04486904c194a2f486c09c9f2"
-  integrity sha512-D3dcBsQQBTRQco7Fhht52rryJxVgtnT5qMtBVGcugrpqcXE3yGzO/UT5iSrTsAf2Kjca7iXJ9J4aohXFR+T2sw==
+skyway-js@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-1.3.0.tgz#585132ac3fa79295661f3f8f31130dee0ff2bbfc"
+  integrity sha512-T/Wpob60VZJKCly1DKjBQ0PD9N3EqNzgT+Yjod4M3J1GXdekRngUXWkAdDeQZH4t13u+zAr4FP8RDXIMT+9I/g==
   dependencies:
     detect-browser "^4.2.0"
     enum "git+https://github.com/eastandwest/enum.git#react-native"
