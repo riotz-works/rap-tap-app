@@ -4,16 +4,16 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.61773fa133ac25185bd2.js",
-    "revision": "567e626f74c41c77b94d31e2a31264e2"
+    "url": "/rap-tap-app/static/app.c4d4ad76abda093b1425.js",
+    "revision": "cd06a302b3885fbd8746650e12474b75"
   },
   {
     "url": "/rap-tap-app/static/layouts/default.317ab608734abaa1f044.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.85c0b6c6743cefd8911a.js",
-    "revision": "e7855bee1c8903ac6c1065cd7008cf47"
+    "url": "/rap-tap-app/static/manifest.58c832fee8979a4596da.js",
+    "revision": "cf9d7cfa478b55ee969cad741cf0ce84"
   },
   {
     "url": "/rap-tap-app/static/pages/about.fc8737e0f7f5f0974b2d.js",
@@ -32,12 +32,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "0d4b95ff8e43636a5b4ade532b02ab24"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.b7777ed491d5d0167d2c.js",
-    "revision": "65c113c43df36f267876009881b009c2"
+    "url": "/rap-tap-app/static/pages/room/rapper.fcdddae01d87ece020d8.js",
+    "revision": "185eeb4fb02fb083be35b0c9f61d096f"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.7b74f150781cd62b733f.js",
-    "revision": "44e83cf9b613925980ae62c76a93ee82"
+    "url": "/rap-tap-app/static/pages/room/watcher.fe7cbf9d09a79dfb7250.js",
+    "revision": "d73a8961f60bd5741fe94098da827da7"
   },
   {
     "url": "/rap-tap-app/static/vendor.0f9f86d223f713ee390a.js",
