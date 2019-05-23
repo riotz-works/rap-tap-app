@@ -27,16 +27,14 @@
     "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "shx": "^0.3.2",
     "ts-loader": "3.5.0",
     "tslint": "^5.16.0",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "clean": "shx rm -rf .nuxt dist static/sw.js static/sitemap.xml*",
+    "clean": "npx rimraf .nuxt dist static/sw.js static/sitemap.xml*",
     "setup": "yarn install --ignore-optional",
-    "upgrade": "yarn upgrade --latest",
     "dev": "nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
@@ -53,6 +51,6 @@
   "bugs": {
     "url": "https://github.com/riotz-works/rap-tap-app/issues"
   },
-  "author": "Riotz Works (https://riotz.works)",
+  "author": "Riotz.works (https://riotz.works)",
   "license": "MIT"
 }
