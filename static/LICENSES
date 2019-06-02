@@ -3626,6 +3626,13 @@ and limitations under the License.
  * Released under the MIT License.
  */
 
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
 /*!*****************************************!*\
   !*** ./src/components/VAlert/VAlert.ts ***!
   \*****************************************/
@@ -7339,13 +7346,6 @@ and limitations under the License.
   \******************************************************************************/
 
 /*! no static exports found */
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
 
 /*!
  * @overview es6-promise - a tiny implementation of Promises/A+.
