@@ -4,15 +4,15 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.f24d2d8c664176c28025.js",
-    "revision": "ed6baf643cf451503eedfea93b48616e"
+    "url": "/rap-tap-app/static/app.315bc4c18bfd4dd6efc2.js",
+    "revision": "7158f6fcef044d4e73ae73a4418b37ee"
   },
   {
     "url": "/rap-tap-app/static/layouts/default.8d908eac2f7baf585fd0.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.c7671ce9f6ce42109146.js",
+    "url": "/rap-tap-app/static/manifest.cb2631efa38b9f5a4e32.js",
     "revision": "2b3484d290673a1190667ea550765629"
   },
   {
