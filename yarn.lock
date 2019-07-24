@@ -691,7 +691,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.7.tgz#1854f0a9aa8d2cd6818d607b3d091346c6730362"
   integrity sha512-on4MmIDgHXiuJDELPk1NFaKVUxxCFr37tm8E9yN6rAiF5Pzp/9bBfBHkoexqRiY+hk/Z04EJU9kKEb59YqJ82A==
 
-"@types/node@^12.6.8":
+"@types/node@^12.0.8", "@types/node@^12.6.8":
   version "12.6.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.8.tgz#e469b4bf9d1c9832aee4907ba8a051494357c12c"
   integrity sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
@@ -8251,11 +8251,12 @@ sitemap@^2.2.0:
     url-join "^4.0.0"
     xmlbuilder "^10.0.0"
 
-skyway-js@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-1.4.0.tgz#0c370ca0785563f4854cf42eb5881a9c8c38a502"
-  integrity sha512-EHmV8MX/sdwjhWjVBRMQyRcn0XDJ8OXcc+WXjjvZ8Vt57BnDuqGS8SE0ucY5A9+rR5I/FgQBRj8R9nw/uMvhwQ==
+skyway-js@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-2.0.1.tgz#af9cffc9025a8d2a384121526ef4d11391d6bd89"
+  integrity sha512-ubHbbi+9DzGNM1cCPatod9lN2N3Tu34v9zDJLpc49Lgsy14uQK6ICuO+u6GBl9Otm/jBFwiFAstQIpC3JoSfqg==
   dependencies:
+    "@types/node" "^12.0.8"
     detect-browser "^4.2.0"
     enum "git+https://github.com/eastandwest/enum.git#react-native"
     events "^3.0.0"
