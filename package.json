@@ -24,7 +24,7 @@
     "@types/node": "^12.7.1",
     "all-contributors-cli": "^6.8.1",
     "cross-env": "^5.2.0",
-    "gh-pages": "^2.1.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "ts-loader": "3.5.0",
