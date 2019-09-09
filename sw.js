@@ -4,40 +4,40 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.2e94417c6faafe7095e0.js",
-    "revision": "c2eed648140aa07b7633b7203bd4a040"
+    "url": "/rap-tap-app/static/app.90b76fb27480dc2b03cb.js",
+    "revision": "ff66fe996ad2c31b470cd32ad1716264"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.331b3bc8b98e740b01fa.js",
+    "url": "/rap-tap-app/static/layouts/default.85797f9bf0a2b108bbe6.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.50fb8a23a06faf019f47.js",
-    "revision": "19ccc1a819e5efb984f5ca2af1037c93"
+    "url": "/rap-tap-app/static/manifest.837114c6a1532d8adf38.js",
+    "revision": "d4f9d5296afe5eeb3ab3dc3340680ba3"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.22be13245b654e79aa69.js",
+    "url": "/rap-tap-app/static/pages/about.fccfe657b372ed57feee.js",
     "revision": "e0693cb3df4b8185832b77b3e0640767"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.abbdcf070382c4d49cc0.js",
-    "revision": "e4b3f4bfab73c53aaf6911584f3fca90"
+    "url": "/rap-tap-app/static/pages/enter.96cb7747d6d22fcda85a.js",
+    "revision": "9c809b716c49743341ea5bfeb772ba6e"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.b903f77bdb36b854f860.js",
+    "url": "/rap-tap-app/static/pages/host.7d4ef49ba024acf9a084.js",
     "revision": "dae93b2a64d4d7bc7d5da3702723508a"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.223fb7516fc91a73f7d2.js",
-    "revision": "16f3c4b50a577f24f954bc1ff4e30320"
+    "url": "/rap-tap-app/static/pages/index.71852ff5649be76a59b0.js",
+    "revision": "a2fd57e3696768b543965536d10490cd"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.e7aeb7f42d7ab1d954a8.js",
-    "revision": "70394ea9a911e02340532a3afc182497"
+    "url": "/rap-tap-app/static/pages/room/rapper.928b459aa78feb1c64d7.js",
+    "revision": "109d742ceb868de2f31c28cf15370779"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.cb5fa4130519c8711e1c.js",
-    "revision": "2f5171c1ea608ece970ef4aa9aceb4ff"
+    "url": "/rap-tap-app/static/pages/room/watcher.67fd52d9b69af78155fd.js",
+    "revision": "cd7e9be53b0848f4ab742f9b635732d6"
   },
   {
     "url": "/rap-tap-app/static/vendor.4520302cd135140617cf.js",
