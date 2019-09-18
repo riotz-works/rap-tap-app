@@ -23,7 +23,7 @@
     "@nuxtjs/vuetify": "^0.5.7",
     "@types/node": "^12.7.5",
     "all-contributors-cli": "^6.9.0",
-    "cross-env": "^5.2.1",
+    "cross-env": "^6.0.0",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.3.1",
