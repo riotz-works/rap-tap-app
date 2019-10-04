@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.36c7333092cd8981e58d.js",
-    "revision": "90eb4ffe840a33cd26dfac6b3dcb871b"
+    "url": "/rap-tap-app/static/app.d85fd0f90598a5235d99.js",
+    "revision": "118e64b7cb2cb96b2f049188649681b7"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.85797f9bf0a2b108bbe6.js",
+    "url": "/rap-tap-app/static/layouts/default.f29623e86aa6696cf8b2.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.9fbf93eb8424ff764376.js",
-    "revision": "d227670da6c473c1b22870f97a11e120"
+    "url": "/rap-tap-app/static/manifest.2278312bb7757958830d.js",
+    "revision": "86552e61da5091c8c194c3ef4355258c"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.fccfe657b372ed57feee.js",
+    "url": "/rap-tap-app/static/pages/about.9f1e3a4218722c0f9bc1.js",
     "revision": "e0693cb3df4b8185832b77b3e0640767"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.7ea760796732eca45a98.js",
+    "url": "/rap-tap-app/static/pages/enter.43be1643deef67df2c1e.js",
     "revision": "228d4dfbadcfd6755624052fbd25a8f4"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.7d4ef49ba024acf9a084.js",
+    "url": "/rap-tap-app/static/pages/host.82bb182d0b18397a3254.js",
     "revision": "dae93b2a64d4d7bc7d5da3702723508a"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.51ead7c00738f7673fe1.js",
+    "url": "/rap-tap-app/static/pages/index.37e9cae341030af8ae37.js",
     "revision": "c15bd84200bf462ed155b3db13ebaf0d"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.62da5311d14319e8d037.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.bf067f8d8e503421f1e6.js",
     "revision": "2e7e141f5e557912f8c587a80a49f48e"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.aa9e0f90e93b177c06ff.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.711c7f416afb15c7a794.js",
     "revision": "b60a3f026852f527974b99853f435a41"
   },
   {
