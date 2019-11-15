@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.103c1e134d4c50f3dc70.js",
-    "revision": "f6036ece02e0586e02c41ada645dcec7"
+    "url": "/rap-tap-app/static/app.acfce189788c882b6bce.js",
+    "revision": "b7f2d56e087a0a587ffa9ee70ff90d12"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.1144655d8cdd258a0a9b.js",
+    "url": "/rap-tap-app/static/layouts/default.f7cb50d860f80bf1ed38.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.f53e9fd4a0947010f9d7.js",
-    "revision": "df073883e2954eae89356d58b715b357"
+    "url": "/rap-tap-app/static/manifest.a795a17d8a9807763d51.js",
+    "revision": "f45223b502e3d93dc52798b7b7c8c4d3"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.10a591e2a8ef9ad76a35.js",
+    "url": "/rap-tap-app/static/pages/about.c5e44cd88009d9c22d24.js",
     "revision": "e0693cb3df4b8185832b77b3e0640767"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.24a4bd857ae1ca8706c0.js",
+    "url": "/rap-tap-app/static/pages/enter.9c8b4c7f44b4011348d6.js",
     "revision": "f05c8537207b2ae844acdb258e7498f2"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.23035beb8429a7f25aed.js",
+    "url": "/rap-tap-app/static/pages/host.9c472f95166236ac7d0c.js",
     "revision": "9ef3e8bff56fdc27c850a8192a35183d"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.48a01e69f60694f41ca6.js",
+    "url": "/rap-tap-app/static/pages/index.f79e33fcad1d85496108.js",
     "revision": "9e1eacad95fc29a858518a22422b57a1"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.3eff60367794a0da7db5.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.64583d48dcbce02f520e.js",
     "revision": "06fc8f67224071cbd55f5c037d17dbe5"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.905faed37985616cb1ca.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.8d524e5bca5179ffd875.js",
     "revision": "d550b21505fb692cf445b008ee46657d"
   },
   {
