@@ -1,4 +1,11 @@
 /*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
  * SkyWay Copyright(c) 2019 NTT Communications Corporation
  * peerjs Copyright(c) 2013 Michelle Bu <michelle@michellebu.com>
  */
