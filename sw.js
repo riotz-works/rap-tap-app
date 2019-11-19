@@ -4,15 +4,15 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.41d32c9fef49825bf246.js",
-    "revision": "c711f661331f101e9930584e29c4041a"
+    "url": "/rap-tap-app/static/app.1751ddeca295d7ca6e45.js",
+    "revision": "94c902bda40deb3d321eefc37def4bc1"
   },
   {
     "url": "/rap-tap-app/static/layouts/default.f7cb50d860f80bf1ed38.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.9466ab2dd03c9418bed2.js",
+    "url": "/rap-tap-app/static/manifest.283b2cfef9c1c173cafb.js",
     "revision": "6a1e7581f9a9f0f5122d50ddf755e6df"
   },
   {
@@ -40,8 +40,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "955ab8754218d0bbe19bb3567923e96b"
   },
   {
-    "url": "/rap-tap-app/static/vendor.4520302cd135140617cf.js",
-    "revision": "66741501b06439affa6ae602ca7717ee"
+    "url": "/rap-tap-app/static/vendor.ea7adbafffb0e3a77901.js",
+    "revision": "de413f8dc0769c16ce42ca1dfcf037c6"
   }
 ], {
   "cacheId": "rap-tap-app",
