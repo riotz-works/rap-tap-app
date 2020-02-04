@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.8b5818cdc36b5938e40a.js",
-    "revision": "1e2405cbbaa12823692e51fa82d92c44"
+    "url": "/rap-tap-app/static/app.e6fe5fa03dfddfb53b2b.js",
+    "revision": "0557250815277fd97d92e22e4f452c4e"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.cfaedded599f31d95941.js",
+    "url": "/rap-tap-app/static/layouts/default.3fe2d8261bcf87560be6.js",
     "revision": "ae03145919c54b8d31062d5a6e0a348c"
   },
   {
-    "url": "/rap-tap-app/static/manifest.8a94aa61474f34197ca3.js",
-    "revision": "dd39046f97b3d59a8de8754b289a150f"
+    "url": "/rap-tap-app/static/manifest.ea112b2f614547b9bdd3.js",
+    "revision": "633fcb376a2d1a2d9021ede5c9aa3b24"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.11ffe12db255de09d35e.js",
+    "url": "/rap-tap-app/static/pages/about.7bca81c24d323652b9b1.js",
     "revision": "e0693cb3df4b8185832b77b3e0640767"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.0ef4564d1cb7a05087fb.js",
+    "url": "/rap-tap-app/static/pages/enter.8627c8e0d537c8909497.js",
     "revision": "6bbeb7891c44ec25ecf72067adc23911"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.746ddc4a90af9ae622a6.js",
+    "url": "/rap-tap-app/static/pages/host.4ca874803fb294ef5405.js",
     "revision": "9ef3e8bff56fdc27c850a8192a35183d"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.31aee8edf3668174038e.js",
+    "url": "/rap-tap-app/static/pages/index.756ee89f061ad0dc64ee.js",
     "revision": "d36f0d8f5e3f0b7c6b7a5396bea66a66"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.643e2e4bc408028dded5.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.42df75d56f142254143a.js",
     "revision": "0cb3f75c0d2cd72de03bc66561800273"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.2b1df18bd9547df29735.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.d58e188e1970fa7fca88.js",
     "revision": "d5bd6e238a9c28f16d6d7d4e1ca60ed2"
   },
   {
