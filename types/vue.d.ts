@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Vue from 'vue';
 import { Store } from 'vuex';
 import { Route } from 'vue-router';
