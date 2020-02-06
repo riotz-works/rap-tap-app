@@ -43,7 +43,7 @@
 
 <script lang="ts">
 
-import { AxiosResponse } from 'axios'; // tslint:disable-line
+import { AxiosResponse } from 'axios';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 

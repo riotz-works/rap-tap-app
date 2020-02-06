@@ -1,7 +1,4 @@
 import firebase from 'firebase/app';
-
-// tslint:disable: no-import-side-effect
-// Because of Firebase recommended import method
 import 'firebase/auth';
 import 'firebase/database';
 
