@@ -1,7 +1,7 @@
 /*!
  * The buffer module from node.js, for the browser.
  *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @author   Feross Aboukhadijeh <http://feross.org>
  * @license  MIT
  */
 
@@ -4096,7 +4096,7 @@ and limitations under the License.
  */
 
 /*!
- * Vue.js v2.6.10
+ * Vue.js v2.6.11
  * (c) 2014-2019 Evan You
  * Released under the MIT License.
  */
@@ -5522,6 +5522,8 @@ and limitations under the License.
 /*! ../../mixins/themeable */
 
 /*! ../../util/mixins */
+
+/*! ../../util/helpers */
 
 /*!*******************************************!*\
   !*** ./src/components/VMessages/index.ts ***!
@@ -7820,7 +7822,7 @@ and limitations under the License.
  * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
  * @license   Licensed under MIT license
  *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   v4.2.6+9869a4bc
+ * @version   v4.2.8+1e68dce6
  */
 
 /**
