@@ -4,40 +4,40 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.ba3ac090ef282a316a2b.js",
-    "revision": "68042d5ebe7f9c16d0dac63172955690"
+    "url": "/rap-tap-app/static/app.4bafcba1fd5c04836892.js",
+    "revision": "c8ee0324563bbf64887497bd8274e40b"
   },
   {
     "url": "/rap-tap-app/static/layouts/default.5bcd47d05d511afc98fe.js",
     "revision": "8a76b4d33502743fe725fbfc19881497"
   },
   {
-    "url": "/rap-tap-app/static/manifest.fbf0c0bd02e840335bf4.js",
-    "revision": "a4fc04720275b482848d1d0d2e585bda"
+    "url": "/rap-tap-app/static/manifest.583cdc6a5da535d3e2ab.js",
+    "revision": "3ae292b4a1a75351757e4febfdb90a90"
   },
   {
     "url": "/rap-tap-app/static/pages/about.eee9a663e359be0a91da.js",
     "revision": "fb693ba1a42ab489265fe48dbfb14ee0"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.c14cddfd83c22907f16c.js",
-    "revision": "a244313b976a6415595826a05cb40aef"
+    "url": "/rap-tap-app/static/pages/enter.7fbf63faf22a82412064.js",
+    "revision": "627147d9d87cbd1ee84cb2c4d7c8b974"
   },
   {
     "url": "/rap-tap-app/static/pages/host.9394e9288ceb6db0dc1d.js",
     "revision": "5cb1119703a49bd6cc40d4f01d13f1e9"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.64f11a79fefd52c38fb7.js",
-    "revision": "ae5f5593a9e787e9335de2ef7a5e1332"
+    "url": "/rap-tap-app/static/pages/index.f7c05e104a334c636731.js",
+    "revision": "e967f4d3f11ec7a9969dc1492bf174b4"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.b36aea78f9a4784b83aa.js",
-    "revision": "90105f2d8b1c4dc72fe5569365f6cef2"
+    "url": "/rap-tap-app/static/pages/room/rapper.1f7756f1772b3280be63.js",
+    "revision": "442021c91f7d2a8f7df33c40acfd0778"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.38a574cc766f96813156.js",
-    "revision": "d8aa49b5fccabebe3f39c79a798d2092"
+    "url": "/rap-tap-app/static/pages/room/watcher.dcaea97e7207e5b131d1.js",
+    "revision": "dcdbe65d6a2e9da6ffc2969bf031ff1d"
   },
   {
     "url": "/rap-tap-app/static/vendor.3ff17577d0aa45def7ac.js",
