@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.7c733ec7e2074c68027c.js",
-    "revision": "47e9576505826422ed60cd29e628d119"
+    "url": "/rap-tap-app/static/app.17c648451d276b1e8783.js",
+    "revision": "cba4cf12208fba56feb470b66fa41115"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.1bd3c04cf554e45c1435.js",
+    "url": "/rap-tap-app/static/layouts/default.8c2279aa359a4dac9d16.js",
     "revision": "8a76b4d33502743fe725fbfc19881497"
   },
   {
-    "url": "/rap-tap-app/static/manifest.ab36d51d5158e92683a5.js",
-    "revision": "682d6b52d353311401308330c80a58b9"
+    "url": "/rap-tap-app/static/manifest.68188490d67a3d7f9568.js",
+    "revision": "90a184c4aba671d564f38fc4a2bd9d7a"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.e0d0788822bc36712f8e.js",
+    "url": "/rap-tap-app/static/pages/about.6edf3538f17758f66c80.js",
     "revision": "fb693ba1a42ab489265fe48dbfb14ee0"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.6b3a9f0dd62361401718.js",
+    "url": "/rap-tap-app/static/pages/enter.fb91f1939da4893b5341.js",
     "revision": "ebe40a3cbcf3d9183341a79d045c304c"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.b924579184a9915093d6.js",
+    "url": "/rap-tap-app/static/pages/host.97d986d47dfa0183b5a4.js",
     "revision": "5cb1119703a49bd6cc40d4f01d13f1e9"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.0a5f8616a36b27abc270.js",
+    "url": "/rap-tap-app/static/pages/index.b922fd353a5910e475f8.js",
     "revision": "9fd2771f6d127e61e2aade5232f1f380"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.b5c92498af2bcde4e307.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.b3f24e67deb07d6bcbdb.js",
     "revision": "836b6e7ac716d5774d3ceabf315daf25"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.7b5b75d6f02589e6a631.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.5d5590d286528808ec40.js",
     "revision": "627e49dca24e0e47976855d84934b66f"
   },
   {
