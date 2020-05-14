@@ -4,39 +4,39 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.a6068735dccc2877a8b7.js",
-    "revision": "2e0a0d4e70b884233c979b42e111625d"
+    "url": "/rap-tap-app/static/app.42efbe07991956803e61.js",
+    "revision": "3e1929736c0c2591c068099690cb5120"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.3dec328dab68a4e6eeb9.js",
+    "url": "/rap-tap-app/static/layouts/default.7db3455e17d44b56d856.js",
     "revision": "8a76b4d33502743fe725fbfc19881497"
   },
   {
-    "url": "/rap-tap-app/static/manifest.624484d0c571a7ce837b.js",
-    "revision": "32a6456cb5fa774ffc57b95b6e427439"
+    "url": "/rap-tap-app/static/manifest.eea24a8f97984de177ca.js",
+    "revision": "aadcffab6b17600b24d23d0169eb9b73"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.4b094921b5d6508ec037.js",
+    "url": "/rap-tap-app/static/pages/about.8648d4f4a322d11071ad.js",
     "revision": "fb693ba1a42ab489265fe48dbfb14ee0"
   },
   {
-    "url": "/rap-tap-app/static/pages/enter.2c6094ac045f972fef56.js",
+    "url": "/rap-tap-app/static/pages/enter.1d2d8464805812ab9494.js",
     "revision": "71ab2a1db573a793ad4ebc7c51935390"
   },
   {
-    "url": "/rap-tap-app/static/pages/host.3f8d2a3a1129cee5edba.js",
+    "url": "/rap-tap-app/static/pages/host.838b9be066375370afb7.js",
     "revision": "5cb1119703a49bd6cc40d4f01d13f1e9"
   },
   {
-    "url": "/rap-tap-app/static/pages/index.e7895e242f2ba72edb9c.js",
+    "url": "/rap-tap-app/static/pages/index.21967c3b05da5526458b.js",
     "revision": "0860517877363e328b6c7e41ac06380f"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/rapper.6502612a6e5681472019.js",
+    "url": "/rap-tap-app/static/pages/room/rapper.4d21cfb993ce26e12a3a.js",
     "revision": "bcfa2f17042e084a0770fdf0b2068d8d"
   },
   {
-    "url": "/rap-tap-app/static/pages/room/watcher.6ba3aeadda15c9b7ab49.js",
+    "url": "/rap-tap-app/static/pages/room/watcher.fa8d85fc2e528de33f75.js",
     "revision": "fb77367930a5dc3a3309a92dd498e23e"
   },
   {
