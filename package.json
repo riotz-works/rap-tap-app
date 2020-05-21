@@ -43,7 +43,7 @@
     "gh-pages": "^2.2.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
-    "ts-loader": "3.5.0",
+    "ts-loader": "7.0.4",
     "typescript": "^3.9.3"
   },
   "homepage": "https://github.com/riotz-works/rap-tap-app#readme",
