@@ -46,6 +46,10 @@
     "ts-loader": "3.5.0",
     "typescript": "^3.9.5"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "homepage": "https://github.com/riotz-works/rap-tap-app#readme",
   "repository": {
     "type": "git",
