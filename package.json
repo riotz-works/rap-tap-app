@@ -7,7 +7,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean": "rimraf .nuxt dist static/sw.js static/sitemap.xml*",
+    "clean": "rimraf .nuxt dist src/static/sw.js src/static/sitemap.xml*",
     "setup": "yarn install --ignore-optional",
     "dev": "nuxt",
     "build": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",

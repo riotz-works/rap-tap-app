@@ -25,7 +25,7 @@
 import { NuxtContext } from 'nuxt';
 import Vue from 'vue';
 import { config } from '~/mixins/config';
-import pkg from '~/package.json';
+import pkg from '../../package.json';
 
 export default Vue.extend({
   async asyncData({ app }: NuxtContext): Promise<object> {

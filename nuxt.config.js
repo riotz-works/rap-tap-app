@@ -6,6 +6,7 @@ const pkg = require('./package.json');
 
 module.exports = {
   mode: 'spa',
+  srcDir: 'src/',
   router: {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },
@@ -59,6 +60,9 @@ module.exports = {
       retries: 3,
       retryDelay: axiosRetry.exponentialDelay
     }
+  },
+  dotenv: {
+    path: './'
   },
   sitemap: {
     hostname: `${pkg.applicationHost}/${pkg.name}`
