@@ -10,11 +10,10 @@
     "clean": "rimraf .nuxt dist static/sw.js static/sitemap.xml*",
     "setup": "yarn install --ignore-optional",
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
     "build:analyze": "nuxt build --analyze",
     "lint": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
     "lint:fix": "yarn lint --fix",
-    "generate": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
     "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
