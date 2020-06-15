@@ -1,7 +1,7 @@
 # Nuxt generate
 dist
-static/sw.js
-static/sitemap*
+src/static/sw.js
+src/static/sitemap*
 
 
 # Created by https://www.gitignore.io/api/node

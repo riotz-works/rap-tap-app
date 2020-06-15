@@ -4,7 +4,7 @@
       <v-toolbar-title class="title">
         <router-link to="/">
           <img src="@/static/icon.png">
-          <span class="neon">{{ require('~/package.json').displayName }}</span>
+          <span class="neon">{{ displayName }}</span>
         </router-link>
       </v-toolbar-title>
       <v-spacer />
@@ -28,12 +28,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { config } from '~/mixins/config';
 
 const home = require('~/assets/image/wallpaper-top.jpg');
 const room = require('~/assets/image/wallpaper-room.jpg');
 
 
 export default Vue.extend({
+  data: (): object => ({
+    displayName: config.displayName
+  }),
   methods: {
     wallpaper(): object {
       const path = this.$route.path;
