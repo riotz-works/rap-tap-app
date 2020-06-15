@@ -8,16 +8,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "6cfcb2c8f772724e0bd6349b7c89d14c"
   },
   {
-    "url": "/rap-tap-app/static/layouts/default.8c606482764b84d45f02.js",
-    "revision": "2575ee92aa8fac5a9208983655716f13"
+    "url": "/rap-tap-app/static/layouts/default.62a06186122964fcdbfd.js",
+    "revision": "70b9a61776266a6175978be564ac287b"
   },
   {
-    "url": "/rap-tap-app/static/manifest.bc208512e20cb234b5ed.js",
-    "revision": "039dad74c771470008359f6a5981157a"
+    "url": "/rap-tap-app/static/manifest.c77d7e475febf9f52902.js",
+    "revision": "0423f8deaf004a29d0be142e409ed434"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.1ffa2b8d820016939dc6.js",
-    "revision": "5e7bc790a2a1984787300660db424953"
+    "url": "/rap-tap-app/static/pages/about.46400de8106c79f2ba61.js",
+    "revision": "1cd1bebf5a88663cd3f0e941c890ebb9"
   },
   {
     "url": "/rap-tap-app/static/pages/enter.ecbf4cb4e13b670de3fd.js",
