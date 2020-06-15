@@ -1,75 +1,75 @@
 <template>
   <section>
 
-      <!--　ステータス表示 -->
-      <v-layout row>
-        <v-flex xs12>
-          <v-btn v-if="roomState === 'entered'"    dark color="black" class="display-label" @click="onStart">START</v-btn>
-          <v-btn v-if="roomState === 'connecting'" dark color="black" class="display-label" disabled>
-            <v-progress-circular indeterminate color="red"></v-progress-circular>
-          </v-btn>
-          <v-btn v-if="roomState === 'waiting'"  dark color="black" class="display-label" disabled>対戦相手が入場するまでお待ち下さい。</v-btn>
-          <v-btn v-if="roomState === 'fighting'" dark color="black" class="display-label" disabled>FIGHT</v-btn>
-        </v-flex>
-      </v-layout>
+    <!-- ステータス表示 -->
+    <v-layout row>
+      <v-flex xs12>
+        <v-btn v-if="roomState === 'entered'" dark color="black" class="display-label" @click="onStart">START</v-btn>
+        <v-btn v-if="roomState === 'connecting'" dark color="black" class="display-label" disabled>
+          <v-progress-circular indeterminate color="red" />
+        </v-btn>
+        <v-btn v-if="roomState === 'waiting'" dark color="black" class="display-label" disabled>対戦相手が入場するまでお待ち下さい。</v-btn>
+        <v-btn v-if="roomState === 'fighting'" dark color="black" class="display-label" disabled>FIGHT</v-btn>
+      </v-flex>
+    </v-layout>
 
-      <!-- 対戦パネル -->
-      <v-layout row>
+    <!-- 対戦パネル -->
+    <v-layout row>
 
-        <!-- 自分のパネル -->
-        <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card class="transparent-panel">
-            <video id="battle-movie-me" autoplay playsinline class="battle-movie"></video>
-            <v-card-title>
-              <div>{{ this.rappers.me.nickname }}</div>
-            </v-card-title>
-            <v-card-actions>
-              <v-chip color="white" label outline>
-                <v-avatar>
-                  <v-icon class="neon">thumb_up</v-icon>
-                </v-avatar>
-                <span class="neon">{{ rappers.me.feedback.thumb_up }}</span>
-              </v-chip>
-              <v-spacer></v-spacer>
-              <v-chip color="white" label outline>
-                <span class="neon-blue">{{ rappers.me.feedback.thumb_down }}</span>
-                <v-avatar>
-                  <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
-                </v-avatar>
-              </v-chip>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
+      <!-- 自分のパネル -->
+      <v-flex xs6 text-xs-center class="margin-0-2">
+        <v-card class="transparent-panel">
+          <video id="battle-movie-me" autoplay playsinline class="battle-movie" />
+          <v-card-title>
+            <div>{{ rappers.me.nickname }}</div>
+          </v-card-title>
+          <v-card-actions>
+            <v-chip color="white" label outline>
+              <v-avatar>
+                <v-icon class="neon">thumb_up</v-icon>
+              </v-avatar>
+              <span class="neon">{{ rappers.me.feedback.thumbUp }}</span>
+            </v-chip>
+            <v-spacer />
+            <v-chip color="white" label outline>
+              <span class="neon-blue">{{ rappers.me.feedback.thumbDown }}</span>
+              <v-avatar>
+                <v-icon class="neon-blue thumbDown">thumb_down</v-icon>
+              </v-avatar>
+            </v-chip>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
 
-        <!-- 相手のパネル -->
-        <v-flex xs6 text-xs-center class="margin-0-2">
-          <v-card class="transparent-panel">
-            <video id="battle-movie-competitor" autoplay playsinline class="battle-movie"></video>
-            <v-card-title>
-              <div>{{ this.rappers.competitor.nickname }}</div>
-            </v-card-title>
-            <v-card-actions>
-              <v-chip color="white" label outline>
-                <v-avatar>
-                  <v-icon class="neon">thumb_up</v-icon>
-                </v-avatar>
-                <span class="neon">{{ rappers.competitor.feedback.thumb_up }}</span>
-              </v-chip>
-              <v-spacer></v-spacer>
-              <v-chip color="white" label outline>
-                <span class="neon-blue">{{ rappers.competitor.feedback.thumb_down }}</span>
-                <v-avatar>
-                  <v-icon class="neon-blue thumb_down">thumb_down</v-icon>
-                </v-avatar>
-              </v-chip>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
+      <!-- 相手のパネル -->
+      <v-flex xs6 text-xs-center class="margin-0-2">
+        <v-card class="transparent-panel">
+          <video id="battle-movie-competitor" autoplay playsinline class="battle-movie" />
+          <v-card-title>
+            <div>{{ rappers.competitor.nickname }}</div>
+          </v-card-title>
+          <v-card-actions>
+            <v-chip color="white" label outline>
+              <v-avatar>
+                <v-icon class="neon">thumb_up</v-icon>
+              </v-avatar>
+              <span class="neon">{{ rappers.competitor.feedback.thumbUp }}</span>
+            </v-chip>
+            <v-spacer />
+            <v-chip color="white" label outline>
+              <span class="neon-blue">{{ rappers.competitor.feedback.thumbDown }}</span>
+              <v-avatar>
+                <v-icon class="neon-blue thumbDown">thumb_down</v-icon>
+              </v-avatar>
+            </v-chip>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
 
-      </v-layout>
+    </v-layout>
 
-      <!-- チャット -->
-      <chat :roomId="roomId" :myNickname="rappers.me.nickname" />
+    <!-- チャット -->
+    <chat :room-id="roomId" :my-nickname="rappers.me.nickname" />
 
   </section>
 </template>
@@ -80,10 +80,11 @@ import { AxiosResponse } from 'axios';
 import Peer from 'skyway-js';
 import Vue from 'vue';
 import Chat from '~/components/chat.vue';
+import { config } from '~/mixins/config';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
-interface Rapper { peerId: string; }
-interface SkywayMediaStream extends MediaStream { peerId: string; }
+interface Rapper { peerId: string }
+interface SkywayMediaStream extends MediaStream { peerId: string }
 type Snapshot = firebase.database.DataSnapshot | null;
 
 
@@ -100,16 +101,16 @@ export default Vue.extend({
         nickname: 'Waiting...',
         peerId: '',
         feedback: {
-          thumb_up: 0,
-          thumb_down: 0
+          thumbUp: 0,
+          thumbDown: 0
         }
       },
       competitor: {
         nickname: 'Waiting...',
         peerId: '',
         feedback: {
-          thumb_up: 0,
-          thumb_down: 0
+          thumbUp: 0,
+          thumbDown: 0
         }
       }
     },
@@ -121,6 +122,37 @@ export default Vue.extend({
     chats: [],
     chatMessage: ''
   }),
+
+  computed: {
+    roomId(): string {
+      return this.$route.query.roomId;
+    },
+    roomName(): string {
+      return this.$route.query.roomName;
+    },
+    nickname(): string {
+      return this.$route.query.nickname;
+    }
+  },
+
+  mounted(): void {
+    this.rappers.me.nickname = this.$route.query.nickname;
+    this.rappers.me.peerId = this.$route.query.peerId;
+    this.roomState = 'entered';
+
+    this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
+      const competitor = res.data.rappers.find((r: Rapper) => r.peerId !== this.peerId);
+      this.rappers.competitor.peerId = competitor.peerId;
+    });
+
+    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+      if (snapshot && snapshot.val()) {
+        this.rappers.me.feedback = snapshot.val();
+      }
+    });
+
+    this.peer = new Peer(this.rappers.me.peerId, { key: config.skywayApiKey, debug: 3 });
+  },
 
   methods: {
     onStart(): void {
@@ -156,9 +188,7 @@ export default Vue.extend({
           const competitorVideo = document.getElementById('battle-movie-competitor') as HTMLMediaElement;
           competitorVideo.srcObject = competitorStream;
         });
-
       });
-
     },
 
     sendMessage(): void {
@@ -168,38 +198,6 @@ export default Vue.extend({
       });
       this.chatMessage = '';
     }
-  },
-
-  computed: {
-    roomId(): string {
-      return this.$route.query.roomId;
-    },
-    roomName(): string {
-      return this.$route.query.roomName;
-    },
-    nickname(): string {
-      return this.$route.query.nickname;
-    }
-  },
-
-  mounted(): void {
-
-    this.rappers.me.nickname = this.$route.query.nickname;
-    this.rappers.me.peerId = this.$route.query.peerId;
-    this.roomState = 'entered';
-
-    this.$coreApi.get(`/rooms/${this.roomId}`).then((res: AxiosResponse) => {
-      const competitor = res.data.rappers.find((r: Rapper) => r.peerId !== this.peerId);
-      this.rappers.competitor.peerId = competitor.peerId;
-    });
-
-    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
-      if (snapshot && snapshot.val()) {
-        this.rappers.me.feedback = snapshot.val();
-      }
-    });
-
-    this.peer = new Peer(this.rappers.me.peerId, { key: process.env.SKYWAY_API_KEY, debug: 3 });
   }
 });
 </script>
@@ -209,7 +207,7 @@ export default Vue.extend({
 
 .battle-movie {
   width: 100%;
-  height: 280px; /* TODO: Set calculated height to keep aspect ratio */
+  height: 280px;
 }
 
 .display-label {

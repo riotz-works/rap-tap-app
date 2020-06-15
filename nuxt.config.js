@@ -1,3 +1,6 @@
+/* eslint-disable no-process-env */                 // 'cuz configuration file and requires environment variables
+/* eslint-disable nuxt/no-cjs-in-config */          // 'cuz it conflicts with compiler
+/* eslint-disable @typescript-eslint/camelcase */   // 'cuz key name of configuration is specified
 const axiosRetry = require('axios-retry');
 const pkg = require('./package.json');
 
@@ -11,7 +14,7 @@ module.exports = {
     vendor: [ 'axios', 'vuetify' ]
   },
   head: {
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : 'ラップ、タップ、アップ 🎶'
+    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
   },
   meta: {
     ogHost: pkg.applicationHost
@@ -72,7 +75,7 @@ module.exports = {
         strategyOptions: { cacheableResponse: { statuses: [ 0, 200 ]}}
       },
       {
-        urlPattern: '\.(?:png|gif|jpg|jpeg|svg)$',
+        urlPattern: '(?:.png|.gif|.jpg|.jpeg|.svg)$',
         handler: 'cacheFirst',
         method: 'GET',
         strategyOptions: { cacheExpiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 }}

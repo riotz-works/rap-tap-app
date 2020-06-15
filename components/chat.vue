@@ -7,9 +7,9 @@
         <v-card class="chat-contents transparent-panel">
 
           <div v-for="chat of chats" :key="chat.id">
-              <v-chip label color="pink" text-color="white">
+            <v-chip label color="pink" text-color="white">
               {{ chat.nickname }}
-              </v-chip>{{ chat.content }}
+            </v-chip>{{ chat.content }}
           </div>
 
         </v-card>
@@ -19,19 +19,18 @@
     <!-- チャット入力 -->
     <v-layout row>
       <v-flex xs12 class="chat-input-flex">
-          <v-card class="transparent-panel">
+        <v-card class="transparent-panel">
           <v-card-actions>
-              <v-text-field
+            <v-text-field
               v-model="chatInputMessage"
               :counter="20"
               append-icon="chat"
-              @click:append="sendChatMessage"
               label="メッセージを入力してください"
               required
-              >
-              </v-text-field>
+              @click:append="sendChatMessage"
+            />
           </v-card-actions>
-          </v-card>
+        </v-card>
       </v-flex>
     </v-layout>
 
@@ -53,11 +52,11 @@ interface ChatComponentData {
 
 export default Vue.extend({
 
-  name: 'chat',
+  name: 'Chat',
 
   props: {
-    roomId: String,
-    myNickname: String
+    roomId: { type: String, required: true },
+    myNickname: { type: String, required: true }
   },
 
   data: (): ChatComponentData => ({
