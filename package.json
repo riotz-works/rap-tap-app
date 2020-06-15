@@ -3,7 +3,7 @@
   "displayName": "ラップ、タップ、アップ 🎶",
   "displayShortName": "ラップ🎤",
   "description": "リアルタイム の 競演 と 参加型観戦 で 音楽を最高に楽しむ",
-  "applicationHost": "https://riotz.works",
+  "appHost": "https://riotz.works",
   "version": "0.0.1",
   "private": true,
   "scripts": {

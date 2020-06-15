@@ -18,7 +18,7 @@ module.exports = {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
   },
   meta: {
-    ogHost: pkg.applicationHost
+    ogHost: pkg.appHost
   },
   manifest: {
     name: pkg.displayName,
@@ -65,7 +65,7 @@ module.exports = {
     path: './'
   },
   sitemap: {
-    hostname: `${pkg.applicationHost}/${pkg.name}`
+    hostname: `${pkg.appHost}/${pkg.name}`
   },
   workbox: {
     dev: true,
