@@ -61,9 +61,7 @@ module.exports = {
     }
   },
   sitemap: {
-    hostname: `${pkg.applicationHost}/${pkg.name}`,
-    gzip: true,
-    generate: true
+    hostname: `${pkg.applicationHost}/${pkg.name}`
   },
   workbox: {
     dev: true,
