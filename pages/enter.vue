@@ -12,21 +12,21 @@
     <v-layout row>
       <v-flex xs12 text-xs-center>
         <v-form
-          color="black"
-          lazy-validation
           ref="form"
           v-model="valid"
-          v-on:submit.prevent="submit"
+          color="black"
+          lazy-validation
+          @submit.prevent="submit"
         >
           <v-text-field
+            v-model="nickname"
             label="ニックネーム"
             prepend-icon="tag_faces"
             required
-            v-model="nickname"
             :counter="20"
             :rules="nicknameRules"
             @keyup.enter="submit"
-          ></v-text-field>
+          />
           <v-btn
             :disabled="!valid"
             @click="submit"
@@ -54,8 +54,8 @@ export default Vue.extend({
     valid: true,
     nickname: '',
     nicknameRules: [
-      (v: string): boolean | string => !!v || 'ニックネームを入力してください',
-      (v: string): boolean | string => (v && v.length <= 20 || 'ニックネームは20文字以内で入力してください。')
+      (v: string): boolean | string => Boolean(v) || 'ニックネームを入力してください',
+      (v: string): boolean | string => v.length <= 20 || 'ニックネームは20文字以内で入力してください。'
     ],
     modes: {
       rapper: '対戦',
@@ -71,7 +71,6 @@ export default Vue.extend({
     },
 
     async submit(): Promise<void> {
-
       if (!this.isSubmitted && this.$refs.form.validate()) {
         this.isSubmitted = true;
 
@@ -92,8 +91,8 @@ export default Vue.extend({
           }
           await RealtimeDB.ref(`/rooms/${roomId}/rappers/${peerId}`).set({
             feedback: {
-              thumb_up: 0,
-              thumb_down: 0
+              thumbUp: 0,
+              thumbDown: 0
             }
           });
         }
@@ -104,7 +103,6 @@ export default Vue.extend({
         if (mode === 'watcher') {
           this.$router.push({ path: '/room/watcher', query: { roomId, roomName, peerId, nickname }});
         }
-        return;
       }
     }
   }

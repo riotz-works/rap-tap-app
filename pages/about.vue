@@ -24,25 +24,26 @@
 <script lang="ts">
 import { NuxtContext } from 'nuxt';
 import Vue from 'vue';
+import { config } from '~/mixins/config';
 import pkg from '~/package.json';
 
 export default Vue.extend({
+  async asyncData({ app }: NuxtContext): Promise<object> {
+    return {
+      modules: [ pkg, (await app.$axios.get(`${config.coreApiEndpoint}/version?detail=true`)).data ]
+    };
+  },
   computed: {
     title: (): string => 'About',
     headers: (): object => [
-      { text: '#',           sortable: false, width:  '24px' },
+      { text: '#', sortable: false, width:  '24px' },
       { text: 'Module Name', sortable: false, width: '240px' },
-      { text: 'Version',     sortable: false }
+      { text: 'Version', sortable: false }
     ]
   },
   head(): object {
     return {
       title: this.title
-    };
-  },
-  async asyncData({ app }: NuxtContext): Promise<object> {
-    return {
-      modules: [ pkg, (await app.$axios.get(`${process.env.RAP_TAP_APP_CORE_API}/version?detail=true`)).data ]
     };
   }
 });

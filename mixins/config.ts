@@ -1,6 +1,7 @@
 /* eslint-disable no-process-env */
 export const config = Object.freeze({
   coreApiEndpoint: process.env.RAP_TAP_APP_CORE_API,
+  skywayApiKey: process.env.SKYWAY_API_KEY,
   firebase: {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,

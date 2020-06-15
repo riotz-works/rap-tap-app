@@ -2,10 +2,10 @@
   <section>
     <v-container grid-list-md>
 
-    <v-snackbar
-        v-model  ="copyURLSnackbar.show"
-        :timeout ="copyURLSnackbar.timeout"
-        :top     ="copyURLSnackbar.align_y === 'top'"
+      <v-snackbar
+        v-model="copyURLSnackbar.show"
+        :timeout="copyURLSnackbar.timeout"
+        :top="copyURLSnackbar.align_y === 'top'"
       >
         {{ copyURLSnackbar.text }}
         <v-btn
@@ -28,17 +28,18 @@
                 <v-icon>open_in_browser</v-icon>
               </v-chip>
             </v-card-title>
-            <canvas id="rapper-qr-code"></canvas>
+            <canvas id="rapper-qr-code" />
             <v-card-actions>
               <v-text-field
-                readonly
                 id="rapper-copy-url"
+                readonly
                 label="URL"
                 append-icon="file_copy"
-                @click:append="copyRapperRoomUrl"
                 :value="rapperUrl"
                 persistent-hint
-                hint="Copy this link to the battle room"></v-text-field>
+                hint="Copy this link to the battle room"
+                @click:append="copyRapperRoomUrl"
+              />
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -55,17 +56,18 @@
                 <v-icon>open_in_browser</v-icon>
               </v-chip>
             </v-card-title>
-            <canvas id="watcher-qr-code"></canvas>
+            <canvas id="watcher-qr-code" />
             <v-card-actions>
               <v-text-field
-                readonly
                 id="watcher-copy-url"
+                readonly
                 label="URL"
                 append-icon="file_copy"
-                @click:append="copyWatcherRoomUrl"
                 :value="watcherUrl"
                 persistent-hint
-                hint="Copy this link to the battle room"></v-text-field>
+                hint="Copy this link to the battle room"
+                @click:append="copyWatcherRoomUrl"
+              />
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -85,11 +87,45 @@ export default Vue.extend({
   data: (): object => ({
     copyURLSnackbar: {
       show: false,
-      align_y: 'top',
       timeout: 5000,
       text: ''
     }
   }),
+
+  computed: {
+    roomId(): string {
+      return this.$route.query.roomId;
+    },
+    roomName(): string {
+      return this.$route.query.roomName;
+    },
+    roomParam(): string {
+      return `roomId=${this.roomId}&roomName=${this.roomName}`;
+    },
+    rapperUrl(): string {
+      return location.hostname === 'localhost'
+        ? `http://${location.hostname}:${location.port}/enter/?mode=rapper&${this.roomParam}`
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${this.roomParam}`;
+    },
+    watcherUrl(): string {
+      return location.hostname === 'localhost'
+        ? `http://${location.hostname}:${location.port}/enter/?mode=watcher&${this.roomParam}`
+        : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`;
+    }
+  },
+
+  mounted(): void {
+    const rapperCanvas = document.getElementById('rapper-qr-code');
+    const watcherCanvas = document.getElementById('watcher-qr-code');
+    const qrCodeOptions = {
+      errorCorrectionLevel: 'H',
+      scale: 5,
+      width: 250
+    };
+
+    QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
+    QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);
+  },
 
   methods: {
     copyRapperRoomUrl(): void {
@@ -112,42 +148,6 @@ export default Vue.extend({
     openEnterPageForWatcher(): void {
       this.$router.push({ path: '/enter', query: { mode: 'watcher', roomId: this.roomId, roomName: this.roomName }});
     }
-  },
-
-  computed: {
-    roomId(): string {
-      return this.$route.query.roomId;
-    },
-    roomName(): string {
-      return this.$route.query.roomName;
-    },
-    roomParam(): string {
-      return `roomId=${this.roomId}&roomName=${this.roomName}`;
-    },
-    rapperUrl(): string {
-      return location.hostname === 'localhost' ?
-        `http://${location.hostname}:${location.port}/enter/?mode=rapper&${this.roomParam}`
-        : `https://${location.hostname}/rap-tap-app/enter/?mode=rapper&${this.roomParam}`;
-    },
-    watcherUrl(): string {
-      return location.hostname === 'localhost' ?
-        `http://${location.hostname}:${location.port}/enter/?mode=watcher&${this.roomParam}`
-        : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`;
-    }
-
-  },
-
-  mounted(): void {
-    const rapperCanvas = document.getElementById('rapper-qr-code');
-    const watcherCanvas = document.getElementById('watcher-qr-code');
-    const qrCodeOptions = {
-      errorCorrectionLevel: 'H',
-      scale: 5,
-      width: 250
-    };
-
-    QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
-    QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);
   }
 });
 
