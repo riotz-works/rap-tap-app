@@ -22,8 +22,7 @@ commands:
 
 jobs:
   setup:
-    executor:
-      name: default
+    executor: default
     steps:
       - run:
           name: System information
@@ -45,21 +44,19 @@ jobs:
             - ~/.cache/yarn
       - persist
   lint:
-    executor:
-      name: default
+    executor: default
     steps:
       - attach
       - run:
           name: Lint
           command: |
-            yarn lint --format junit --output-file ./reports/eslint/results.xml
+            yarn lint --format junit --output-file reports/eslint/results.xml
       - store_artifacts:
-          path: ./reports
+          path: reports
       - store_test_results:
-          path: ./reports
+          path: reports
   build:
-    executor:
-      name: default
+    executor: default
     steps:
       - attach
       - run:
@@ -67,18 +64,16 @@ jobs:
           command: |
             yarn build
       - store_artifacts:
-          path: ./dist
+          path: dist
       - persist
   deploy:
-    executor:
-      name: default
+    executor: default
     steps:
       - attach
       - add_ssh_keys:
           fingerprints:
             - "b2:63:c2:77:fe:82:48:8d:10:28:f8:ae:b7:1f:57:52"
-      - run:
-          name: Deploy
+      - deploy:
           command: |
             ssh-keyscan github.com >> ~/.ssh/known_hosts
             git config --global user.name "CircleCI"
