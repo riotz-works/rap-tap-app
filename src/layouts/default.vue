@@ -20,7 +20,7 @@
 
     <v-footer app class="footer" height="18px">
       <v-spacer />
-      <small>© Since 2018 <a href="https://riotz.works">Riotz Works</a>.</small>
+      <small>© Since 2018 <a href="https://riotz.works">Riotz.works</a>.</small>
     </v-footer>
   </v-app>
 </template>
