@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
 
-    // Specific settings for this project
+    /* Specific settings for this project */
     "allowJs": true,                          /* Allow javascript files to be compiled. */
     "outDir": "dist",                         /* Redirect output structure to the directory. */
     "noImplicitAny": false,                   /* Raise error on expressions and declarations with an implied 'any' type. */
