@@ -62,7 +62,7 @@ module.exports = {
     }
   },
   dotenv: {
-    path: './'
+    path: '.'
   },
   sitemap: {
     hostname: `${pkg.appHost}/${pkg.name}`
