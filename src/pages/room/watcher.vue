@@ -74,16 +74,15 @@
 <script lang="ts">
 /* eslint-disable id-length */  // 'cuz to handle screen sequential numbering of rappers
 import { AxiosResponse } from 'axios';
-import firebase from 'firebase';
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import { DataSnapshot } from '@firebase/database-types';
 import Chat from '~/components/chat.vue';
 import { config } from '~/mixins/config';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 interface Rapper { peerId: string }
 interface SkywayMediaStream extends MediaStream { peerId: string }
-type Snapshot = firebase.database.DataSnapshot | null;
 
 
 export default Vue.extend({
@@ -151,7 +150,7 @@ export default Vue.extend({
             this.rappers.A.peerId = rapper.peerId;
             this.rappers.A.nickname = rapper.nickname;
 
-            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.A.peerId}/feedback`).on('value', (snapshot: DataSnapshot) => {
               if (snapshot && snapshot.val()) {
                 this.rappers.A.feedback = snapshot.val();
               }
@@ -164,7 +163,7 @@ export default Vue.extend({
             this.rappers.B.peerId = rapper.peerId;
             this.rappers.B.nickname = rapper.nickname;
 
-            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.B.peerId}/feedback`).on('value', (snapshot: DataSnapshot) => {
               if (snapshot && snapshot.val()) {
                 this.rappers.B.feedback = snapshot.val();
               }

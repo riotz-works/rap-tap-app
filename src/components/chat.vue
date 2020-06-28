@@ -38,11 +38,10 @@
 </template>
 
 <script lang="ts">
-
+import { DataSnapshot } from '@firebase/database-types';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
-type Snapshot = firebase.database.DataSnapshot | null;
 
 interface ChatComponentData {
   chatCount: number;
@@ -66,7 +65,7 @@ export default Vue.extend({
   }),
 
   mounted(): void {
-    RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: Snapshot) => {
+    RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: DataSnapshot) => {
       if (snapshot && snapshot.val()) {
         const data = snapshot.val();
         this.chats.push({ id: `chatid-${this.chatCount + 1}`, nickname: data.name, content: data.content });

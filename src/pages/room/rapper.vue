@@ -79,13 +79,13 @@
 import { AxiosResponse } from 'axios';
 import Peer from 'skyway-js';
 import Vue from 'vue';
+import { DataSnapshot } from '@firebase/database-types';
 import Chat from '~/components/chat.vue';
 import { config } from '~/mixins/config';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 interface Rapper { peerId: string }
 interface SkywayMediaStream extends MediaStream { peerId: string }
-type Snapshot = firebase.database.DataSnapshot | null;
 
 
 export default Vue.extend({
@@ -145,7 +145,7 @@ export default Vue.extend({
       this.rappers.competitor.peerId = competitor.peerId;
     });
 
-    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+    RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.me.peerId}/feedback`).on('value', (snapshot: DataSnapshot) => {
       if (snapshot && snapshot.val()) {
         this.rappers.me.feedback = snapshot.val();
       }
@@ -177,7 +177,7 @@ export default Vue.extend({
             this.rappers.competitor.nickname = competitor.nickname;
             this.rappers.competitor.peerId = competitor.peerId;
 
-            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.competitor.peerId}/feedback`).on('value', (snapshot: Snapshot) => {
+            RealtimeDB.ref(`/rooms/${this.roomId}/rappers/${this.rappers.competitor.peerId}/feedback`).on('value', (snapshot: DataSnapshot) => {
               console.debug('on competitor feedback value: ', snapshot ? snapshot.val() : snapshot);
               if (snapshot && snapshot.val()) {
                 this.rappers.competitor.feedback = snapshot.val();
