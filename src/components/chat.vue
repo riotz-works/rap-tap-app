@@ -64,7 +64,7 @@ export default Vue.extend({
   methods: {
     sendChatMessage(): void {
       RealtimeDB.ref(`/rooms/${this.roomId}/messages`).push({
-        name:    this.myNickname,
+        name: this.myNickname,
         content: this.chatInputMessage
       });
       this.chatInputMessage = '';

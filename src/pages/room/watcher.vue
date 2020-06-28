@@ -88,7 +88,7 @@ export default Vue.extend({
   components: { Chat },
   data: () => ({
     roomState: 'wating', // Possible values are "wating | started"
-    peer:          undefined,
+    peer: undefined,
     rapperStreamA: undefined,
     rapperStreamB: undefined,
     rappers: {
@@ -179,7 +179,7 @@ export default Vue.extend({
   methods: {
     sendMessage(): void {
       RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
-        name:    this.nickname,
+        name: this.nickname,
         content: this.chatMessage
       });
       this.chatMessage = '';

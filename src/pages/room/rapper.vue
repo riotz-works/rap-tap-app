@@ -109,7 +109,7 @@ export default Vue.extend({
         }
       }
     },
-    peer:     undefined,
+    peer: undefined,
     // コンポーネント外出したい
     chatCount: 0,
     chats: [],
@@ -182,7 +182,7 @@ export default Vue.extend({
     },
     sendMessage(): void {
       RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
-        name:    this.rappers.me.nickname,
+        name: this.rappers.me.nickname,
         content: this.chatMessage
       });
       this.chatMessage = '';

@@ -36,7 +36,7 @@ export default Vue.extend({
   computed: {
     title: (): string => 'About',
     headers: (): object => [
-      { text: '#', sortable: false, width:  '24px' },
+      { text: '#', sortable: false, width: '24px' },
       { text: 'Module Name', sortable: false, width: '240px' },
       { text: 'Version', sortable: false }
     ]

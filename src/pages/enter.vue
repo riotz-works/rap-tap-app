@@ -70,7 +70,7 @@ export default Vue.extend({
         this.isSubmitted = true;
 
         const mode = this.$route.query.mode;
-        const roomId   = this.$route.query.roomId;
+        const roomId = this.$route.query.roomId;
         const roomName = this.$route.query.roomName;
         const nickname = this.nickname;
         const peerId = `${roomId}-${Math.random().toString(36).slice(-4)}`;
