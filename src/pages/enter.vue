@@ -42,13 +42,11 @@
 
 
 <script lang="ts">
-
 import { AxiosResponse } from 'axios';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
-
   data: () => ({
     isSubmitted: false,
     valid: true,
@@ -62,14 +60,11 @@ export default Vue.extend({
       watcher: '観戦'
     }
   }),
-
   methods: {
-
     getMode(): string {
       const mode = this.$route.query.mode;
       return this.modes[mode] || '対戦';
     },
-
     async submit(): Promise<void> {
       if (!this.isSubmitted && this.$refs.form.validate()) {
         this.isSubmitted = true;

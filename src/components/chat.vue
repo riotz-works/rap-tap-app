@@ -5,13 +5,11 @@
     <v-layout row>
       <v-flex xs12 class="chat-content-flex">
         <v-card class="chat-contents transparent-panel">
-
           <div v-for="chat of chats" :key="chat.id">
             <v-chip label color="pink" text-color="white">
               {{ chat.nickname }}
             </v-chip>{{ chat.content }}
           </div>
-
         </v-card>
       </v-flex>
     </v-layout>
@@ -37,28 +35,23 @@
   </section>
 </template>
 
+
 <script lang="ts">
 import { DataSnapshot } from '@firebase/database-types';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
-
-
 export default Vue.extend({
-
   name: 'Chat',
-
   props: {
     roomId: { type: String, required: true },
     myNickname: { type: String, required: true }
   },
-
   data: () => ({
     chatCount: 0,
     chats: [],
     chatInputMessage: ''
   }),
-
   mounted(): void {
     RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: DataSnapshot) => {
       if (snapshot && snapshot.val()) {
@@ -68,7 +61,6 @@ export default Vue.extend({
       }
     });
   },
-
   methods: {
     sendChatMessage(): void {
       RealtimeDB.ref(`/rooms/${this.roomId}/messages`).push({
@@ -79,11 +71,10 @@ export default Vue.extend({
     }
   }
 });
-
 </script>
 
-<style scoped>
 
+<style scoped>
 .chat-contents {
   max-height: 200px;
   overflow: scroll;
@@ -96,5 +87,4 @@ export default Vue.extend({
 .chat-input-flex {
   margin: 0.2em;
 }
-
 </style>

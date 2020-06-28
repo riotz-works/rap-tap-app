@@ -6,6 +6,5 @@ export default (_context: NuxtContext, inject: (key: string, value: object) => v
   const client = axios.create({
     baseURL: config.coreApiEndpoint
   });
-
   inject('coreApi', client);
 };

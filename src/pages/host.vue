@@ -83,7 +83,6 @@ import QRCode from 'qrcode';
 import Vue from 'vue';
 
 export default Vue.extend({
-
   data: () => ({
     copyURLSnackbar: {
       show: false,
@@ -91,7 +90,6 @@ export default Vue.extend({
       text: ''
     }
   }),
-
   computed: {
     roomId(): string {
       return this.$route.query.roomId;
@@ -113,7 +111,6 @@ export default Vue.extend({
         : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`;
     }
   },
-
   mounted(): void {
     const rapperCanvas = document.getElementById('rapper-qr-code');
     const watcherCanvas = document.getElementById('watcher-qr-code');
@@ -126,7 +123,6 @@ export default Vue.extend({
     QRCode.toCanvas(rapperCanvas, this.rapperUrl, qrCodeOptions);
     QRCode.toCanvas(watcherCanvas, this.watcherUrl, qrCodeOptions);
   },
-
   methods: {
     copyRapperRoomUrl(): void {
       (document.getElementById('rapper-copy-url') as HTMLInputElement).select();
@@ -155,11 +151,9 @@ export default Vue.extend({
 
 
 <style scoped>
-
 .host-btn {
   font-weight: 600;
   margin: 0.5em 0;
   width: 100%;
 }
-
 </style>

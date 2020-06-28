@@ -1,5 +1,6 @@
 <template>
   <v-app dark :style="wallpaper()">
+
     <v-toolbar app flat height="36px">
       <v-toolbar-title class="title">
         <router-link to="/">
@@ -22,6 +23,7 @@
       <v-spacer />
       <small>© Since 2018 <a href="https://riotz.works">Riotz.works</a>.</small>
     </v-footer>
+
   </v-app>
 </template>
 
@@ -32,7 +34,6 @@ import { config } from '~/mixins/config';
 
 const home = require('~/assets/image/wallpaper-top.jpg');
 const room = require('~/assets/image/wallpaper-room.jpg');
-
 
 export default Vue.extend({
   data: () => ({

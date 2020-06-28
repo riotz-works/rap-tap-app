@@ -87,15 +87,10 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 interface Rapper { peerId: string }
 interface SkywayMediaStream extends MediaStream { peerId: string }
 
-
 export default Vue.extend({
-
   components: { Chat },
-
   data: () => ({
-
     roomState: 'entered', // Possible values are "entered | connecting | waiting | fighting"
-
     rappers: {
       me: {
         nickname: 'Waiting...',
@@ -114,15 +109,12 @@ export default Vue.extend({
         }
       }
     },
-
     peer:     undefined,
-
     // コンポーネント外出したい
     chatCount: 0,
     chats: [],
     chatMessage: ''
   }),
-
   computed: {
     roomId(): string {
       return this.$route.query.roomId;
@@ -134,7 +126,6 @@ export default Vue.extend({
       return this.$route.query.nickname;
     }
   },
-
   mounted(): void {
     this.rappers.me.nickname = this.$route.query.nickname;
     this.rappers.me.peerId = this.$route.query.peerId;
@@ -153,7 +144,6 @@ export default Vue.extend({
 
     this.peer = new Peer(this.rappers.me.peerId, { key: config.skywayApiKey, debug: 3 });
   },
-
   methods: {
     onStart(): void {
       this.roomState = 'connecting';
@@ -190,7 +180,6 @@ export default Vue.extend({
         });
       });
     },
-
     sendMessage(): void {
       RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/messages`).push({
         name:    this.rappers.me.nickname,
@@ -204,7 +193,6 @@ export default Vue.extend({
 
 
 <style scoped>
-
 .battle-movie {
   width: 100%;
   height: 280px;
@@ -218,5 +206,4 @@ export default Vue.extend({
 .margin-0-2 {
   margin: 0.2em;
 }
-
 </style>

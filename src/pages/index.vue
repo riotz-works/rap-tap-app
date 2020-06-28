@@ -21,7 +21,6 @@ import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
-
   methods: {
     onHost(): void {
       this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: AxiosResponse) => RealtimeDB
