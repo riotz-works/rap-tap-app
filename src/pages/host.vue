@@ -111,7 +111,7 @@ export default Vue.extend({
         : `https://${location.hostname}/rap-tap-app/enter/?mode=watcher&${this.roomParam}`;
     }
   },
-  mounted(): void {
+  mounted() {
     const rapperCanvas = document.getElementById('rapper-qr-code');
     const watcherCanvas = document.getElementById('watcher-qr-code');
     const qrCodeOptions = {

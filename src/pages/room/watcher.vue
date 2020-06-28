@@ -123,7 +123,7 @@ export default Vue.extend({
       return this.$route.query.nickname;
     }
   },
-  mounted(): void {
+  mounted() {
     this.peer = new Peer({ key: config.skywayApiKey, debug: 3 });
 
     this.peer.on('open', () => {

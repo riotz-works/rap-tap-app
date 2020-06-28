@@ -126,7 +126,7 @@ export default Vue.extend({
       return this.$route.query.nickname;
     }
   },
-  mounted(): void {
+  mounted() {
     this.rappers.me.nickname = this.$route.query.nickname;
     this.rappers.me.peerId = this.$route.query.peerId;
     this.roomState = 'entered';

@@ -52,7 +52,7 @@ export default Vue.extend({
     chats: [],
     chatInputMessage: ''
   }),
-  mounted(): void {
+  mounted() {
     RealtimeDB.ref(`/rooms/${this.roomId}/messages`).on('child_added', (snapshot: DataSnapshot) => {
       if (snapshot && snapshot.val()) {
         const data = snapshot.val();
