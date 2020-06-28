@@ -37,8 +37,8 @@
 
 
 <script lang="ts">
-import { DataSnapshot } from '@firebase/database-types';
 import Vue from 'vue';
+import { DataSnapshot } from '@firebase/database-types';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
