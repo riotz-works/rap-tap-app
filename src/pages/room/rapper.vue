@@ -84,8 +84,8 @@ import Chat from '~/components/chat.vue';
 import { config } from '~/mixins/config';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
-interface Rapper { peerId: string }
-interface SkywayMediaStream extends MediaStream { peerId: string }
+type Rapper = { peerId: string };
+type SkywayMediaStream = { peerId: string } & MediaStream;
 
 export default Vue.extend({
   components: { Chat },
