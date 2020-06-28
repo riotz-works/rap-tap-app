@@ -49,7 +49,7 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 export default Vue.extend({
 
-  data: (): object => ({
+  data: () => ({
     isSubmitted: false,
     valid: true,
     nickname: '',

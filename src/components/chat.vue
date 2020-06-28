@@ -43,11 +43,6 @@ import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
 
-interface ChatComponentData {
-  chatCount: number;
-  chats: Array<{ id: string; nickname: string; content: string }>;
-  chatInputMessage: string;
-}
 
 export default Vue.extend({
 
@@ -58,7 +53,7 @@ export default Vue.extend({
     myNickname: { type: String, required: true }
   },
 
-  data: (): ChatComponentData => ({
+  data: () => ({
     chatCount: 0,
     chats: [],
     chatInputMessage: ''

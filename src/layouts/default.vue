@@ -35,7 +35,7 @@ const room = require('~/assets/image/wallpaper-room.jpg');
 
 
 export default Vue.extend({
-  data: (): object => ({
+  data: () => ({
     displayName: config.displayName
   }),
   methods: {

@@ -84,7 +84,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
 
-  data: (): object => ({
+  data: () => ({
     copyURLSnackbar: {
       show: false,
       timeout: 5000,
