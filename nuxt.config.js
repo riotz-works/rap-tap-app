@@ -4,6 +4,9 @@
 const axiosRetry = require('axios-retry');
 const pkg = require('./package.json');
 
+const production = process.env.NODE_ENV === 'production';
+
+
 module.exports = {
   mode: 'spa',
   target: 'static',
@@ -13,7 +16,14 @@ module.exports = {
   },
   build: {
     publicPath: '/static/',
-    hardSource: process.env.NODE_ENV !== 'production'
+    hardSource: !production,
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: production
+        }
+      }
+    }
   },
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
