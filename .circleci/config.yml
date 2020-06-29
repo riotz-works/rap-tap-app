@@ -106,6 +106,7 @@ workflows:
       - export:
           context: rap-tap-app
           requires:
+            - lint
             - build
       - deploy:
           context: rap-tap-app
