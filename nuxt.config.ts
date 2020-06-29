@@ -1,8 +1,8 @@
 /* eslint-disable no-process-env */                 // 'cuz configuration file and requires environment variables
 /* eslint-disable nuxt/no-cjs-in-config */          // 'cuz it conflicts with compiler
 /* eslint-disable @typescript-eslint/camelcase */   // 'cuz key name of configuration is specified
-const axiosRetry = require('axios-retry');
-const pkg = require('./package.json');
+import axiosRetry from 'axios-retry';
+import pkg from './package.json';
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   head: {
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
+    titleTemplate: (titleChunk: string): string => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
   },
   meta: {
     ogHost: pkg.appHost
