@@ -6,13 +6,13 @@ const pkg = require('./package.json');
 
 module.exports = {
   mode: 'spa',
+  target: 'static',
   srcDir: 'src/',
   router: {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },
   build: {
-    publicPath: '/static/',
-    vendor: [ 'axios', 'vuetify' ]
+    publicPath: '/static/'
   },
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
@@ -36,14 +36,16 @@ module.exports = {
   css: [
     '@/assets/css/style.scss'
   ],
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/vuetify',
+    [ '@nuxtjs/google-analytics', { id: 'UA-109297390-1' }]
+  ],
   modules: [
-    [ '@nuxtjs/axios' ],
-    [ '@nuxtjs/dotenv' ],
-    [ '@nuxtjs/google-analytics', { id: 'UA-109297390-1' }],
-    [ '@nuxtjs/pwa' ],
-    [ '@nuxtjs/sitemap' ],
-    [ '@nuxtjs/vuetify' ],
-    [ '~/modules/typescript.js' ]
+    '@nuxtjs/axios'
   ],
   plugins: [
     { src: '~/plugins/core-api', ssr: false }

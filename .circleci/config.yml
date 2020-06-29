@@ -64,6 +64,17 @@ jobs:
           command: |
             yarn build
       - store_artifacts:
+          path: .nuxt
+      - persist
+  export:
+    executor: default
+    steps:
+      - attach
+      - run:
+          name: Export
+          command: |
+            yarn export
+      - store_artifacts:
           path: dist
       - persist
   deploy:
@@ -92,6 +103,10 @@ workflows:
           context: rap-tap-app
           requires:
             - setup
+      - export:
+          context: rap-tap-app
+          requires:
+            - build
       - deploy:
           context: rap-tap-app
           requires:
