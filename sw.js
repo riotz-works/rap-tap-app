@@ -2,8 +2,8 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.2b34119.js",
-    "revision": "a86721dd96d61a47032ad36cbf4c6d0f"
+    "url": "/rap-tap-app/static/app.4c517a8.js",
+    "revision": "91da1d7f003e0c8b94427383763cec07"
   },
   {
     "url": "/rap-tap-app/static/commons.app.b083936.js",
