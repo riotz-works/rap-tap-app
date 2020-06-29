@@ -12,7 +12,8 @@ module.exports = {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },
   build: {
-    publicPath: '/static/'
+    publicPath: '/static/',
+    hardSource: process.env.NODE_ENV !== 'production'
   },
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'
