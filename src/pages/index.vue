@@ -46,7 +46,7 @@ export default Vue.extend({
 }
 
 .warning {
-  font-size: smaller;
+  font-size: small;
   background-color: rgba(0, 0, 0, 0) !important;
 }
 </style>
