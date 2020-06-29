@@ -45,6 +45,7 @@
     /* Type declaration files to be included in compilation. */
     "types": [
       "@types/node",
+      "@nuxt/types",
       "vue-meta"
     ]
   }
