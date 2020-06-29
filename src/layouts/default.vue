@@ -4,7 +4,7 @@
     <v-toolbar app flat height="36px">
       <v-toolbar-title class="title">
         <router-link to="/">
-          <img src="@/static/icon.png">
+          <img src="@/static/icon.png" :alt="displayName">
           <span class="neon">{{ displayName }}</span>
         </router-link>
       </v-toolbar-title>
