@@ -4,7 +4,7 @@ executors:
   default:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node
+      - image: circleci/node:latest-browsers
     environment:
       TZ: /usr/share/zoneinfo/Asia/Tokyo
 
@@ -77,6 +77,16 @@ jobs:
       - store_artifacts:
           path: dist
       - persist
+  lhci:
+    executor: default
+    steps:
+      - attach
+      - run:
+          name: Lighthouse
+          command: |
+            yarn lhci --upload.target=filesystem --upload.outputDir=reports/lighthouse
+      - store_artifacts:
+          path: reports
   deploy:
     executor: default
     steps:
@@ -108,6 +118,9 @@ workflows:
           requires:
             - lint
             - build
+      - lhci:
+          requires:
+            - export
       - deploy:
           context: rap-tap-app
           requires:

@@ -15,7 +15,7 @@ module.exports = {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },
   build: {
-    publicPath: '/static/',
+    publicPath: '/static',
     hardSource: !production,
     terser: {
       terserOptions: {
@@ -24,6 +24,9 @@ module.exports = {
         }
       }
     }
+  },
+  generate: {
+    dir: `dist/${pkg.name}`
   },
   head: {
     titleTemplate: (titleChunk: string): string => titleChunk ? `${titleChunk} | 'ラップ、タップ、アップ 🎶'` : 'ラップ、タップ、アップ 🎶'

@@ -1,5 +1,6 @@
 src/static/sw.js
 src/static/sitemap*
+.lighthouseci
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/node

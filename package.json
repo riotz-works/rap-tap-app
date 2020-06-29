@@ -7,14 +7,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "clean": "rimraf node_modules/.cache .nuxt dist src/static/sw.js src/static/sitemap.xml*",
+    "clean": "rimraf node_modules/.cache .nuxt dist src/static/sw.js src/static/sitemap.xml* .lighthouseci",
     "setup": "yarn install --ignore-optional",
     "dev": "nuxt-ts",
     "build": "cross-env DEPLOY_ENV=GH_PAGES nuxt-ts build",
     "export": "nuxt-ts export",
     "lint": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
     "lint:fix": "yarn lint --fix",
-    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'",
+    "lhci": "lhci autorun --output json --output html",
+    "deploy": "gh-pages -d dist/rap-tap-app -b master -m 'Update Site [ci skip]'",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
@@ -26,6 +27,7 @@
     "skyway-js": "^1.4.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.4.2",
     "@nuxt/typescript-build": "^1.0.3",
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/axios": "^5.11.0",
