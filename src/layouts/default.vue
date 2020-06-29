@@ -9,8 +9,6 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer />
-      <v-btn flat fab color="black" class="no-margin"><v-icon>notifications_none</v-icon></v-btn>
-      <v-btn flat fab color="black" class="no-margin"><v-icon>settings</v-icon></v-btn>
     </v-toolbar>
 
     <v-content>
