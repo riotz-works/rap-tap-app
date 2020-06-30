@@ -24,7 +24,7 @@
     "@firebase/auth": "^0.14.7",
     "@firebase/database": "^0.6.6",
     "qrcode": "^1.4.4",
-    "skyway-js": "^1.4.0"
+    "skyway-js": "^3.0.1"
   },
   "devDependencies": {
     "@lhci/cli": "^0.4.2",
