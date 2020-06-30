@@ -1,13 +1,14 @@
 /* eslint-disable no-process-env */                 // 'cuz configuration file and requires environment variables
 /* eslint-disable nuxt/no-cjs-in-config */          // 'cuz it conflicts with compiler
 /* eslint-disable @typescript-eslint/camelcase */   // 'cuz key name of configuration is specified
-import axiosRetry from 'axios-retry';
+import { fail } from 'assert';
+import { Configuration } from '@nuxt/types';
 import pkg from './package.json';
 
 const production = process.env.NODE_ENV === 'production';
 
 
-module.exports = {
+const config: Configuration = {
   mode: 'spa',
   target: 'static',
   srcDir: 'src/',
@@ -66,17 +67,14 @@ module.exports = {
     { src: '~/plugins/core-api', ssr: false }
   ],
   env: {
-    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
-    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
-    FIREBASE_REALTIME_DATABASE_URL: process.env.FIREBASE_REALTIME_DATABASE_URL,
-    RAP_TAP_APP_CORE_API: process.env.RAP_TAP_APP_CORE_API,
-    SKYWAY_API_KEY: process.env.SKYWAY_API_KEY
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY || fail(),
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN || fail(),
+    FIREBASE_REALTIME_DATABASE_URL: process.env.FIREBASE_REALTIME_DATABASE_URL || fail(),
+    RAP_TAP_APP_CORE_API: process.env.RAP_TAP_APP_CORE_API || fail(),
+    SKYWAY_API_KEY: process.env.SKYWAY_API_KEY || fail()
   },
   axios: {
-    retry: {
-      retries: 3,
-      retryDelay: axiosRetry.exponentialDelay
-    }
+    retry: true
   },
   dotenv: {
     path: '.'
@@ -108,3 +106,5 @@ module.exports = {
     ]
   }
 };
+
+export default config;
