@@ -12,8 +12,12 @@
     "dev": "nuxt-ts",
     "build": "cross-env DEPLOY_ENV=GH_PAGES nuxt-ts build",
     "export": "nuxt-ts export",
-    "lint": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
-    "lint:fix": "yarn lint --fix",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lint:js": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
+    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint:fix": "yarn lint:fix:js && yarn lint:fix:style",
+    "lint:fix:js": "yarn lint:js --fix",
+    "lint:fix:style": "yarn lint:style --fix",
     "lhci": "lhci autorun --output json --output html",
     "deploy": "gh-pages -d dist/rap-tap-app -b master -m 'Update Site [ci skip]'",
     "contributors:add": "all-contributors add",
@@ -47,7 +51,12 @@
     "gh-pages": "^3.1.0",
     "nuxt": "^2.13.2",
     "sass": "^1.26.9",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0"
   },
   "browserslist": [
     "> 1%",
