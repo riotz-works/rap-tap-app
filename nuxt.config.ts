@@ -11,6 +11,7 @@ module.exports = {
   mode: 'spa',
   target: 'static',
   srcDir: 'src/',
+  components: true,
   router: {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? `/${pkg.name}/` : '/'
   },

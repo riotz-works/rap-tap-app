@@ -77,7 +77,6 @@ import { AxiosResponse } from 'axios';
 import Peer from 'skyway-js';
 import Vue from 'vue';
 import { DataSnapshot } from '@firebase/database-types';
-import Chat from '~/components/chat.vue';
 import { config } from '~/mixins/config';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
 
@@ -85,7 +84,6 @@ type Rapper = { peerId: string };
 type SkywayMediaStream = { peerId: string } & MediaStream;
 
 export default Vue.extend({
-  components: { Chat },
   data: () => ({
     roomState: 'wating', // Possible values are "wating | started"
     peer: undefined,
