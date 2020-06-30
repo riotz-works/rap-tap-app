@@ -210,8 +210,8 @@ export default Vue.extend({
 }
 
 .display-label {
-  margin: 0.5em 0;
   width: 100%;
+  margin: 0.5em 0;
 }
 
 .margin-0-2 {

@@ -72,6 +72,7 @@ nav {
   font-size: medium;
   font-weight: bold;
 }
+
 .title img {
   width: 28px;
   margin-top: 4px;
@@ -79,11 +80,12 @@ nav {
 }
 
 .footer {
-  background-color: rgba(0, 0, 0, 0) !important;
-  padding-right: 4px;
   min-height: 0;
+  padding-right: 4px;
   text-align: right;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
+
 .footer a {
   color: #fff;
 }

@@ -40,9 +40,9 @@ export default Vue.extend({
 
 <style scoped>
 .host-btn {
-  font-weight: 600;
-  margin: 0.5em 0;
   width: 100%;
+  margin: 0.5em 0;
+  font-weight: 600;
 }
 
 .warning {
