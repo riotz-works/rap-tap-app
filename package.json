@@ -40,7 +40,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/vuetify": "^0.5.7",
-    "@types/node": "^14.0.18",
+    "@types/node": "^14.0.19",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "all-contributors-cli": "^6.16.1",
