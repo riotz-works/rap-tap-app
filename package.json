@@ -19,7 +19,7 @@
     "lint:fix:js": "yarn lint:js --fix",
     "lint:fix:style": "yarn lint:style --fix",
     "lhci": "lhci autorun --output json --output html",
-    "deploy": "gh-pages -d dist/rap-tap-app -b master -m 'Update Site [ci skip]'",
+    "deploy": "gh-pages -t -d dist/rap-tap-app -b master -m 'Update Site [ci skip]'",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
