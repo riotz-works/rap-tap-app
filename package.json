@@ -24,7 +24,7 @@
     "contributors:generate": "all-contributors generate"
   },
   "dependencies": {
-    "@firebase/app": "^0.6.7",
+    "@firebase/app": "^0.6.8",
     "@firebase/auth": "^0.14.7",
     "@firebase/database": "^0.6.6",
     "qrcode": "^1.4.4",
