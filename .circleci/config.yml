@@ -24,6 +24,8 @@ commands:
       - add_ssh_keys:
           fingerprints:
             - "b2:63:c2:77:fe:82:48:8d:10:28:f8:ae:b7:1f:57:52"
+      - run:
+          command: ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 jobs:
   setup:
@@ -93,18 +95,12 @@ jobs:
           path: reports
   deploy:
     executor: default
-    parameters:
-      stage:
-        type: enum
-        enum: [ "none", "dev" ]
     steps:
       - attach
       - ssh_keys
       - deploy:
           command: |
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-            DRYRUN=
-            yarn deploy -u "`git --no-pager show -s --format='%cn <%ce>' HEAD`" `[ "<< parameters.stage >>" = "none" ] && echo " -n"`
+            yarn deploy -u "`git --no-pager show -s --format='%cn <%ce>' HEAD`"
 
 
 workflows:
@@ -127,15 +123,6 @@ workflows:
           requires:
             - export
       - deploy:
-          stage: none
-          context: rap-tap-app
-          requires:
-            - export
-          filters:
-            branches:
-              ignore: source
-      - deploy:
-          stage: dev
           context: rap-tap-app
           requires:
             - export
