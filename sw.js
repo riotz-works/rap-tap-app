@@ -18,8 +18,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "dedee60b8fe1e21102c4e75b9afe4a54"
   },
   {
-    "url": "/rap-tap-app/static/pages/about.167ed9a.js",
-    "revision": "a54acc059d3754ded17728d6828183d0"
+    "url": "/rap-tap-app/static/pages/about.ba7ed4e.js",
+    "revision": "ec599f64195628e33f12d6de680ae7f6"
   },
   {
     "url": "/rap-tap-app/static/pages/enter.76375bc.js",
@@ -42,8 +42,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "368bf259caeb4a3c6efcef9a19f5be9a"
   },
   {
-    "url": "/rap-tap-app/static/runtime.15ec1f0.js",
-    "revision": "fa03c31d75493663f700c791964b7daa"
+    "url": "/rap-tap-app/static/runtime.86db4b0.js",
+    "revision": "bf3b5eca826c33beedc0ca41fe063ec2"
   },
   {
     "url": "/rap-tap-app/static/vendors~app.3410368.js",
