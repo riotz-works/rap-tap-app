@@ -95,12 +95,16 @@ jobs:
           path: reports
   deploy:
     executor: default
+    parameters:
+      stage:
+        type: enum
+        enum: [ "none", "dev" ]
     steps:
       - attach
       - ssh_keys
       - deploy:
           command: |
-            yarn deploy -u "`git --no-pager show -s --format='%cn <%ce>' HEAD`"
+            yarn deploy -u "`git --no-pager show -s --format='%cn <%ce>' HEAD`" `[ "<< parameters.stage >>" = "none" ] && echo " -n"`
 
 
 workflows:
@@ -123,6 +127,15 @@ workflows:
           requires:
             - export
       - deploy:
+          stage: none
+          context: rap-tap-app
+          requires:
+            - export
+          filters:
+            branches:
+              ignore: source
+      - deploy:
+          stage: dev
           context: rap-tap-app
           requires:
             - export
