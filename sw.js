@@ -1,73 +1,35 @@
-importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
+importScripts('https://cdn.jsdelivr.net/npm/workbox-cdn@5.1.3/workbox/workbox-sw.js')
 
-workbox.precaching.precacheAndRoute([
-  {
-    "url": "/rap-tap-app/static/app.41ff742.js",
-    "revision": "90e77b735023b370925ec5cefe7824f5"
-  },
-  {
-    "url": "/rap-tap-app/static/commons/app.e53b83b.js",
-    "revision": "92f8a1ed1971305f43c3db3246cebce9"
-  },
-  {
-    "url": "/rap-tap-app/static/commons/fdb2c280.9ab4ad0.js",
-    "revision": "7e8f90aeda8f6498b0281125063f335e"
-  },
-  {
-    "url": "/rap-tap-app/static/commons/room.rapper~room.watcher.6640caa.js",
-    "revision": "fa9241678098d9f209cbaf576ce2e229"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/about.301399c.js",
-    "revision": "d14a01a931112d68aba4f8f751eacf97"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/enter.e08eeaf.js",
-    "revision": "d4cb3734eaae38ddfd30c9283b5497b3"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/host.4f4419c.js",
-    "revision": "3b84e64b01f628acfad2e9528b59d308"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/index.d484434.js",
-    "revision": "fba9d5f70ef97e5f5cc66274ab0fe9ae"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/room/rapper.52987b1.js",
-    "revision": "bed690731f059470ff7e17c4e236d745"
-  },
-  {
-    "url": "/rap-tap-app/static/pages/room/watcher.107cc29.js",
-    "revision": "13ca4012f15e1ec8f79aaa612a5fb8ac"
-  },
-  {
-    "url": "/rap-tap-app/static/runtime.5459db0.js",
-    "revision": "aea0945742933c3ce925400644617994"
-  },
-  {
-    "url": "/rap-tap-app/static/vendors~app.a4a14fb.js",
-    "revision": "906ac51bd600b6c56bc4cd7b425d8da8"
-  },
-  {
-    "url": "/rap-tap-app/static/vendors~pages/host.e897961.js",
-    "revision": "9c1df7f5afc2bcd50bb2999ede420a5d"
-  }
-], {
-  "cacheId": "rap-tap-app",
-  "directoryIndex": "/",
-  "cleanUrls": false
+// --------------------------------------------------
+// Configure
+// --------------------------------------------------
+
+// Set workbox config
+workbox.setConfig({
+  "debug": true
 })
 
-workbox.clientsClaim()
-workbox.skipWaiting()
+// Start controlling any existing clients as soon as it activates
+workbox.core.clientsClaim()
 
-workbox.routing.registerRoute(new RegExp('/rap-tap-app/static/.*'), workbox.strategies.cacheFirst({}), 'GET')
+// Skip over the SW waiting lifecycle stage
+workbox.core.skipWaiting()
 
-workbox.routing.registerRoute(new RegExp('/rap-tap-app/.*'), workbox.strategies.networkFirst({}), 'GET')
+workbox.precaching.cleanupOutdatedCaches()
 
-workbox.routing.registerRoute(new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'), workbox.strategies.cacheFirst({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+// --------------------------------------------------
+// Precaches
+// --------------------------------------------------
 
-workbox.routing.registerRoute(new RegExp('(?:.png|.gif|.jpg|.jpeg|.svg)$'), workbox.strategies.cacheFirst({"cacheExpiration":{"maxEntries":60,"maxAgeSeconds":2592000}}), 'GET')
+// Precache assets
 
-workbox.routing.registerRoute(new RegExp('https://eguv57s481.execute-api.ap-northeast-1.amazonaws.com/dev/version'), workbox.strategies.networkFirst({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+// --------------------------------------------------
+// Runtime Caching
+// --------------------------------------------------
+
+// Register route handlers for runtimeCaching
+workbox.routing.registerRoute(new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'), new workbox.strategies.CacheFirst ({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+workbox.routing.registerRoute(new RegExp('(?:.png|.gif|.jpg|.jpeg|.svg)$'), new workbox.strategies.CacheFirst ({"cacheExpiration":{"maxEntries":60,"maxAgeSeconds":2592000}}), 'GET')
+workbox.routing.registerRoute(new RegExp('https://eguv57s481.execute-api.ap-northeast-1.amazonaws.com/dev/version'), new workbox.strategies.NetworkFirst ({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+workbox.routing.registerRoute(new RegExp('/rap-tap-app/static/'), new workbox.strategies.CacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/rap-tap-app/'), new workbox.strategies.NetworkFirst ({}), 'GET')
