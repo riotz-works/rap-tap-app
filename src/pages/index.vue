@@ -23,13 +23,13 @@ import RealtimeDB from '~/plugins/firebase-realtimedb';
 export default Vue.extend({
   methods: {
     onHost(): void {
-      this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: AxiosResponse) => RealtimeDB
-        .ref(`/rooms/${res.data.roomId}`)
-        .set({
+      this.$coreApi.post('/rooms', { roomName: 'RAP_BATTLE' }).then((res: AxiosResponse) => RealtimeDB.
+        ref(`/rooms/${res.data.roomId}`).
+        set({
           messages: [],
           rappers: {}
-        })
-        .then(() => res)).then((res: AxiosResponse) => {
+        }).
+        then(() => res)).then((res: AxiosResponse) => {
         this.$router.push({ path: '/host', query: { roomId: res.data.roomId, roomName: res.data.roomName }});
       });
     }

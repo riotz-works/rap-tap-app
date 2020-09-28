@@ -42,6 +42,7 @@
 
 
 <script lang="ts">
+/* eslint-disable no-magic-numbers */
 import { AxiosResponse } from 'axios';
 import Vue from 'vue';
 import RealtimeDB from '~/plugins/firebase-realtimedb';
@@ -62,17 +63,17 @@ export default Vue.extend({
   }),
   methods: {
     getMode(): string {
-      const mode = this.$route.query.mode;
+      const { mode } = this.$route.query;
       return this.modes[mode] || '対戦';
     },
     async submit(): Promise<void> {
       if (!this.isSubmitted && this.$refs.form.validate()) {
         this.isSubmitted = true;
 
-        const mode = this.$route.query.mode;
-        const roomId = this.$route.query.roomId;
-        const roomName = this.$route.query.roomName;
-        const nickname = this.nickname;
+        const { mode } = this.$route.query;
+        const { roomId } = this.$route.query;
+        const { roomName } = this.$route.query;
+        const { nickname } = this;
         const peerId = `${roomId}-${Math.random().toString(36).slice(-4)}`;
 
         if (mode === 'rapper') {

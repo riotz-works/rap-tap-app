@@ -125,14 +125,17 @@ export default Vue.extend({
   },
   methods: {
     copyRapperRoomUrl(): void {
-      (document.getElementById('rapper-copy-url') as HTMLInputElement).select();
+
+      const element = document.getElementById('rapper-copy-url') as HTMLInputElement;
+      element.select();
       document.execCommand('copy');
 
       this.copyURLSnackbar.text = '対戦者ルームのURLをコピーしました。';
       this.copyURLSnackbar.show = true;
     },
     copyWatcherRoomUrl(): void {
-      (document.getElementById('watcher-copy-url') as HTMLInputElement).select();
+      const element = document.getElementById('watcher-copy-url') as HTMLInputElement;
+      element.select();
       document.execCommand('copy');
 
       this.copyURLSnackbar.text = '観戦者ルームのURLをコピーしました。';

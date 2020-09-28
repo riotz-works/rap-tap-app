@@ -183,20 +183,20 @@ export default Vue.extend({
       this.chatMessage = '';
     },
     onClickThumbUpForA(): void {
-      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`)
-        .transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp + 1, thumbDown: feedback.thumbDown } : undefined);
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`).
+        transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp + 1, thumbDown: feedback.thumbDown } : undefined);
     },
     onClickThumbDownForA(): void {
-      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`)
-        .transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp, thumbDown: feedback.thumbDown + 1 } : undefined);
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.A.peerId}/feedback`).
+        transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp, thumbDown: feedback.thumbDown + 1 } : undefined);
     },
     onClickThumbUpForB(): void {
-      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`)
-        .transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp + 1, thumbDown: feedback.thumbDown } : undefined);
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`).
+        transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp + 1, thumbDown: feedback.thumbDown } : undefined);
     },
     onClickThumbDownForB(): void {
-      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`)
-        .transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp, thumbDown: feedback.thumbDown + 1 } : undefined);
+      RealtimeDB.ref(`/rooms/${this.$route.query.roomId}/rappers/${this.rappers.B.peerId}/feedback`).
+        transaction((feedback: { thumbUp: number; thumbDown: number }) => feedback ? { thumbUp: feedback.thumbUp, thumbDown: feedback.thumbDown + 1 } : undefined);
     }
   }
 });

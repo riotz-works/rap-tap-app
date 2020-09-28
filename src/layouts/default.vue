@@ -30,8 +30,8 @@
 import Vue from 'vue';
 import { config } from '~/mixins/config';
 
-const home = require('~/assets/image/wallpaper-top.jpg');
-const room = require('~/assets/image/wallpaper-room.jpg');
+const home = require('~/assets/image/wallpaper-top.jpg'); /* eslint-disable-line @typescript-eslint/no-var-requires */ // 'cuz importing resources requires `require`
+const room = require('~/assets/image/wallpaper-room.jpg'); /* eslint-disable-line @typescript-eslint/no-var-requires */ // 'cuz importing resources requires `require`
 
 export default Vue.extend({
   data: () => ({
@@ -39,8 +39,8 @@ export default Vue.extend({
   }),
   methods: {
     wallpaper(): object {
-      const path = this.$route.path;
-      const mode = this.$route.query.mode;
+      const { path } = this.$route;
+      const { mode } = this.$route.query;
       const type = path.startsWith('/room') ? 'room' : mode === 'watcher' ? 'room' : 'top';
       const pos = type === 'top' ? 'bottom' : 'top';
 

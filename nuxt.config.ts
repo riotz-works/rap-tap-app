@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */               // 'cuz configuration file
 /* eslint-disable no-process-env */                 // 'cuz configuration file and requires environment variables
 /* eslint-disable nuxt/no-cjs-in-config */          // 'cuz it conflicts with compiler
 /* eslint-disable @typescript-eslint/camelcase */   // 'cuz key name of configuration is specified
