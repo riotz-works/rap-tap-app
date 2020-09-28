@@ -2,8 +2,8 @@ importScripts('/rap-tap-app/static/workbox.dev.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/rap-tap-app/static/app.e5946db.js",
-    "revision": "ba51a3b7a8ab2b87beaa1a7a9447f6f8"
+    "url": "/rap-tap-app/static/app.dc4c71b.js",
+    "revision": "89e0d8a8ae1db0f3ddb1182eed327b6a"
   },
   {
     "url": "/rap-tap-app/static/commons/app.5e4d7eb.js",
@@ -70,4 +70,4 @@ workbox.routing.registerRoute(new RegExp('https://fonts.(?:googleapis|gstatic).c
 
 workbox.routing.registerRoute(new RegExp('(?:.png|.gif|.jpg|.jpeg|.svg)$'), workbox.strategies.cacheFirst({"cacheExpiration":{"maxEntries":60,"maxAgeSeconds":2592000}}), 'GET')
 
-workbox.routing.registerRoute(new RegExp('https://6llw9ziqp5.execute-api.ap-northeast-1.amazonaws.com/dev/version'), workbox.strategies.networkFirst({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
+workbox.routing.registerRoute(new RegExp('https://eguv57s481.execute-api.ap-northeast-1.amazonaws.com/dev/version'), workbox.strategies.networkFirst({"cacheableResponse":{"statuses":[0,200]}}), 'GET')
