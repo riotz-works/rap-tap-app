@@ -4,49 +4,49 @@
   "description": "リアルタイム の 競演 と 参加型観戦 で 音楽を最高に楽しむ",
   "icons": [
     {
-      "src": "/rap-tap-app/static/icons/icon_64x64.fcaee6.png",
+      "src": "/static/icons/icon_64x64.fcaee6.png",
       "sizes": "64x64",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_120x120.fcaee6.png",
+      "src": "/static/icons/icon_120x120.fcaee6.png",
       "sizes": "120x120",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_144x144.fcaee6.png",
+      "src": "/static/icons/icon_144x144.fcaee6.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_152x152.fcaee6.png",
+      "src": "/static/icons/icon_152x152.fcaee6.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_192x192.fcaee6.png",
+      "src": "/static/icons/icon_192x192.fcaee6.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_384x384.fcaee6.png",
+      "src": "/static/icons/icon_384x384.fcaee6.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/rap-tap-app/static/icons/icon_512x512.fcaee6.png",
+      "src": "/static/icons/icon_512x512.fcaee6.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/rap-tap-app/?standalone=true",
+  "start_url": "/?standalone=true",
   "display": "standalone",
   "background_color": "#000",
   "theme_color": "#000",
