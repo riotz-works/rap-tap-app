@@ -31,7 +31,7 @@
     "skyway-js": "^1.4.0"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.5.0",
+    "@lhci/cli": "^0.5.1",
     "@nuxt/typescript-build": "^1.0.3",
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/axios": "^5.12.2",
