@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@firebase/app": "^0.6.11",
-    "@firebase/auth": "^0.14.9",
+    "@firebase/auth": "^0.17.1",
     "@firebase/database": "^0.6.10",
     "qrcode": "^1.4.4",
     "skyway-js": "^1.4.0"
